@@ -1,17 +1,21 @@
+import { RouteName } from "./types";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: () => import("@views/Home.vue"),
+    name: RouteName.HOME,
+    component: () => import("@views/home.vue"),
   },
   {
     path: "/config/:id",
-    name: "Config",
-    component: {
-      template: "<p>In development</p>",
-    },
+    name: RouteName.CONFIG_DETAIL,
+    component: () => import("@views/config.vue"),
+  },
+  {
+    path: "/upload",
+    name: RouteName.UPLOAD,
+    component: () => import("@views/upload.vue"),
   },
 ];
 
