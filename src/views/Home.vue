@@ -3,6 +3,9 @@ import { ref } from "vue";
 import configCard from "./components/config-detail.vue";
 import router from "../router";
 import { RouteName } from "@/types";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const searchValue = ref("");
 
@@ -38,7 +41,7 @@ const downloadConfig = (id: string) => {
 </script>
 <template>
   <div class="flex container mx-auto p-4 gap-8 flex-col">
-    <h1 class="text-5xl font-bold mx-auto">Dark Configs</h1>
+    <h1 class="text-5xl font-bold mx-auto">{{ t("home.title") }}</h1>
     <div
       id="search-part"
       class="w-full flex flex-row gap-4 flex-wrap md:flex-nowrap"
@@ -47,12 +50,13 @@ const downloadConfig = (id: string) => {
         v-model="searchValue"
         type="text"
         id="search"
+        :placeholder="t('home.searchInputPlaceHolder')"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-neutral-500 focus:border-neutral-500 block w-full p-2.5 dark:bg-neutral-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500 max-w-full"
       />
       <button
         class="bg-transparent hover:bg-neutral-700 text-white-700 font-semibold hover:text-white py-2 px-4 border border-neutral-700 hover:border-transparent rounded w-full md:w-48 max-w-full"
       >
-        Search
+        {{ t("home.searchButton") }}
       </button>
     </div>
     <div class="w-full flex flex-row gap-8 flex-wrap">

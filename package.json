@@ -1,7 +1,7 @@
 {
   "name": "darkconfigs",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "vue": "^3.3.4",
+    "vue-i18n": "^9.3.0",
     "vue-router": "4"
   },
   "devDependencies": {
