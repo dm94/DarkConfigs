@@ -1,12 +1,12 @@
 {
   "header": {
-    "home": "Home",
-    "uploadConfig": "Upload your config",
-    "configDetail": "Config Detail"
+    "home": "Strona główna",
+    "uploadConfig": "Załaduj konfigurację",
+    "configDetail": "Szczegóły konfiguracji"
   },
   "home": {
     "title": "Dark Configs",
-    "searchButton": "Search",
-    "searchInputPlaceHolder": "Enter what you want to search for"
+    "searchButton": "Szukaj",
+    "searchInputPlaceHolder": "Wpisz to, co chcesz wyszukać"
   }
 }
