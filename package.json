@@ -1,7 +1,7 @@
 {
   "name": "darkconfigs",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,6 +14,7 @@
     "vue-router": "4"
   },
   "devDependencies": {
+    "@types/node": "^20.6.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "autoprefixer": "^10.4.15",
     "eslint": "^8.48.0",

@@ -3,8 +3,8 @@ import { computed } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    id: string;
-    title: string;
+    configId: string;
+    name: string;
     description?: string;
     downloads?: number;
     karma?: number;
@@ -46,7 +46,7 @@ const karmaClasses = computed(() => {
   <div
     class="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-400 w-72 py-4 px-6 flex gap-4 flex-col"
   >
-    <div class="font-bold text-xl mb-2">{{ props.title }}</div>
+    <div class="font-bold text-xl mb-2">{{ props.name }}</div>
     <p class="text-gray-700 text-base">
       {{ props.description }}
     </p>

@@ -1,25 +1,29 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import configCard from "./components/config-detail.vue";
+import configCard from "./components/config-card.vue";
 import router from "../router";
 import { RouteName } from "@/types";
 import { useI18n } from "vue-i18n";
+import { ConfigInfo } from "@/types/configfile";
+import { getConfigFile } from "@/functions/connector";
+import { getJsonFileName } from "@/functions/general";
+import { cleanConfig } from "@/functions/configcleaner";
 
 const { t } = useI18n();
 
 const searchValue = ref("");
 
-const configs = ref([
+const configs = ref<ConfigInfo[]>([
   {
-    id: "asdasdasd",
-    title: "Paladio",
+    configId: "asdasdasd",
+    name: "Paladio",
     description: "Farmea paladio",
     downloads: 1000,
     karma: 1000,
   },
   {
-    id: "asdadase34",
-    title: "Low",
+    configId: "asdadase34",
+    name: "Low",
     description: "Low GG",
     downloads: 10,
     karma: 0,
@@ -35,8 +39,34 @@ const showConfig = (id: string) => {
   });
 };
 
-const downloadConfig = (id: string) => {
-  console.log("Download", id);
+const download = (filename: string, text: string) => {
+  const element = document.createElement("a");
+  element.setAttribute(
+    "href",
+    "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+  );
+  element.setAttribute("download", filename);
+
+  element.style.display = "none";
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+};
+
+const downloadConfig = async (config: ConfigInfo) => {
+  if (!config) {
+    return;
+  }
+  try {
+    const responseConfig = await getConfigFile(config.configId);
+
+    const configParsed = cleanConfig(responseConfig);
+    download(getJsonFileName(config.name), JSON.stringify(configParsed));
+  } catch (error) {
+    console.error(error);
+  }
 };
 </script>
 <template>
@@ -64,9 +94,9 @@ const downloadConfig = (id: string) => {
         v-for="(config, index) in configs"
         v-bind="config"
         :key="index"
-        @show="showConfig(config.id)"
-        @like="showConfig(config.id)"
-        @download="downloadConfig(config.id)"
+        @show="showConfig(config.configId)"
+        @like="showConfig(config.configId)"
+        @download="downloadConfig(config)"
       />
     </div>
   </div>

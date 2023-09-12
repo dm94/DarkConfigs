@@ -10,7 +10,7 @@ const routes = [
   {
     path: "/config/:id",
     name: RouteName.CONFIG_DETAIL,
-    component: () => import("@views/config.vue"),
+    component: () => import("@views/config-detail.vue"),
   },
   {
     path: "/upload",
