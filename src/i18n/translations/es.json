@@ -8,5 +8,13 @@
     "title": "Dark Configs",
     "searchButton": "Buscar",
     "searchInputPlaceHolder": "Escriba lo que desea buscar"
+  },
+  "configDetail": {
+    "title": "Title",
+    "description": "Description",
+    "downloads": "Downloads",
+    "karma": "Karma",
+    "features": "Features",
+    "downloadButton": "Download"
   }
 }
