@@ -40,6 +40,7 @@ export type ConfigFile = {
   MISCELLANEOUS?: any;
   BOT_SETTINGS?: BotSettings;
   EXTRA?: any;
+  UNRESOLVED?: any;
 };
 
 export type ConfigInfo = {
