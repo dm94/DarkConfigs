@@ -5,17 +5,17 @@ const routes = [
   {
     path: "/",
     name: RouteName.HOME,
-    component: () => import("@views/home.vue"),
+    component: () => import("@/views/home.vue"),
   },
   {
     path: "/config/:id",
     name: RouteName.CONFIG_DETAIL,
-    component: () => import("@views/config-detail.vue"),
+    component: () => import("@/views/config-detail.vue"),
   },
   {
     path: "/upload",
     name: RouteName.UPLOAD,
-    component: () => import("@views/upload.vue"),
+    component: () => import("@/views/upload.vue"),
   },
 ];
 
