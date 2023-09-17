@@ -10,11 +10,11 @@
     "searchInputPlaceHolder": "Wpisz to, co chcesz wyszukać"
   },
   "configDetail": {
-    "title": "Title",
-    "description": "Description",
-    "downloads": "Downloads",
+    "title": "Tytuł",
+    "description": "Opis",
+    "downloads": "Pobrane",
     "karma": "Karma",
-    "features": "Features",
-    "downloadButton": "Download"
+    "features": "Funkcje",
+    "downloadButton": "Pobierz"
   }
 }
