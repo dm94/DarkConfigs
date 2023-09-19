@@ -1,5 +1,5 @@
 import { ConfigInfo, ConfigFile } from "@/types/configfile";
-import { getConfigParams } from "@/types/requests";
+import { UpdateKarmaType, getConfigParams } from "@/types/requests";
 
 const baseUrl: string = import.meta.env.VITE_APP_API_URL as string;
 
@@ -78,4 +78,21 @@ export const uploadConfigFile = async (
   });
 
   return (await response.json()) as ConfigInfo;
+};
+
+export const updateKarma = async (
+  id: string,
+  type: UpdateKarmaType
+): Promise<Response> => {
+  const response = await fetch(
+    `${baseUrl}/configs/${id}/vote?` +
+      new URLSearchParams({
+        vote: type,
+      }),
+    {
+      method: "POST",
+    }
+  );
+
+  return await response.json();
 };

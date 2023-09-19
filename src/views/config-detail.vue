@@ -4,14 +4,27 @@ import { computed, onMounted, ref } from "vue";
 import router from "../router";
 import { RouteName } from "@/types";
 import { useI18n } from "vue-i18n";
-import { getConfigFile, getConfig } from "@/functions/connector";
+import { getConfigFile, getConfig, updateKarma } from "@/functions/connector";
 import { cleanConfig } from "@/functions/configcleaner";
 import { ConfigInfo } from "@/types/configfile";
 import { getJsonFileName } from "@/functions/general";
+import { UpdateKarmaType } from "@/types/requests";
 
 const config = ref<ConfigInfo>();
+const showVotePart = ref<boolean>(true);
 
 const { t } = useI18n();
+
+const loadConfigDetail = async (id: string) => {
+  try {
+    const responseConfig = await getConfig(id);
+    if (responseConfig) {
+      config.value = responseConfig;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 onMounted(async () => {
   const route = useRoute();
@@ -21,14 +34,7 @@ onMounted(async () => {
     return;
   }
 
-  try {
-    const responseConfig = await getConfig(route?.params?.id as string);
-    if (responseConfig) {
-      config.value = responseConfig;
-    }
-  } catch (error) {
-    console.error(error);
-  }
+  await loadConfigDetail(route?.params?.id as string);
 
   if (!config.value) {
     router.push({ name: RouteName.HOME });
@@ -92,6 +98,22 @@ const downloadConfig = async () => {
     console.error(error);
   }
 };
+
+const updateKarmaClick = async (type: UpdateKarmaType) => {
+  if (!config.value) {
+    return;
+  }
+
+  showVotePart.value = false;
+
+  try {
+    await updateKarma(config.value.configId, type);
+  } catch (error) {
+    console.error(error);
+  }
+
+  await loadConfigDetail(config.value.configId);
+};
 </script>
 <template>
   <div v-if="config" class="flex container mx-auto p-4 gap-8 flex-col">
@@ -116,7 +138,7 @@ const downloadConfig = async () => {
         </p>
       </div>
       <div class="flex container gap-4 justify-end">
-        <button :class="karmaClasses">
+        <div :class="karmaClasses">
           <svg
             width="16"
             height="16"
@@ -131,8 +153,8 @@ const downloadConfig = async () => {
             />
           </svg>
           <span>{{ config.karma }}</span>
-        </button>
-        <button
+        </div>
+        <div
           class="flex gap-2 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 items-center"
         >
           <svg
@@ -158,13 +180,57 @@ const downloadConfig = async () => {
             />
           </svg>
           <span>{{ config.downloads }}</span>
-        </button>
+        </div>
       </div>
     </div>
     <div
       class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700"
     >
-      <p class="text-xl">{{ t("configDetail.features") }}</p>
+      <div class="flex">
+        <p class="text-xl">{{ t("configDetail.features") }}</p>
+        <div v-if="showVotePart" class="flex ml-auto p-2 gap-4 max-w-xl">
+          <button
+            class="flex gap-2 bg-green-600 rounded px-3 py-3 text-gray-700 items-center"
+            @click="updateKarmaClick(UpdateKarmaType.LIKE)"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 10V20M8 10L4 9.99998V20L8 20M8 10L13.1956 3.93847C13.6886 3.3633 14.4642 3.11604 15.1992 3.29977L15.2467 3.31166C16.5885 3.64711 17.1929 5.21057 16.4258 6.36135L14 9.99998H18.5604C19.8225 9.99998 20.7691 11.1546 20.5216 12.3922L19.3216 18.3922C19.1346 19.3271 18.3138 20 17.3604 20L8 20"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            class="flex gap-2 bg-red-600 rounded px-3 py-3 text-gray-700 items-center"
+            @click="updateKarmaClick(UpdateKarmaType.DISLIKE)"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 14V4M8 14L4 14V4.00002L8 4M8 14L13.1956 20.0615C13.6886 20.6367 14.4642 20.884 15.1992 20.7002L15.2467 20.6883C16.5885 20.3529 17.1929 18.7894 16.4258 17.6387L14 14H18.5604C19.8225 14 20.7691 12.8454 20.5216 11.6078L19.3216 5.60779C19.1346 4.67294 18.3138 4.00002 17.3604 4.00002L8 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
       <div class="flex container mx-auto gap-2 flex-col">
         <p
           v-for="(feature, index) in config.features"
