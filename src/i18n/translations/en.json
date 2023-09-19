@@ -17,5 +17,12 @@
     "karma": "Karma",
     "features": "Features",
     "downloadButton": "Download"
+  },
+  "uploadPage": {
+    "title": "Title",
+    "description": "Description",
+    "features": "Features",
+    "config": "Config",
+    "saveButton": "Save"
   }
 }

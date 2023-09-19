@@ -116,7 +116,7 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
 };
 </script>
 <template>
-  <div v-if="config" class="flex container mx-auto p-4 gap-8 flex-col">
+  <div v-if="config" class="flex py-4 gap-8 flex-col">
     <h1 class="text-5xl font-bold mx-auto">{{ config.name }}</h1>
     <div
       class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700"
