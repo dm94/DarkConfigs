@@ -45,7 +45,7 @@ const readFile = (event: DragEvent | Event) => {
           readerEvent.target.result.toString()
         );
         form.config = cleanConfig(json);
-        configFeatures.value = getEnabledFeatures(json);
+        configFeatures.value = getEnabledFeatures(form.config);
       }
     };
   } catch (error) {
@@ -90,7 +90,7 @@ const uploadConfig = async () => {
           v-model="form.name"
           type="text"
           class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded"
-          max-lenght="15"
+          maxlength="15"
           required
         />
       </div>
@@ -99,7 +99,7 @@ const uploadConfig = async () => {
         <textarea
           v-model="form.description"
           class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded"
-          max-lenght="150"
+          maxlength="100"
           required
         />
       </div>

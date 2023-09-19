@@ -183,6 +183,12 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
         </div>
       </div>
     </div>
+    <button
+      class="mx-auto max-w-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+      @click="downloadConfig"
+    >
+      {{ t("configDetail.downloadButton") }}
+    </button>
     <div
       class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700"
     >
@@ -241,11 +247,5 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
         </p>
       </div>
     </div>
-    <button
-      class="mx-auto max-w-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-      @click="downloadConfig"
-    >
-      {{ t("configDetail.downloadButton") }}
-    </button>
   </div>
 </template>

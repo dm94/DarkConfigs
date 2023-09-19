@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import configCard from "./components/config-card.vue";
-import router from "../router";
-import { RouteName } from "@/types";
 import { useI18n } from "vue-i18n";
 import { ConfigInfo } from "@/types/configfile";
-import { getConfigFile, getConfigs } from "@/functions/connector";
-import { getJsonFileName } from "@/functions/general";
-import { cleanConfig } from "@/functions/configcleaner";
-import { onMounted } from "vue";
+import { getConfigs } from "@/functions/connector";
 import { getConfigParams } from "@/types/requests";
 
 const { t } = useI18n();
@@ -65,45 +60,6 @@ const search = () => {
     search: searchValue.value,
   });
 };
-
-const showConfig = (id: string) => {
-  router.push({
-    name: RouteName.CONFIG_DETAIL,
-    params: {
-      id,
-    },
-  });
-};
-
-const download = (filename: string, text: string) => {
-  const element = document.createElement("a");
-  element.setAttribute(
-    "href",
-    "data:text/plain;charset=utf-8," + encodeURIComponent(text)
-  );
-  element.setAttribute("download", filename);
-
-  element.style.display = "none";
-  document.body.appendChild(element);
-
-  element.click();
-
-  document.body.removeChild(element);
-};
-
-const downloadConfig = async (config: ConfigInfo) => {
-  if (!config) {
-    return;
-  }
-  try {
-    const responseConfig = await getConfigFile(config.configId);
-
-    const configParsed = cleanConfig(responseConfig);
-    download(getJsonFileName(config.name), JSON.stringify(configParsed));
-  } catch (error) {
-    console.error(error);
-  }
-};
 </script>
 <template>
   <div class="flex container mx-auto p-4 gap-8 flex-col">
@@ -132,9 +88,6 @@ const downloadConfig = async (config: ConfigInfo) => {
         v-for="(config, index) in configs"
         v-bind="config"
         :key="index"
-        @show="showConfig(config.configId)"
-        @like="showConfig(config.configId)"
-        @download="downloadConfig(config)"
       />
     </div>
     <div class="w-full flex flex-row gap-8 flex-wrap">
