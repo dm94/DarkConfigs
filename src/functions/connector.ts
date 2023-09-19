@@ -1,4 +1,5 @@
 import { ConfigInfo, ConfigFile } from "@/types/configfile";
+import { getConfigParams } from "@/types/requests";
 
 const baseUrl: string = import.meta.env.VITE_APP_API_URL as string;
 
@@ -33,8 +34,23 @@ export const getConfigFile = async (id: string): Promise<ConfigFile> => {
   return (await response.json()) as ConfigFile;
 };
 
-export const getConfigs = async (): Promise<ConfigInfo[]> => {
-  const response = await fetch(`${baseUrl}/configs`, {
+export const getConfigs = async (
+  params?: getConfigParams
+): Promise<ConfigInfo[]> => {
+  const url = new URL(`${baseUrl}/configs`);
+
+  if (params) {
+    Object.keys(params).forEach((key) => {
+      if (params[key as keyof typeof params]) {
+        url.searchParams.append(
+          key,
+          params[key as keyof typeof params] as string
+        );
+      }
+    });
+  }
+
+  const response = await fetch(url, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
