@@ -9,9 +9,15 @@ export const oldFeatures = [
   "com.deeme.modules.PaladiumModule",
   "eu.darkbot.leanon00.Main.Features.GGSpinner",
   "com.deeme.tasks.Discord",
+  "com.botorbit.darkplane.features.chaosalienmodule.ChaosAlienModule",
+  "com.botorbit.darkplane.extrasplus.ExtrasPlus",
+  "com.deeme.modules.AstralGate",
 ];
+
 export const oldModules = ["com.deemetool"];
 export const blackListModules = ["fernando.qmieasputodemrd"];
+
+export const oldPluginsByName = ["Dmplugin_by_Dm94Dani", "Schifo_by_Fabio"];
 
 export const leakInfoFromFeatues = [
   "com.deeme.tasks.discord.Discord.discordWebHook",
@@ -98,6 +104,10 @@ export const getEnabledFeatures = (config: ConfigFile): string[] => {
   let enableFeatures: string[] = [];
 
   keys.forEach((key) => {
+    if (oldPluginsByName.includes(key)) {
+      return;
+    }
+
     const pluginInfoValue: PluginInfo = pluginInfo[key];
     if (
       pluginInfoValue.ENABLED_FEATURES &&
