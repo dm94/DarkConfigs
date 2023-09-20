@@ -90,7 +90,7 @@ const uploadConfig = async () => {
           v-model="form.name"
           type="text"
           class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded"
-          maxlength="15"
+          maxlength="50"
           required
         />
       </div>
