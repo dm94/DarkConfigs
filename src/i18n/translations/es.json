@@ -7,7 +7,8 @@
   "home": {
     "title": "Dark Configs",
     "searchButton": "Buscar",
-    "searchInputPlaceHolder": "Escriba lo que desea buscar"
+    "searchInputPlaceHolder": "Escriba lo que desea buscar",
+    "loadMoreButton": "Show more"
   },
   "configDetail": {
     "title": "Title",
@@ -16,5 +17,12 @@
     "karma": "Karma",
     "features": "Features",
     "downloadButton": "Download"
+  },
+  "uploadPage": {
+    "title": "Title",
+    "description": "Description",
+    "features": "Features",
+    "config": "Config",
+    "saveButton": "Save"
   }
 }
