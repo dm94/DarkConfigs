@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouteName } from "@/types";
+import { RouteName } from "@/types/routename";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
@@ -36,3 +36,4 @@ const { t } = useI18n();
     </nav>
   </header>
 </template>
+@/types/types

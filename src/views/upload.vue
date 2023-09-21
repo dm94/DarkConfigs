@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import router from "@/router";
-import { RouteName } from "@/types";
+import { RouteName } from "@/types/routename";
 import { useI18n } from "vue-i18n";
 import { uploadConfigFile } from "@/functions/connector";
 import { cleanConfig, getEnabledFeatures } from "@/functions/configcleaner";
@@ -80,7 +80,11 @@ const uploadConfig = async () => {
 };
 </script>
 <template>
-  <form class="flex py-4 gap-8 flex-col" @submit.prevent="uploadConfig">
+  <form
+    class="flex py-4 gap-8 flex-col"
+    @submit.prevent="uploadConfig"
+    data-testid="upload-page"
+  >
     <div
       class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700"
     >
@@ -91,6 +95,7 @@ const uploadConfig = async () => {
           type="text"
           class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded"
           maxlength="50"
+          data-testid="input-title"
           required
         />
       </div>
@@ -100,6 +105,7 @@ const uploadConfig = async () => {
           v-model="form.description"
           class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded"
           maxlength="100"
+          data-testid="textarea-description"
           required
         />
       </div>
@@ -111,6 +117,7 @@ const uploadConfig = async () => {
           :multiple="false"
           accept=".json"
           @change="readFile"
+          data-testid="input-file"
           required
         />
       </div>
@@ -127,6 +134,7 @@ const uploadConfig = async () => {
           v-for="(feature, index) in configFeatures"
           class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded"
           :key="`feature-${index}`"
+          data-testid="feauture-config"
         >
           {{ feature }}
         </p>
@@ -134,9 +142,11 @@ const uploadConfig = async () => {
     </div>
     <button
       type="submit"
+      data-testid="upload-button"
       class="mx-auto max-w-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
     >
       {{ t("uploadPage.saveButton") }}
     </button>
   </form>
 </template>
+@/types/types

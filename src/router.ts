@@ -1,4 +1,4 @@
-import { RouteName } from "./types";
+import { RouteName } from "./types/routename";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [

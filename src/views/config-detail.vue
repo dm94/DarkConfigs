@@ -2,7 +2,7 @@
 import { useRoute } from "vue-router";
 import { computed, onMounted, ref } from "vue";
 import router from "../router";
-import { RouteName } from "@/types";
+import { RouteName } from "@/types/routename";
 import { useI18n } from "vue-i18n";
 import { getConfigFile, getConfig, updateKarma } from "@/functions/connector";
 import { cleanConfig } from "@/functions/configcleaner";
@@ -249,3 +249,4 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
     </div>
   </div>
 </template>
+@/types/types

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { RouteName } from "@/types";
+import { RouteName } from "@/types/routename";
 
 const props = withDefaults(
   defineProps<{
@@ -51,6 +51,7 @@ const karmaClasses = computed(() => {
     }"
   >
     <div
+      data-testid="config-card"
       class="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-400 w-72 py-4 px-6 flex gap-4 flex-col"
     >
       <div class="font-bold text-xl mb-2">{{ props.name }}</div>
@@ -105,3 +106,4 @@ const karmaClasses = computed(() => {
     </div>
   </router-link>
 </template>
+@/types/types
