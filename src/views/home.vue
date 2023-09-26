@@ -5,6 +5,7 @@ import { useI18n } from "vue-i18n";
 import { ConfigInfo } from "@/types/configfile";
 import { getConfigs } from "@/functions/connector";
 import { getConfigParams } from "@/types/requests";
+import { showError } from "@/functions/error-management";
 
 const { t } = useI18n();
 
@@ -26,7 +27,7 @@ const loadConfigs = async (params?: getConfigParams) => {
 
     hasMoreConfigs.value = configs.value.length >= CONFIGS_PER_PAGE;
   } catch (error) {
-    console.error(error);
+    showError(error as string);
   }
 };
 
@@ -50,7 +51,7 @@ const loadMore = async () => {
 
     hasMoreConfigs.value = response && response.length >= CONFIGS_PER_PAGE;
   } catch (error) {
-    console.error(error);
+    showError(error as string);
   }
 };
 

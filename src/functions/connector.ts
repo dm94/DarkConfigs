@@ -13,6 +13,10 @@ export const getConfig = async (id: string): Promise<ConfigInfo> => {
 
   const json = await response.json();
 
+  if (json?.message) {
+    throw Error(json?.message);
+  }
+
   return {
     configId: json.configId,
     name: json.name,
@@ -31,7 +35,13 @@ export const getConfigFile = async (id: string): Promise<ConfigFile> => {
     },
   });
 
-  return (await response.json()) as ConfigFile;
+  const parsed = await response.json();
+
+  if (parsed?.message) {
+    throw Error(parsed?.message);
+  }
+
+  return parsed as ConfigFile;
 };
 
 export const getConfigs = async (
@@ -57,7 +67,22 @@ export const getConfigs = async (
     },
   });
 
-  return (await response.json()) as ConfigInfo[];
+  const parsed = await response.json();
+
+  if (parsed?.message) {
+    throw Error(parsed?.message);
+  }
+
+  return parsed.map((p: ConfigInfo) => {
+    return {
+      configId: p.configId,
+      name: p.name,
+      description: p.description,
+      karma: p.karma,
+      downloads: p.downloads,
+      features: p.features,
+    }
+  });
 };
 
 export const uploadConfigFile = async (
@@ -77,7 +102,14 @@ export const uploadConfigFile = async (
     }),
   });
 
-  return (await response.json()) as ConfigInfo;
+
+  const parsed = await response.json();
+
+  if (parsed?.message) {
+    throw Error(parsed?.message);
+  }
+
+  return parsed as ConfigInfo;
 };
 
 export const updateKarma = async (
@@ -94,5 +126,11 @@ export const updateKarma = async (
     }
   );
 
-  return await response.json();
+  const parsed = await response.json();
+
+  if (parsed?.message) {
+    throw Error(parsed?.message);
+  }
+
+  return parsed;
 };

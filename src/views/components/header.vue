@@ -38,4 +38,3 @@ const { t } = useI18n();
     </nav>
   </header>
 </template>
-@/types/types

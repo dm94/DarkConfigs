@@ -106,4 +106,3 @@ const karmaClasses = computed(() => {
     </div>
   </router-link>
 </template>
-@/types/types

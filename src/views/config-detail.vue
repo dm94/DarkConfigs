@@ -9,6 +9,7 @@ import { cleanConfig } from "@/functions/configcleaner";
 import { ConfigInfo } from "@/types/configfile";
 import { getJsonFileName } from "@/functions/general";
 import { UpdateKarmaType } from "@/types/requests";
+import { showError } from "@/functions/error-management";
 
 const config = ref<ConfigInfo>();
 const showVotePart = ref<boolean>(true);
@@ -22,6 +23,7 @@ const loadConfigDetail = async (id: string) => {
       config.value = responseConfig;
     }
   } catch (error) {
+    showError(error as string);
     console.error(error);
   }
 };
@@ -95,6 +97,7 @@ const downloadConfig = async () => {
     const configParsed = cleanConfig(responseConfig);
     download(getJsonFileName(config.value.name), JSON.stringify(configParsed));
   } catch (error) {
+    showError(error as string);
     console.error(error);
   }
 };
@@ -109,6 +112,7 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
   try {
     await updateKarma(config.value.configId, type);
   } catch (error) {
+    showError(error as string);
     console.error(error);
   }
 
@@ -249,4 +253,3 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
     </div>
   </div>
 </template>
-@/types/types

@@ -6,6 +6,7 @@ import { useI18n } from "vue-i18n";
 import { uploadConfigFile } from "@/functions/connector";
 import { cleanConfig, getEnabledFeatures } from "@/functions/configcleaner";
 import { ConfigFile } from "@/types/configfile";
+import { showError } from "@/functions/error-management";
 
 const configFeatures = ref<string[]>([]);
 
@@ -50,6 +51,7 @@ const readFile = (event: DragEvent | Event) => {
     };
   } catch (error) {
     console.error(error);
+    showError(error as string);
   }
 };
 
@@ -75,7 +77,7 @@ const uploadConfig = async () => {
       });
     }
   } catch (error) {
-    console.error(error);
+    showError(error as string);
   }
 };
 </script>
@@ -149,4 +151,3 @@ const uploadConfig = async () => {
     </button>
   </form>
 </template>
-@/types/types
