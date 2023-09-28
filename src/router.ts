@@ -17,6 +17,11 @@ const routes = [
     name: RouteName.UPLOAD,
     component: () => import("@/views/upload.vue"),
   },
+  {
+    path: "/terms",
+    name: RouteName.TERMS_AND_CONDITIONS,
+    component: () => import("@/views/terms.vue"),
+  },
 ];
 
 export default createRouter({
