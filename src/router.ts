@@ -1,3 +1,4 @@
+import { initGA } from "./functions/ga";
 import { RouteName } from "./types/routename";
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -24,7 +25,11 @@ const routes = [
   },
 ];
 
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+router.beforeEach(() => initGA())
+
+export default router;
