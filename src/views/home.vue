@@ -67,6 +67,7 @@ const search = () => {
 <template>
   <div class="flex container mx-auto p-4 gap-8 flex-col" data-testid="home-page">
     <h1 class="text-5xl font-bold mx-auto">{{ t("home.title") }}</h1>
+    <h3 class="text-3xl font-bold mx-auto">{{ t("home.subtitle") }}</h3>
     <div id="search-part" class="w-full flex flex-row gap-4 flex-wrap md:flex-nowrap">
       <input v-model="searchValue" type="text" id="search" :placeholder="t('home.searchInputPlaceHolder')"
         data-testid="input-search"
