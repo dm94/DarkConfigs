@@ -7,7 +7,14 @@ export const gtag = (...data: unknown): void => {
     initGA();
 
     window.dataLayer = window?.dataLayer || [];
-    window.dataLayer.push(...data);
+
+    if (typeof window?.gtag === "undefined") {
+        window.gtag = function gtag() {
+            window.dataLayer.push(arguments);
+        }
+    }
+
+    window.gtag(...data);
 }
 
 export const initGA = (): void => {
@@ -30,11 +37,6 @@ export const initGA = (): void => {
     element.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
     element.async = true;
     document.head.appendChild(element);
-
-    window.gtag = () => {
-        dataLayer.push(arguments);
-    }
-    window.dataLayer = window?.dataLayer || [];
 
     gtag('js', new Date());
     gtag('config', GA_ID);
