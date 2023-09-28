@@ -15,7 +15,7 @@ import { gtag } from "@/functions/ga";
 const config = ref<ConfigInfo>();
 const showVotePart = ref<boolean>(true);
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const loadConfigDetail = async (id: string) => {
   try {
@@ -92,10 +92,11 @@ const downloadConfig = async () => {
   if (!config.value) {
     return;
   }
+
   try {
     const responseConfig = await getConfigFile(config.value.configId);
 
-    const configParsed = cleanConfig(responseConfig);
+    const configParsed = cleanConfig(responseConfig, locale.value);
     download(getJsonFileName(config.value.name), JSON.stringify(configParsed));
   } catch (error) {
     showError(error as string);

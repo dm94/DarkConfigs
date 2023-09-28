@@ -71,7 +71,7 @@ export const permitFeature = (key: string): boolean => {
   return true;
 };
 
-export const cleanConfig = (config: ConfigFile): ConfigFile => {
+export const cleanConfig = (config: ConfigFile, language = "en"): ConfigFile => {
   const configCopy = { ...config };
 
   configCopy["PLAYER_INFOS"] = undefined;
@@ -87,7 +87,7 @@ export const cleanConfig = (config: ConfigFile): ConfigFile => {
     configCopy["BOT_SETTINGS"]["CUSTOM_BACKGROUND"]["IMAGE"] = undefined;
   }
   if (configCopy?.["BOT_SETTINGS"]?.["BOT_GUI"]?.["LOCALE"]) {
-    configCopy["BOT_SETTINGS"]["BOT_GUI"]["LOCALE"] = "en";
+    configCopy["BOT_SETTINGS"]["BOT_GUI"]["LOCALE"] = language;
   }
 
   return cleanDisabledFeatures(configCopy);
