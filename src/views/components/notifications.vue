@@ -24,7 +24,7 @@ const checkOldNotifications = () => {
 }
 
 const interval = setInterval(() => {
-      checkOldNotifications();
+  checkOldNotifications();
 }, 1000);
 
 onBeforeUnmount(() => {
@@ -34,8 +34,9 @@ onBeforeUnmount(() => {
 
 </script>
 <template>
-  <div class="fixed right-0 top-0">
-    <div v-for="(notification, index) in notificationList" :key="`n-${index}-${notification.time}`" class="p-3 m-2 bg-yellow-500 border border-1 border-red-900 ">
+  <div v-if="notificationList.length > 0" class="fixed right-0 top-0">
+    <div v-for="(notification, index) in notificationList" :key="`n-${index}-${notification.time}`"
+      class="p-3 m-2 bg-yellow-500 border border-1 border-red-900 ">
       {{ notification.message }}
     </div>
   </div>
