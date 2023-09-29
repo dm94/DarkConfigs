@@ -3,10 +3,12 @@
     "home": "Strona główna",
     "uploadConfig": "Załaduj konfigurację",
     "configDetail": "Szczegóły konfiguracji",
-    "termAndConditions": "Terms and Conditions"
+    "termAndConditions": "Terms and Conditions",
+    "discord": "Discord"
   },
   "home": {
     "title": "Dark Configs",
+    "subtitle": "Download and share your favourite configs",
     "searchButton": "Szukaj",
     "searchInputPlaceHolder": "Wpisz to, co chcesz wyszukać",
     "loadMoreButton": "Show more"
@@ -24,6 +26,8 @@
     "description": "Description",
     "features": "Features",
     "config": "Config",
+    "hidden": "Hidden",
+    "hiddenDescription": "When activated, it will not be shown in the public listing",
     "saveButton": "Save"
   },
   "cookieAdvert": {
