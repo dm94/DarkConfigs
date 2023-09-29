@@ -2,7 +2,8 @@
   "header": {
     "home": "Strona główna",
     "uploadConfig": "Załaduj konfigurację",
-    "configDetail": "Szczegóły konfiguracji"
+    "configDetail": "Szczegóły konfiguracji",
+    "termAndConditions": "Terms and Conditions"
   },
   "home": {
     "title": "Dark Configs",
@@ -24,5 +25,10 @@
     "features": "Features",
     "config": "Config",
     "saveButton": "Save"
+  },
+  "cookieAdvert": {
+    "text": "We use cookies to improve our website, you can check our policies here: {link}",
+    "acceptButton": "Accept",
+    "rejectButton": "Reject"
   }
 }
