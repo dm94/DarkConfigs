@@ -88,7 +88,8 @@ export const getConfigs = async (
 export const uploadConfigFile = async (
   name: string,
   description: string,
-  config: ConfigFile
+  config: ConfigFile,
+  hidden: boolean,
 ): Promise<ConfigInfo> => {
   const response = await fetch(`${baseUrl}/configs`, {
     method: "POST",
@@ -99,6 +100,7 @@ export const uploadConfigFile = async (
       name: name,
       description: description,
       config: config,
+      hidden: hidden,
     }),
   });
 

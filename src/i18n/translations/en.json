@@ -26,6 +26,8 @@
     "description": "Description",
     "features": "Features",
     "config": "Config",
+    "hidden": "Hidden",
+    "hiddenDescription": "When activated, it will not be shown in the public listing",
     "saveButton": "Save"
   },
   "cookieAdvert": {
