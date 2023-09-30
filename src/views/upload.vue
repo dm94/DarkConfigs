@@ -99,6 +99,7 @@ const uploadConfig = async () => {
       </div>
       <div class="flex container mx-auto gap-2 flex-col">
         <p class="text-xl">{{ t("uploadPage.config") }}</p>
+        <p>{{ t("uploadPage.configDescription") }}</p>
         <input class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded" type="file" :multiple="false"
           accept=".json" @change="readFile" data-testid="input-file" required />
       </div>
