@@ -143,8 +143,8 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
       );
       enableFeatures = enableFeatures.concat(features);
       pluginInfoCopy[key] = {
-        ENABLED_FEATURES: pluginInfoValue.ENABLED_FEATURES,
-        DISABLED_FEATURES: [],
+        ENABLED_FEATURES: features,
+        DISABLED_FEATURES: pluginInfoValue.DISABLED_FEATURES ?? [],
       };
     }
   });
@@ -193,14 +193,15 @@ export const cleanLeakInfoFromFeatures = (
   keys.forEach((key) => {
     const fullKey = `${featureKey}.${key}`;
 
-    if (typeof feature[key] === "object") {
-      return cleanLeakInfoFromFeatures(fullKey, feature[key]);
-    }
-
     if (
       leakInfoFromFeatues.includes(fullKey) ||
       unnecesaryInfoFromFeatures.includes(fullKey)
     ) {
+      return;
+    }
+
+    if (typeof feature[key] === "object" && !Array.isArray(feature[key])) {
+      featureCopy[key] = cleanLeakInfoFromFeatures(fullKey, feature[key]);
       return;
     }
 
