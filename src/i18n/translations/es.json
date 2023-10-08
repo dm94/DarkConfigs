@@ -8,7 +8,7 @@
   },
   "home": {
     "title": "Dark Configs",
-    "subtitle": "Download and share your favourite configs",
+    "subtitle": "Download and share your favourite configs securely",
     "searchButton": "Buscar",
     "searchInputPlaceHolder": "Escriba lo que desea buscar",
     "loadMoreButton": "Show more"
@@ -26,6 +26,7 @@
     "description": "Description",
     "features": "Features",
     "config": "Config",
+    "configDescription": "Both when uploading and downloading the configuration, we remove any data that could be compromising.",
     "hidden": "Hidden",
     "hiddenDescription": "When activated, it will not be shown in the public listing",
     "saveButton": "Save"
