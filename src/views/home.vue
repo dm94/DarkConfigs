@@ -4,7 +4,7 @@ import configCard from "./components/config-card.vue";
 import { useI18n } from "vue-i18n";
 import { ConfigInfo } from "@/types/configfile";
 import { getConfigs } from "@/functions/connector";
-import { getConfigParams } from "@/types/requests";
+import { getConfigParams, OrderByRequest } from "@/types/requests";
 import { showError } from "@/functions/error-management";
 import { gtag } from "@/functions/ga";
 
@@ -13,7 +13,8 @@ const { t } = useI18n();
 const searchValue = ref("");
 const page = ref<number>(1);
 const hasMoreConfigs = ref<boolean>(false);
-const CONFIGS_PER_PAGE = 10;
+const CONFIGS_PER_PAGE = 12;
+const orderByValue = ref(OrderByRequest.KARMA);
 
 const configs = ref<ConfigInfo[]>([]);
 
@@ -33,8 +34,10 @@ const loadConfigs = async (params?: getConfigParams) => {
 };
 
 onMounted(async () => {
-  loadConfigs({
+  await loadConfigs({
     page: page.value,
+    size: CONFIGS_PER_PAGE,
+    orderby: orderByValue.value
   });
 });
 
@@ -45,6 +48,8 @@ const loadMore = async () => {
     const response = await getConfigs({
       page: page.value,
       search: searchValue.value,
+      size: CONFIGS_PER_PAGE,
+      orderby: orderByValue.value
     });
     if (response) {
       configs.value = configs.value.concat(response);
@@ -56,13 +61,25 @@ const loadMore = async () => {
   }
 };
 
-const search = () => {
+const search = async () => {
   gtag('event', 'search', { term: searchValue.value });
-  loadConfigs({
+  await loadConfigs({
     page: page.value,
     search: searchValue.value,
+    size: CONFIGS_PER_PAGE,
+    orderby: orderByValue.value
   });
 };
+
+const updateOrderBy = async () => {
+  await loadConfigs({
+    page: page.value,
+    search: searchValue.value,
+    size: CONFIGS_PER_PAGE,
+    orderby: orderByValue.value
+  });
+}
+
 </script>
 <template>
   <div class="flex container mx-auto p-4 gap-8 flex-col" data-testid="home-page">
@@ -78,6 +95,17 @@ const search = () => {
         @click="search">
         {{ t("home.searchButton") }}
       </button>
+    </div>
+    <div id="orderby-part"
+      class="ml-auto w-48 block appearance-none bg-gray-200 border border-gray-200 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+      <select id="orderby" class="bg-transparent p-1 w-full" v-model="orderByValue" @change="updateOrderBy">
+        <i18n-t v-for="order in Object.keys(OrderByRequest)" tag="option" keypath="home.orderby"
+          :value="OrderByRequest[order as keyof typeof OrderByRequest]">
+          <template #type>
+            {{ t(`home.orderbyTypes.${order.toLowerCase()}`) }}
+          </template>
+        </i18n-t>
+      </select>
     </div>
     <div class="w-full flex flex-row gap-8 flex-wrap">
       <config-card v-for="(config, index) in configs" v-bind="config" :key="index" />
