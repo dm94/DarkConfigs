@@ -39,7 +39,9 @@ export const leakInfoFromFeatues = [
   "com.pikapika.tasks.nova.Nova.roster",
   "com.pikapika.tasks.nova.Nova.resource",
   "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.GATE_HANGER",
-  "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.SPIN_HANGER"
+  "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.SPIN_HANGER",
+  "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.SPIN_PROFILE.HANGER",
+  "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.GATE_PROFILE.HANGER"
 ];
 
 export const unnecesaryInfoFromFeatures = [
