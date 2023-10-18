@@ -11,7 +11,13 @@
     "subtitle": "Download and share your favourite configs securely",
     "searchButton": "Buscar",
     "searchInputPlaceHolder": "Escriba lo que desea buscar",
-    "loadMoreButton": "Show more"
+    "loadMoreButton": "Show more",
+    "orderby": "Order by {type}",
+    "orderbyTypes": {
+      "karma": "Karma",
+      "downloads": "Downloads",
+      "newest": "Newest"
+    }
   },
   "configDetail": {
     "title": "Title",
