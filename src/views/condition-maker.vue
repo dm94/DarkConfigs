@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BlocklyComponent from "./components/blockly-component.vue";
 import "@/functions/blocky/blocks/stocks";
+import "@/functions/blocky/blocks/conditions";
 import { javascriptGenerator } from "blockly/javascript";
 import { ref } from "vue";
 
@@ -51,19 +52,26 @@ const options = {
             <block type="stock_buy_prog"></block>
             <block type="stock_fetch_price"></block>
           </category>
+          <category name="Conditions" colour="%{BKY_LOGIC_HUE}">
+            <block type="afterCondition"></block>
+            <block type="allCondition"></block>
+            <block type="anyCondition"></block>
+            <block type="equalCondition"></block>
+            <block type="hasEffectCondition"></block>
+          </category>
         </xml>`,
 };
 
 const showCode = () => {
     code.value = javascriptGenerator.workspaceToCode(blocky.value.workspace);
-    console.log(blocky.value.workspace);
 };
+
 </script>
 <template>
     <div class="flex container mx-auto p-4 gap-8 flex-col" data-testid="maker-page">
         <BlocklyComponent id="blockly2" :options="options" ref="blocky"></BlocklyComponent>
         <p class="code">
-            <button @click="showCode()">Show JavaScript</button>
+            <button @click="showCode()">Show condition</button>
         <pre v-html="code"></pre>
         </p>
     </div>
