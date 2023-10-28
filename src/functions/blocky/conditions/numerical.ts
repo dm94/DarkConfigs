@@ -28,5 +28,5 @@ javascriptGenerator.forBlock['numericalCondition'] = function (block: any, gener
   const operator = block.getFieldValue("operator");
   const secondNumber = generator.valueToCode(block, 'secondNumber', Order.ATOMIC);
 
-  return `if(${firstNumber}${operator}${secondNumber})`;
+  return [`if(${firstNumber}${operator}${secondNumber})`, Order.ATOMIC];
 };

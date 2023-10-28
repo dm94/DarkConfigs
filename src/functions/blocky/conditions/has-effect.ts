@@ -1,5 +1,5 @@
 import * as Blockly from "blockly/core";
-import { javascriptGenerator } from "blockly/javascript";
+import { javascriptGenerator, Order } from "blockly/javascript";
 
 Blockly.Blocks["hasEffectCondition"] = {
   init: function() {
@@ -66,5 +66,5 @@ javascriptGenerator.forBlock["hasEffectCondition"] = function (block: any) {
   const effect = block.getFieldValue("effect");
   const ship = block.getFieldValue("ship");
 
-  return `has-effect(${effect}, ${ship})`;
+  return [`has-effect(${effect}, ${ship})`, Order.ATOMIC];
 };

@@ -20,5 +20,5 @@ Blockly.Blocks["afterCondition"] = {
 javascriptGenerator.forBlock["afterCondition"] = function (block: any, generator: any) {
   const seconds = generator.valueToCode(block, "seconds", Order.ATOMIC);
   const condition = generator.valueToCode(block, "condition", Order.ATOMIC);
-  return `after(${seconds},${condition})`;
+  return [`after(${seconds},${condition})`, Order.ATOMIC];
 };

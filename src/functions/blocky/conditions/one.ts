@@ -1,5 +1,5 @@
 import * as Blockly from "blockly/core";
-import { javascriptGenerator } from "blockly/javascript";
+import { javascriptGenerator, Order } from "blockly/javascript";
 
 Blockly.Blocks["oneCondition"] = {
   init: function () {
@@ -16,5 +16,5 @@ Blockly.Blocks["oneCondition"] = {
 
 javascriptGenerator.forBlock["oneCondition"] = function (block: any, generator: any) {
   const conditions = generator.statementToCode(block, "conditions").trim();
-  return `one(${conditions})`;
+  return [`one(${conditions})`, Order.ATOMIC];
 };

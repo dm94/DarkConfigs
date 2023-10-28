@@ -11,6 +11,154 @@ const code = ref();
 
 const { t } = useI18n();
 
+const toolbox = {
+    "kind": "categoryToolbox",
+    "contents": [
+        {
+            "kind": "category",
+            "name": "Conditions",
+            "colour": "200",
+            "contents": [
+                {
+                    "kind": "block",
+                    "type": "afterCondition"
+                },
+                {
+                    "kind": "block",
+                    "type": "allCondition"
+                },
+                {
+                    "kind": "block",
+                    "type": "anyCondition"
+                },
+                {
+                    "kind": "block",
+                    "type": "equalCondition"
+                },
+                {
+                    "kind": "block",
+                    "type": "hasEffectCondition"
+                },
+                {
+                    "kind": "block",
+                    "type": "hasFormationCondition"
+                },
+                {
+                    "kind": "block",
+                    "type": "noneCondition"
+                },
+                {
+                    "kind": "block",
+                    "type": "numericalCondition"
+                },
+                {
+                    "kind": "block",
+                    "type": "oneCondition"
+                },
+                {
+                    "kind": "block",
+                    "type": "hasRelationCondition"
+                },
+                {
+                    "kind": "block",
+                    "type": "untilCondition"
+                },
+            ]
+        },
+        {
+            "kind": "category",
+            "name": "Number values",
+            "colour": "40",
+            "contents": [
+                {
+                    "kind": "block",
+                    "type": "distanceValue"
+                },
+                {
+                    "kind": "block",
+                    "type": "hpTypeValue"
+                },
+                {
+                    "kind": "block",
+                    "type": "numberConstant"
+                },
+                {
+                    "kind": "block",
+                    "type": "percentConstant"
+                },
+                {
+                    "kind": "block",
+                    "type": "statTypeValue"
+                }
+            ]
+        },
+        {
+            "kind": "category",
+            "name": "Location values",
+            "colour": "60",
+            "contents": [
+                {
+                    "kind": "block",
+                    "type": "locationConstant"
+                },
+                {
+                    "kind": "block",
+                    "type": "shipLocationValue"
+                }
+            ]
+        },
+        {
+            "kind": "category",
+            "name": "Map values",
+            "colour": "80",
+            "contents": [
+                {
+                    "kind": "block",
+                    "type": "heroMapValue"
+                },
+                {
+                    "kind": "block",
+                    "type": "mapConstant"
+                },
+                {
+                    "kind": "block",
+                    "type": "mapConstantString"
+                }
+            ]
+        },
+        {
+            "kind": "category",
+            "name": "String values",
+            "colour": "100",
+            "contents": [
+                {
+                    "kind": "block",
+                    "type": "nameValue"
+                },
+                {
+                    "kind": "block",
+                    "type": "stringConstant"
+                }
+            ]
+        },
+        {
+            "kind": "category",
+            "name": "Other values",
+            "colour": "120",
+            "contents": [
+                {
+                    "kind": "block",
+                    "type": "booleanConstant"
+                },
+                {
+                    "kind": "block",
+                    "type": "healthValue"
+                }
+            ]
+        }
+    ]
+};
+
 const options = {
     media: "media/",
     grid: {
@@ -19,45 +167,7 @@ const options = {
         colour: "#ccc",
         snap: true,
     },
-    toolbox: `<xml>
-            <category name="Conditions" colour="%{BKY_LOGIC_HUE}">
-                <block type="afterCondition"></block>
-                <block type="allCondition"></block>
-                <block type="anyCondition"></block>
-                <block type="equalCondition"></block>
-                <block type="hasEffectCondition"></block>
-                <block type="hasFormationCondition"></block>
-                <block type="noneCondition"></block>
-                <block type="numericalCondition"></block>
-                <block type="oneCondition"></block>
-                <block type="hasRelationCondition"></block>
-                <block type="untilCondition"></block>
-            </category>
-            <category name="Number values" colour="40">
-                <block type="distanceValue"></block>
-                <block type="hpTypeValue"></block>
-                <block type="numberConstant"></block>
-                <block type="percentConstant"></block>
-                <block type="statTypeValue"></block>
-            </category>
-            <category name="Location values" colour="60">
-                <block type="locationConstant"></block>
-                <block type="shipLocationValue"></block>
-            </category>
-            <category name="Map values" colour="80">
-                <block type="heroMapValue"></block>
-                <block type="mapConstant"></block>
-                <block type="mapConstantString"></block>
-            </category>
-            <category name="String values" colour="100">
-                <block type="nameValue"></block>
-                <block type="stringConstant"></block>
-            </category>
-            <category name="Other values" colour="120">
-                <block type="booleanConstant"></block>
-                <block type="healthValue"></block>
-            </category>
-        </xml>`,
+    toolbox: toolbox,
 };
 
 const generateCode = () => {

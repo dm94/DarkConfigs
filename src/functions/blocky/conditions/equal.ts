@@ -1,5 +1,5 @@
 import * as Blockly from "blockly/core";
-import {javascriptGenerator, Order} from "blockly/javascript";
+import { javascriptGenerator, Order } from "blockly/javascript";
 
 Blockly.Blocks["equalCondition"] = {
   init: function () {
@@ -17,5 +17,5 @@ Blockly.Blocks["equalCondition"] = {
 javascriptGenerator.forBlock["equalCondition"] = function (block: any, generator: any) {
   const first = generator.valueToCode(block, "firstValue", Order.ATOMIC);
   const second = generator.valueToCode(block, "secondValue", Order.ATOMIC);
-  return `equal(${first},${second})`;
+  return [`equal(${first},${second})`, Order.ATOMIC];
 };
