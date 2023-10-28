@@ -60,6 +60,7 @@ const options = {
             <block type="hasEffectCondition"></block>
             <block type="hasFormationCondition"></block>
             <block type="noneCondition"></block>
+            <block type="numericalCondition"></block>
           </category>
         </xml>`,
 };
@@ -88,4 +89,4 @@ const showCode = () => {
     height: 80vh;
     width: 100%;
 }
-</style>@/functions/blocky/blocks/stocks
+</style>
