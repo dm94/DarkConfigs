@@ -17,7 +17,7 @@ Blockly.Blocks["afterCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["afterCondition"] = function (block, generator) {
+javascriptGenerator.forBlock["afterCondition"] = function (block: any, generator: any) {
   const seconds = generator.valueToCode(block, "seconds", Order.ATOMIC);
   const condition = generator.valueToCode(block, "condition", Order.ATOMIC);
   return `after(${seconds},${condition})`;
@@ -36,7 +36,7 @@ Blockly.Blocks["allCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["allCondition"] = function (block, generator) {
+javascriptGenerator.forBlock["allCondition"] = function (block: any, generator: any) {
   const conditions = generator.statementToCode(block, "conditions").trim();
   return `all(${conditions})`;
 };
@@ -54,7 +54,7 @@ Blockly.Blocks["anyCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["anyCondition"] = function (block, generator) {
+javascriptGenerator.forBlock["anyCondition"] = function (block: any, generator: any) {
   const conditions = generator.statementToCode(block, "conditions").trim();
   return `any(${conditions})`;
 };
@@ -72,7 +72,7 @@ Blockly.Blocks["equalCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["equalCondition"] = function (block, generator) {
+javascriptGenerator.forBlock["equalCondition"] = function (block: any, generator: any) {
   const first = generator.valueToCode(block, "firstValue", Order.ATOMIC);
   const second = generator.valueToCode(block, "secondValue", Order.ATOMIC);
   return `equal(${first},${second})`;
@@ -137,7 +137,7 @@ Blockly.Blocks["hasEffectCondition"] = {
   }
 };
 
-javascriptGenerator.forBlock["hasEffectCondition"] = function (block, generator) {
+javascriptGenerator.forBlock["hasEffectCondition"] = function (block: any, generator: any) {
   const effect = generator.valueToCode(block, "FIELDNAME", Order.ATOMIC);
   const ship = generator.valueToCode(block, "ship", Order.ATOMIC);
 
@@ -198,9 +198,27 @@ Blockly.Blocks['hasFormationCondition'] = {
   }
 };
 
-javascriptGenerator.forBlock['hasFormationCondition'] = function (block, generator) {
+javascriptGenerator.forBlock['hasFormationCondition'] = function (block: any, generator: any) {
   const formation = generator.valueToCode(block, 'formation', Order.ATOMIC);
   const ship = generator.valueToCode(block, 'ship', Order.ATOMIC);
 
   return `has-formation(${formation}, ${ship})`;
+};
+
+Blockly.Blocks["noneCondition"] = {
+  init: function () {
+    this.appendStatementInput("conditions")
+      .setCheck("Boolean")
+      .appendField("None")
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setOutput(true, 'Boolean');
+    this.setColour(200);
+    this.setTooltip("Returns true if no child conditions return true");
+  },
+};
+
+javascriptGenerator.forBlock["noneCondition"] = function (block: any, generator: any) {
+  const conditions = generator.statementToCode(block, "conditions").trim();
+  return `none(${conditions})`;
 };
