@@ -25,7 +25,7 @@ Blockly.Blocks['numericalCondition'] = {
 
 javascriptGenerator.forBlock['numericalCondition'] = function (block: any, generator: any) {
   const firstNumber = generator.valueToCode(block, 'firstNumber', Order.ATOMIC);
-  const operator = generator.valueToCode(block, 'operator', Order.ATOMIC);
+  const operator = block.getFieldValue("operator");
   const secondNumber = generator.valueToCode(block, 'secondNumber', Order.ATOMIC);
 
   return `if(${firstNumber}${operator}${secondNumber})`;
