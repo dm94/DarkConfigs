@@ -58,6 +58,7 @@ const options = {
             <block type="anyCondition"></block>
             <block type="equalCondition"></block>
             <block type="hasEffectCondition"></block>
+            <block type="hasFormationCondition"></block>
           </category>
         </xml>`,
 };

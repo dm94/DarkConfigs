@@ -20,8 +20,7 @@ Blockly.Blocks["afterCondition"] = {
 javascriptGenerator.forBlock["afterCondition"] = function (block, generator) {
   const seconds = generator.valueToCode(block, "seconds", Order.ATOMIC);
   const condition = generator.valueToCode(block, "condition", Order.ATOMIC);
-  const code = `after(${seconds},${condition})`;
-  return code;
+  return `after(${seconds},${condition})`;
 };
 
 Blockly.Blocks["allCondition"] = {
@@ -39,8 +38,7 @@ Blockly.Blocks["allCondition"] = {
 
 javascriptGenerator.forBlock["allCondition"] = function (block, generator) {
   const conditions = generator.statementToCode(block, "conditions").trim();
-  const code = `all(${conditions})`;
-  return code;
+  return `all(${conditions})`;
 };
 
 Blockly.Blocks["anyCondition"] = {
@@ -58,8 +56,7 @@ Blockly.Blocks["anyCondition"] = {
 
 javascriptGenerator.forBlock["anyCondition"] = function (block, generator) {
   const conditions = generator.statementToCode(block, "conditions").trim();
-  const code = `any(${conditions})`;
-  return code;
+  return `any(${conditions})`;
 };
 
 Blockly.Blocks["equalCondition"] = {
@@ -78,8 +75,7 @@ Blockly.Blocks["equalCondition"] = {
 javascriptGenerator.forBlock["equalCondition"] = function (block, generator) {
   const first = generator.valueToCode(block, "firstValue", Order.ATOMIC);
   const second = generator.valueToCode(block, "secondValue", Order.ATOMIC);
-  const code = `equal(${first},${second})`;
-  return code;
+  return `equal(${first},${second})`;
 };
 
 Blockly.Blocks["hasEffectCondition"] = {
@@ -145,6 +141,66 @@ javascriptGenerator.forBlock["hasEffectCondition"] = function (block, generator)
   const effect = generator.valueToCode(block, "FIELDNAME", Order.ATOMIC);
   const ship = generator.valueToCode(block, "ship", Order.ATOMIC);
 
-  const code = `has-effect(${effect},${ship})`;
-  return code;
+  return `has-effect(${effect},${ship})`;
+};
+
+
+Blockly.Blocks['hasFormationCondition'] = {
+  init: function() {
+    this.appendDummyInput()
+      .appendField("Has formation")
+      .appendField(new Blockly.FieldDropdown(this.generateFormations), 'formation');
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([
+        ["hero()", "hero()"],
+        ["target()", "target()"],
+      ]), "ship");
+      this.setInputsInline(true);
+    this.setOutput(true, "Boolean");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(200);
+    this.setTooltip("Checks if a ship has a formation");
+  },
+  generateFormations: function() {
+    let options: string[][] = [];
+    let allFormations = [
+      "STANDARD",
+      "TURTLE",
+      "ARROW",
+      "LANCE",
+      "STAR",
+      "PINCER",
+      "DOUBLE_ARROW",
+      "DIAMOND",
+      "CHEVRON",
+      "MOTH",
+      "CRAB",
+      "HEART",
+      "BARRAGE",
+      "BAT",
+      "RING",
+      "DRILL",
+      "VETERAN",
+      "DOME",
+      "WHEEL",
+      "X",
+      "WAVY",
+      "MOSQUITO"
+    ];
+
+    allFormations.forEach((formation) => {
+      const custom = formation.toLowerCase().replaceAll("_","-");
+      options.push([custom, custom]);
+    })
+
+    return options;
+  }
+};
+
+javascriptGenerator.forBlock['hasFormationCondition'] = function (block, generator) {
+  const formation = generator.valueToCode(block, 'formation', Order.ATOMIC);
+  const ship = generator.valueToCode(block, 'ship', Order.ATOMIC);
+
+  return `has-formation(${formation}, ${ship})`;
 };
