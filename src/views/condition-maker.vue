@@ -63,6 +63,7 @@ const options = {
                 <block type="numericalCondition"></block>
                 <block type="oneCondition"></block>
                 <block type="hasRelationCondition"></block>
+                <block type="untilCondition"></block>
             </category>
         </xml>`,
 };
