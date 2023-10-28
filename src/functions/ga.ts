@@ -29,7 +29,7 @@ export const initGA = (): void => {
 
     const GA_ID: string = import.meta.env.VITE_APP_GA_ID as string;
 
-    if (GA_ID.length <= 0) {
+    if (!GA_ID || GA_ID.length <= 0) {
         return;
     }
 

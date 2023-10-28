@@ -23,6 +23,11 @@ const routes = [
     name: RouteName.TERMS_AND_CONDITIONS,
     component: () => import("@/views/terms.vue"),
   },
+  {
+    path: "/maker",
+    name: RouteName.CONDITION_MAKER,
+    component: () => import("@/views/condition-maker.vue"),
+  },
 ];
 
 const router = createRouter({
