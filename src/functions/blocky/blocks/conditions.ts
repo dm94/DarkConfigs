@@ -144,7 +144,6 @@ javascriptGenerator.forBlock["hasEffectCondition"] = function (block: any, gener
   return `has-effect(${effect},${ship})`;
 };
 
-
 Blockly.Blocks['hasFormationCondition'] = {
   init: function() {
     this.appendDummyInput()
@@ -269,4 +268,48 @@ Blockly.Blocks["oneCondition"] = {
 javascriptGenerator.forBlock["oneCondition"] = function (block: any, generator: any) {
   const conditions = generator.statementToCode(block, "conditions").trim();
   return `one(${conditions})`;
+};
+
+Blockly.Blocks['hasRelationCondition'] = {
+  init: function() {
+    this.appendDummyInput()
+      .appendField("If")
+      .appendField(new Blockly.FieldDropdown([
+        ["hero()", "hero()"],
+        ["target()", "target()"],
+      ]), "ship");
+    this.appendDummyInput()
+      .appendField("has relation")
+      .appendField(new Blockly.FieldDropdown(this.generateOptions), 'relation');
+    this.setInputsInline(true);
+    this.setOutput(true, "Boolean");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(200);
+    this.setTooltip("Checks the target type");
+  },
+  generateOptions: function() {
+    let options: string[][] = [];
+    let all = [
+      "NO_TARGET",
+      "NPC",
+      "ENEMY",
+      "ALLIED",
+      "NOT_ATTACK_PACT"
+    ];
+
+    all.forEach((option) => {
+      const custom = option.toLowerCase().replaceAll("_","-");
+      options.push([custom, custom]);
+    })
+
+    return options;
+  }
+};
+
+javascriptGenerator.forBlock['hasRelationCondition'] = function (block: any, generator: any) {
+  const relation = generator.valueToCode(block, 'relation', Order.ATOMIC);
+  const ship = generator.valueToCode(block, 'ship', Order.ATOMIC);
+
+  return `has-relation(${relation}, ${ship})`;
 };

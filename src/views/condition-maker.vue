@@ -62,6 +62,7 @@ const options = {
                 <block type="noneCondition"></block>
                 <block type="numericalCondition"></block>
                 <block type="oneCondition"></block>
+                <block type="hasRelationCondition"></block>
             </category>
         </xml>`,
 };
