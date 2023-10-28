@@ -4,9 +4,13 @@ import "@/functions/blocky/conditions";
 import "@/functions/blocky/values";
 import { javascriptGenerator } from "blockly/javascript";
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 
 const blocky = ref();
 const code = ref();
+
+const { t } = useI18n();
+
 const options = {
     media: "media/",
     grid: {
@@ -56,26 +60,23 @@ const options = {
         </xml>`,
 };
 
-const showCode = () => {
-    code.value = javascriptGenerator.workspaceToCode(blocky.value.workspace);
+const generateCode = () => {
+    code.value = javascriptGenerator.workspaceToCode(blocky.value.workspace).replaceAll(";", "");
 };
 
 </script>
 <template>
     <div class="flex container mx-auto p-4 gap-8 flex-col" data-testid="maker-page">
-        <BlocklyComponent id="blockly2" :options="options" ref="blocky"></BlocklyComponent>
-        <p class="code">
-            <button @click="showCode()">Show condition</button>
-        <pre v-html="code"></pre>
+        <p class="code flex p-4 gap-4 flex-col w-100">
+            <button
+                class="mx-auto max-w-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                @click="generateCode()">{{ t("maker.generateButton") }}</button>
+        <pre class="bg-gray-100 p-1">{{ code }}</pre>
         </p>
+        <BlocklyComponent id="blockly2" :options="options" ref="blocky"></BlocklyComponent>
     </div>
 </template>
 <style>
-.code {
-    min-height: 50px;
-    width: 100%;
-}
-
 #blockly2 {
     height: 80vh;
     width: 100%;

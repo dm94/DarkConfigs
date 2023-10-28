@@ -25,6 +25,11 @@ const DISCORD_URL: string = import.meta.env.VITE_APP_DISCORD as string;
               :title="RouteName.UPLOAD">{{ t("header.uploadConfig") }}</router-link>
           </li>
           <li itemprop="name">
+            <router-link :to="{ name: RouteName.CONDITION_MAKER }"
+              class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200"
+              :title="RouteName.CONDITION_MAKER">{{ t("header.maker") }}</router-link>
+          </li>
+          <li itemprop="name">
             <a class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200" :href="DISCORD_URL"
               rel="external nofollow noopener" target="_blank">{{ t("header.discord") }}</a>
           </li>
