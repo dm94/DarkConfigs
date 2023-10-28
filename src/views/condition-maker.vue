@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import BlocklyComponent from "./components/blockly-component.vue";
-import "@/functions/blocky/blocks/stocks";
 import "@/functions/blocky/blocks/conditions";
 import { javascriptGenerator } from "blockly/javascript";
 import { ref } from "vue";
@@ -46,11 +45,6 @@ const options = {
                 <block type="text_print"></block>
             </category>
             <category name="Variables" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
-                </category>
-            <category name="Stocks" colour="%{BKY_LOOPS_HUE}">
-                <block type="stock_buy_simple"></block>
-                <block type="stock_buy_prog"></block>
-                <block type="stock_fetch_price"></block>
             </category>
             <category name="Conditions" colour="%{BKY_LOGIC_HUE}">
                 <block type="afterCondition"></block>
