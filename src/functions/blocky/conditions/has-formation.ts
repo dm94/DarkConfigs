@@ -1,6 +1,5 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
-import { shipTypes } from "../dropdowns/ship-types";
 
 Blockly.Blocks['hasFormationCondition'] = {
   init: function() {
@@ -8,7 +7,10 @@ Blockly.Blocks['hasFormationCondition'] = {
       .appendField("Has formation")
       .appendField(new Blockly.FieldDropdown(this.generateFormations), 'formation');
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown(shipTypes), "ship");
+      .appendField(new Blockly.FieldDropdown([
+          ["hero()", "hero()"],
+          ["target()", "target()"],
+        ]), "ship");
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setPreviousStatement(true);

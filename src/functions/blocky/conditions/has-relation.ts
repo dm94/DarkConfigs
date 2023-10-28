@@ -1,12 +1,14 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
-import { shipTypes } from "../dropdowns/ship-types";
 
 Blockly.Blocks['hasRelationCondition'] = {
   init: function() {
     this.appendDummyInput()
       .appendField("If")
-      .appendField(new Blockly.FieldDropdown(shipTypes), "ship");
+      .appendField(new Blockly.FieldDropdown([
+          ["hero()", "hero()"],
+          ["target()", "target()"],
+        ]), "ship");
     this.appendDummyInput()
       .appendField("has relation")
       .appendField(new Blockly.FieldDropdown(this.generateOptions), 'relation');

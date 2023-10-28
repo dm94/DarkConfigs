@@ -1,6 +1,5 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
-import { shipTypes } from "../dropdowns/ship-types";
 
 Blockly.Blocks["hasEffectCondition"] = {
   init: function() {
@@ -8,7 +7,10 @@ Blockly.Blocks["hasEffectCondition"] = {
       .appendField("Has effect")
       .appendField(new Blockly.FieldDropdown(this.generateEffects), 'effect');
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown(shipTypes), "ship");
+      .appendField(new Blockly.FieldDropdown([
+          ["hero()", "hero()"],
+          ["target()", "target()"],
+        ]), "ship");
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setPreviousStatement(true);

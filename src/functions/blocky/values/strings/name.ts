@@ -1,12 +1,14 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
-import { shipTypes } from "../../dropdowns/ship-types";
 
 Blockly.Blocks["nameValue"] = {
   init: function () {
     this.appendDummyInput()
       .appendField("Name of")
-      .appendField(new Blockly.FieldDropdown(shipTypes), "shipType");
+      .appendField(new Blockly.FieldDropdown([
+          ["hero()", "hero()"],
+          ["target()", "target()"],
+        ]), "shipType");
     this.setPreviousStatement(false);
     this.setNextStatement(false);
     this.setInputsInline(true);
