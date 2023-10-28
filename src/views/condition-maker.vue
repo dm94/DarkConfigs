@@ -29,7 +29,10 @@ const options = {
                 <block type="hasRelationCondition"></block>
                 <block type="untilCondition"></block>
             </category>
-            <category name="Values" colour="%{BKY_VARIABLES_HUE}">
+            <category name="Number values" colour="%{BKY_MATH_HUE}">
+                <block type="distanceValue"></block>
+            </category>
+            <category name="Other values" colour="%{BKY_VARIABLES_HUE}">
                 <block type="booleanConstant"></block>
             </category>
             <category name="Text" colour="%{BKY_TEXTS_HUE}">

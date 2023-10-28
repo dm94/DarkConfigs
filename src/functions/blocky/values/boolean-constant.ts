@@ -11,7 +11,7 @@ Blockly.Blocks["booleanConstant"] = {
     this.setPreviousStatement(false);
     this.setNextStatement(false);
     this.setOutput(true, 'Boolean');
-    this.setColour(160);
+    this.setColour(330);
     this.setTooltip("Boolean constant");
   },
 };
