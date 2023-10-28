@@ -1,17 +1,15 @@
 import * as Blockly from "blockly/core";
-import {javascriptGenerator, Order} from "blockly/javascript";
+import { javascriptGenerator } from "blockly/javascript";
+import { shipTypes } from "../dropdowns/ship-types";
 
 Blockly.Blocks["hasEffectCondition"] = {
   init: function() {
     this.appendDummyInput()
       .appendField("Has effect")
-      .appendField(new Blockly.FieldDropdown(this.generateEffects), 'FIELDNAME');
+      .appendField(new Blockly.FieldDropdown(this.generateEffects), 'effect');
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([
-        ["hero()", "hero()"],
-        ["target()", "target()"],
-      ]), "ship");
-      this.setInputsInline(true);
+      .appendField(new Blockly.FieldDropdown(shipTypes), "ship");
+    this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -60,9 +58,9 @@ Blockly.Blocks["hasEffectCondition"] = {
   }
 };
 
-javascriptGenerator.forBlock["hasEffectCondition"] = function (block: any, generator: any) {
-  const effect = generator.valueToCode(block, "FIELDNAME", Order.ATOMIC);
-  const ship = generator.valueToCode(block, "ship", Order.ATOMIC);
+javascriptGenerator.forBlock["hasEffectCondition"] = function (block: any) {
+  const effect = block.getFieldValue("effect");
+  const ship = block.getFieldValue("ship");
 
-  return `has-effect(${effect},${ship})`;
+  return `has-effect(${effect}, ${ship})`;
 };

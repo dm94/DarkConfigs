@@ -1,5 +1,6 @@
 import * as Blockly from "blockly/core";
-import {javascriptGenerator, Order} from "blockly/javascript";
+import { javascriptGenerator, Order } from "blockly/javascript";
+import { shipTypes } from "../dropdowns/ship-types";
 
 Blockly.Blocks['hasFormationCondition'] = {
   init: function() {
@@ -7,11 +8,8 @@ Blockly.Blocks['hasFormationCondition'] = {
       .appendField("Has formation")
       .appendField(new Blockly.FieldDropdown(this.generateFormations), 'formation');
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([
-        ["hero()", "hero()"],
-        ["target()", "target()"],
-      ]), "ship");
-      this.setInputsInline(true);
+      .appendField(new Blockly.FieldDropdown(shipTypes), "ship");
+    this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -54,9 +52,9 @@ Blockly.Blocks['hasFormationCondition'] = {
   }
 };
 
-javascriptGenerator.forBlock['hasFormationCondition'] = function (block: any, generator: any) {
-  const formation = generator.valueToCode(block, 'formation', Order.ATOMIC);
-  const ship = generator.valueToCode(block, 'ship', Order.ATOMIC);
+javascriptGenerator.forBlock['hasFormationCondition'] = function (block: any) {
+  const formation = block.getFieldValue("formation");
+  const ship = block.getFieldValue("ship");
 
-  return `has-formation(${formation}, ${ship})`;
+  return [`has-formation(${formation}, ${ship})`, Order.ATOMIC];
 };

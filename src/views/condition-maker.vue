@@ -29,18 +29,29 @@ const options = {
                 <block type="hasRelationCondition"></block>
                 <block type="untilCondition"></block>
             </category>
-            <category name="Number values" colour="%{BKY_MATH_HUE}">
+            <category name="Number values" colour="40">
                 <block type="distanceValue"></block>
+                <block type="hpTypeValue"></block>
+                <block type="numberConstant"></block>
+                <block type="percentConstant"></block>
+                <block type="statTypeValue"></block>
             </category>
-            <category name="Other values" colour="%{BKY_VARIABLES_HUE}">
+            <category name="Location values" colour="60">
+                <block type="locationConstant"></block>
+                <block type="shipLocationValue"></block>
+            </category>
+            <category name="Map values" colour="80">
+                <block type="heroMapValue"></block>
+                <block type="mapConstant"></block>
+                <block type="mapConstantString"></block>
+            </category>
+            <category name="String values" colour="100">
+                <block type="nameValue"></block>
+                <block type="stringConstant"></block>
+            </category>
+            <category name="Other values" colour="120">
                 <block type="booleanConstant"></block>
-            </category>
-            <category name="Text" colour="%{BKY_TEXTS_HUE}">
-                <block type="text"></block>
-                <block type="text_length"></block>
-                <block type="text_print"></block>
-            </category>
-            <category name="Variables" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
+                <block type="healthValue"></block>
             </category>
         </xml>`,
 };

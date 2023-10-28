@@ -1,9 +1,10 @@
 import * as Blockly from "blockly/core";
-import {javascriptGenerator, Order} from "blockly/javascript";
+import { javascriptGenerator, Order } from "blockly/javascript";
 
 Blockly.Blocks["booleanConstant"] = {
   init: function () {
     this.appendDummyInput()
+      .appendField("Boolean:")
       .appendField(new Blockly.FieldDropdown([
         ["true", "true"],
         ["false", "false"],
@@ -11,12 +12,12 @@ Blockly.Blocks["booleanConstant"] = {
     this.setPreviousStatement(false);
     this.setNextStatement(false);
     this.setOutput(true, 'Boolean');
-    this.setColour(330);
+    this.setColour(120);
     this.setTooltip("Boolean constant");
   },
 };
 
-javascriptGenerator.forBlock["booleanConstant"] = function (block: any, generator: any) {
-  const type = generator.valueToCode(block, "type", Order.ATOMIC);
-  return `boolean(${type})`;
+javascriptGenerator.forBlock["booleanConstant"] = function (block: any) {
+  const type = block.getFieldValue("type");
+  return [`boolean(${type})`, Order.ATOMIC];
 };
