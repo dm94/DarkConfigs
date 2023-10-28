@@ -160,13 +160,13 @@ const toolbox = {
 };
 
 const options = {
-    media: "media/",
     grid: {
         spacing: 25,
         length: 3,
         colour: "#ccc",
         snap: true,
     },
+    sounds: false,
     toolbox: toolbox,
 };
 
@@ -191,4 +191,4 @@ const generateCode = () => {
     height: 80vh;
     width: 100%;
 }
-</style>@/functions/blocky/conditions@/functions/blocky/values
+</style>
