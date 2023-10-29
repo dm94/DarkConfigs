@@ -1,5 +1,5 @@
 import * as Blockly from "blockly/core";
-import { javascriptGenerator, Order } from "blockly/javascript";
+import { javascriptGenerator } from "blockly/javascript";
 
 Blockly.Blocks['hasFormationCondition'] = {
   init: function() {
@@ -13,8 +13,8 @@ Blockly.Blocks['hasFormationCondition'] = {
         ]), "ship");
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setPreviousStatement(true, "Boolean");
+    this.setNextStatement(true, "Boolean");
     this.setColour(200);
     this.setTooltip("Checks if a ship has a formation");
   },
@@ -58,5 +58,5 @@ javascriptGenerator.forBlock['hasFormationCondition'] = function (block: any) {
   const formation = block.getFieldValue("formation");
   const ship = block.getFieldValue("ship");
 
-  return [`has-formation(${formation}, ${ship})`, Order.ATOMIC];
+  return `has-formation(${formation}, ${ship});`;
 };

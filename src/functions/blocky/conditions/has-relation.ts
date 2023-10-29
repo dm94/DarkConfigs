@@ -14,8 +14,8 @@ Blockly.Blocks['hasRelationCondition'] = {
       .appendField(new Blockly.FieldDropdown(this.generateOptions), 'relation');
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setPreviousStatement(true, "Boolean");
+    this.setNextStatement(true, "Boolean");
     this.setColour(200);
     this.setTooltip("Checks the target type");
   },
@@ -42,5 +42,5 @@ javascriptGenerator.forBlock['hasRelationCondition'] = function (block: any) {
   const relation = block.getFieldValue("relation");
   const ship = block.getFieldValue("ship");
 
-  return `has-relation(${relation}, ${ship})`;
+  return `has-relation(${relation}, ${ship});`;
 };

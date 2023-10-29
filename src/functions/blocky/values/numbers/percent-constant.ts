@@ -15,7 +15,7 @@ Blockly.Blocks["percentConstant"] = {
   },
 };
 
-javascriptGenerator.forBlock["percentConstant"] = function (block: any, generator: any) {
-  const first = generator.valueToCode(block, "number", Order.ATOMIC) as number;
+javascriptGenerator.forBlock["percentConstant"] = function (block: any) {
+  const first = block.getFieldValue("number") as number;
   return [ `percent(${first * 100})`, Order.ATOMIC];
 };

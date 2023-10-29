@@ -17,6 +17,8 @@ Blockly.Blocks['numericalCondition'] = {
     this.appendValueInput('secondNumber')
         .setCheck('Number');
     this.setInputsInline(true);
+    this.setPreviousStatement(true, "Boolean");
+    this.setNextStatement(true, "Boolean");
     this.setOutput(true, 'Boolean');
     this.setColour(200);
     this.setTooltip('Compares two numbers');
@@ -28,5 +30,5 @@ javascriptGenerator.forBlock['numericalCondition'] = function (block: any, gener
   const operator = block.getFieldValue("operator");
   const secondNumber = generator.valueToCode(block, 'secondNumber', Order.ATOMIC);
 
-  return [`if(${firstNumber}${operator}${secondNumber})`, Order.ATOMIC];
+  return `if(${firstNumber}${operator}${secondNumber});`;
 };

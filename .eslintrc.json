@@ -4,8 +4,7 @@
     "node": true,
     "commonjs": true,
     "browser": true,
-    "es6": true,
-    "cypress/globals": true
+    "es6": true
   },
   "settings": {
     "react": {

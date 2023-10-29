@@ -1,5 +1,5 @@
 import * as Blockly from "blockly/core";
-import { javascriptGenerator, Order } from "blockly/javascript";
+import { javascriptGenerator } from "blockly/javascript";
 
 Blockly.Blocks["hasEffectCondition"] = {
   init: function() {
@@ -13,8 +13,8 @@ Blockly.Blocks["hasEffectCondition"] = {
         ]), "ship");
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setPreviousStatement(true, "Boolean");
+    this.setNextStatement(true, "Boolean");
     this.setColour(200);
     this.setTooltip("Checks if a ship has an effect");
   },
@@ -66,5 +66,5 @@ javascriptGenerator.forBlock["hasEffectCondition"] = function (block: any) {
   const effect = block.getFieldValue("effect");
   const ship = block.getFieldValue("ship");
 
-  return [`has-effect(${effect}, ${ship})`, Order.ATOMIC];
+  return `has-effect(${effect}, ${ship});`;
 };

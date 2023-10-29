@@ -5,8 +5,8 @@ Blockly.Blocks["equalCondition"] = {
   init: function () {
     this.appendValueInput("firstValue");
     this.appendValueInput("secondValue").appendField("equals");
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setPreviousStatement(true, "Boolean");
+    this.setNextStatement(true, "Boolean");
     this.setInputsInline(true);
     this.setOutput(true, 'Boolean');
     this.setColour(200);
@@ -17,5 +17,5 @@ Blockly.Blocks["equalCondition"] = {
 javascriptGenerator.forBlock["equalCondition"] = function (block: any, generator: any) {
   const first = generator.valueToCode(block, "firstValue", Order.ATOMIC);
   const second = generator.valueToCode(block, "secondValue", Order.ATOMIC);
-  return [`equal(${first},${second})`, Order.ATOMIC];
+  return `equal(${first},${second});`;
 };

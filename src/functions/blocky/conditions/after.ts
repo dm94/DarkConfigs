@@ -9,8 +9,8 @@ Blockly.Blocks["afterCondition"] = {
     this.appendValueInput("condition")
       .setCheck("Boolean")
       .appendField("Condition")
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setPreviousStatement(true, "Boolean");
+    this.setNextStatement(true, "Boolean");
     this.setOutput(true, 'Boolean');
     this.setColour(200);
     this.setTooltip("Returns true if inner condition is true after the specified time in seconds");
@@ -20,5 +20,5 @@ Blockly.Blocks["afterCondition"] = {
 javascriptGenerator.forBlock["afterCondition"] = function (block: any, generator: any) {
   const seconds = generator.valueToCode(block, "seconds", Order.ATOMIC);
   const condition = generator.valueToCode(block, "condition", Order.ATOMIC);
-  return [`after(${seconds},${condition})`, Order.ATOMIC];
+  return `after(${seconds},${condition});`;
 };
