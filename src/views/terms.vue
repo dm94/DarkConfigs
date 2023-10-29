@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="flex container mx-auto p-4 gap-4 flex-col"
-    data-testid="home-page"
-  >
+  <div class="flex container mx-auto p-4 gap-4 flex-col" data-testid="home-page">
     <h1 class="text-5xl font-bold mx-auto">Website Terms and conditions</h1>
     <h1>Privacy Policy</h1>
     <p>Last updated: September 28, 2023</p>
@@ -73,12 +70,8 @@
       <li>
         <p>
           <strong>Website</strong> refers to Dark Configs, accessible from
-          <a
-            href="https://darkconfigs.vercel.app"
-            rel="external nofollow noopener"
-            target="_blank"
-            >https://darkconfigs.vercel.app</a
-          >
+          <a href="https://darkconfigs.vercel.app" rel="external nofollow noopener"
+            target="_blank">https://darkconfigs.vercel.app</a>
         </p>
       </li>
       <li>
@@ -142,12 +135,7 @@
       Persistent Cookies remain on Your personal computer or mobile device when
       You go offline, while Session Cookies are deleted as soon as You close
       Your web browser. You can learn more about cookies on
-      <a
-        href="https://gdpr.eu/cookies/"
-        rel="external nofollow noreferrer"
-        target="_blank"
-        >GDPR</a
-      >
+      <a href="https://gdpr.eu/cookies/" rel="external nofollow noreferrer noopener" target="_blank">GDPR</a>
       article.
     </p>
     <p>
@@ -412,12 +400,8 @@
     <ul>
       <li>
         Discord:
-        <a
-          href="https://discord.gg/FcecRtZ"
-          rel="external nofollow noopener"
-          target="_blank"
-          >https://discord.gg/FcecRtZ</a
-        >
+        <a href="https://discord.gg/FcecRtZ" rel="external nofollow noopener"
+          target="_blank">https://discord.gg/FcecRtZ</a>
       </li>
     </ul>
     <h2 class="text-4xl font-bold mx-auto">Other - Terms and conditions</h2>
