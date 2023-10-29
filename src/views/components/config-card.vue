@@ -14,7 +14,7 @@ const props = withDefaults(
     description: "",
     downloads: 0,
     karma: 0,
-  }
+  },
 );
 
 const karmaClasses = computed(() => {

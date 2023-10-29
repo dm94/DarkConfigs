@@ -45,7 +45,7 @@ export const getConfigFile = async (id: string): Promise<ConfigFile> => {
 };
 
 export const getConfigs = async (
-  params?: getConfigParams
+  params?: getConfigParams,
 ): Promise<ConfigInfo[]> => {
   const url = new URL(`${baseUrl}/configs`);
 
@@ -54,7 +54,7 @@ export const getConfigs = async (
       if (params[key as keyof typeof params]) {
         url.searchParams.append(
           key,
-          params[key as keyof typeof params] as string
+          params[key as keyof typeof params] as string,
         );
       }
     });
@@ -81,7 +81,7 @@ export const getConfigs = async (
       karma: p.karma,
       downloads: p.downloads,
       features: p.features,
-    }
+    };
   });
 };
 
@@ -104,7 +104,6 @@ export const uploadConfigFile = async (
     }),
   });
 
-
   const parsed = await response.json();
 
   if (parsed?.message) {
@@ -116,7 +115,7 @@ export const uploadConfigFile = async (
 
 export const updateKarma = async (
   id: string,
-  type: UpdateKarmaType
+  type: UpdateKarmaType,
 ): Promise<Response> => {
   const response = await fetch(
     `${baseUrl}/configs/${id}/vote?` +
@@ -125,7 +124,7 @@ export const updateKarma = async (
       }),
     {
       method: "POST",
-    }
+    },
   );
 
   const parsed = await response.json();

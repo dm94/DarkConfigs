@@ -4,8 +4,7 @@ import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
 
-const DISCORD_URL: string = import.meta.env.VITE_APP_DISCORD as string;
-
+const discordUrl = import.meta.env.VITE_APP_DISCORD as string ?? "";
 </script>
 <template>
   <header class="w-full">
@@ -25,13 +24,18 @@ const DISCORD_URL: string = import.meta.env.VITE_APP_DISCORD as string;
               :title="RouteName.UPLOAD">{{ t("header.uploadConfig") }}</router-link>
           </li>
           <li itemprop="name">
-            <a class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200" :href="DISCORD_URL"
+            <router-link :to="{ name: RouteName.CONDITION_MAKER }"
+              class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200"
+              :title="RouteName.CONDITION_MAKER">{{ t("header.maker") }}</router-link>
+          </li>
+          <li itemprop="name">
+            <a class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200" :href="discordUrl"
               rel="external nofollow noopener" target="_blank">{{ t("header.discord") }}</a>
           </li>
           <li itemprop="name" class="lg:ml-auto">
             <router-link :to="{ name: RouteName.TERMS_AND_CONDITIONS }"
               class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200"
-              :title="RouteName.TERMS_AND_CONDITIONS">TOS</router-link>
+              :title="RouteName.TERMS_AND_CONDITIONS">{{ t("header.tos") }}</router-link>
           </li>
         </ul>
       </div>

@@ -20,7 +20,7 @@ describe("Functions -> Config Cleaner", () => {
         "eu.darkbot.popcorn.def.FlashPatcher",
         "eu.darkbot.teyrox.BOXList",
         "com.deeme.tasks.AutoChangeMap",
-      ])
+      ]),
     );
   });
 });

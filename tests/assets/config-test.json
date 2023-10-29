@@ -1,1 +1,649 @@
-{"PLAYER_INFOS":{"13213213123":{"username":"TestName"}},"AVOIDED":{},"PREFERRED":{"2":{"resolution":30,"data":"AAAAAAAAAAAAAAAAAQAAAAAIAAAEAAAAAAAAAAAACAAAAAAAEAAAAAAAQAAAAAAAACAAAQAAAAAAgAAAAAAABAAAAABAQAAAAAAACAAAAAAACAAAAAAAAAAAAAAAABAAAAAAAAIAIAgAAAAAAAAAAAA="},"3":{"resolution":30,"data":"AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAEAAAAAAAEAAAQAAAAABAAAAAAAAAAACAAAAAAAAAAQAAIAAAAAAAAABAGAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAACAAAAAAAgAAAAAAAAAEAAAAAAA="},"4":{"resolution":30,"data":"AAAAAAAAAAAIEAIAAAAAAAAAAAAAAAAAAAAAEAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgAIAAAAAAAAACAAAAAAAEAAICAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAgAAAAAAAIAAAAAAAAAA="},"6":{"resolution":30,"data":"AAAAAAAAAAAAAAAAQAAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAIAAAAgAAEAAAQAAAAAAAAAAAAAAAAAAABAAIAAAAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAA="},"7":{"resolution":30,"data":"AAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAACAAAAAAAAAAAACAAEAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAA="},"8":{"resolution":30,"data":"AAAAAAAAAAAAAAAAAAgAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAIAAAAAAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAAAgAAAAAAAAAACAAAAIAAAAAAAAFAAEAAAAAAAAAAAAAAAAAAAAAAAAA="},"10":{"resolution":30,"data":"AAAAAAAAAAAgAIAAABAAAAAAAAAAAAAAAAAAQAAAhAAAAAAAAAAAACAAAEAAAAQAAAAAAEAAAAAAAABAAIEAAAAAIAAAAAAAAAAACIAAAAAAAAAAAAAAAAAAIAAAAAAgAAAgAAAACEAAAAAACAAAAAA="},"11":{"resolution":30,"data":"AAAAAAgABAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAIIAAAEAAAAAAAAAAAAAAAAAAAAAAAECEAACAAQAAAAAAAAAAAAAAAAAAEAAAAAAAAAAgEBAAAAAAAAAAAA="},"12":{"resolution":30,"data":"AAAAAAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAQAAAgAAAgCAAgAAAAAAAAAAAAAAEAAAAAACAAAAgABAAAAAAAEAAAAAAABAAAAAEAEAAAAAAAAAAAAAAAAAgAAAAAgAAAQAAAAAAAAAAAAAA="},"13":{"resolution":30,"data":"AAAAAAAAAAAAAAAAAAAAAAAEAAAAAACAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAABACAAAAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgMAAAAAAAAAAAAAAAA="},"14":{"resolution":30,"data":"AAAAAAAAAAAAAAAAAAAAAAAAAQIAAAAACAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAAAAACAAAAAAAAAAAACQAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAAABAAAAAAAAA="},"15":{"resolution":30,"data":"AAAAAAAAAAAAAAAAAAAAAIQAAAAAIAAAAAAAAAAAAAAAAAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAAAAAAAACAAAAIAQAAAAAAAAAAAAAAAAAAACAgAAAAAAAAAAAAAAAAAA="},"20":{"resolution":30,"data":"AAAAAAAAAAABAAAAAABAAIAAAAAAAAAAAAAAAAAAAAAAAAAEAQAAAEAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAAABAAAAAAAAAAA="},"24":{"resolution":30,"data":"AAAAAAAAAAAAAQAAAAAAEAAAAAAAECAAAAAAEAAAAAAAAAAAAAEAAAAgAGAAAAAAAAAAIABAAAAAAAAACAAAAAAACAAAAAAAAAQAIAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAAA="},"28":{"resolution":30,"data":"AAAAAAAAAAAAAAgAAgAAACAAEAAAAAAAgAAQAAACAAEAAAAAAAAAAAAgAAEAAAAAAAAABAAAAAAABAAAAAAAAACAAAAAAABAAAAAAAAAAAAAIABAAAAAAAAAAAAAAAAAAACAgAgAAAAQgAAAAAAAAAA="},"306":{"resolution":30,"data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAA8AAAADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="},"307":{"resolution":30,"data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAAADgAAgAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="},"308":{"resolution":30,"data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAgAEAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="}},"SAFETY":{"2":[],"3":[{"type":"PORTAL","x":18500,"y":2000,"runMode":"ALWAYS","jumpMode":"NEVER"},{"type":"PORTAL","x":2000,"y":2000,"runMode":"NEVER","jumpMode":"NEVER"}],"4":[{"type":"PORTAL","x":19000,"y":6000,"runMode":"ALWAYS","jumpMode":"NEVER"}],"5":[],"6":[],"7":[{"type":"PORTAL","x":2000,"y":2000,"runMode":"NEVER","jumpMode":"NEVER"},{"type":"PORTAL","x":2000,"y":11500,"runMode":"NEVER","jumpMode":"ESCAPING"}],"8":[{"type":"PORTAL","x":10000,"y":12000,"runMode":"ALWAYS","jumpMode":"NEVER"}],"10":[],"11":[{"type":"PORTAL","x":18500,"y":2000,"runMode":"NEVER","jumpMode":"NEVER"},{"type":"PORTAL","x":2000,"y":2000,"runMode":"ALWAYS","jumpMode":"NEVER"}],"12":[{"type":"PORTAL","x":10000,"y":1500,"runMode":"ALWAYS","jumpMode":"NEVER"}],"13":[{"type":"PORTAL","x":18500,"y":2000,"runMode":"ALWAYS","jumpMode":"NEVER"},{"type":"PORTAL","x":10500,"y":6750,"runMode":"NEVER","jumpMode":"NEVER"},{"type":"PORTAL","x":18500,"y":11500,"runMode":"ALWAYS","jumpMode":"NEVER"}],"14":[{"type":"PORTAL","x":10500,"y":6750,"runMode":"ALWAYS","jumpMode":"NEVER"}],"15":[{"type":"PORTAL","x":10500,"y":6750,"runMode":"ALWAYS","jumpMode":"NEVER"},{"type":"PORTAL","x":2000,"y":2000,"runMode":"ALWAYS","jumpMode":"NEVER"},{"type":"PORTAL","x":2000,"y":11500,"runMode":"ALWAYS","jumpMode":"NEVER"}],"16":[],"20":[],"24":[],"28":[],"306":[],"307":[],"308":[],"-1":[]},"PLAYER_TAGS":[],"CUSTOM_CONFIGS":{"eu.darkbot.popcorn.def.AntiPush":{"DRAWFIRE_PAUSE_TIME":0,"MAX_DEATHS":7,"DEATH_PAUSE_TIME":0},"com.deeme.tasks.AutoChangeMap":{},"eu.darkbot.teyrox.BOXList":{}},"PLUGIN_INFOS":{"Default plugin_by_Popcorn":{"ENABLED_FEATURES":["eu.darkbot.popcorn.def.AntiPush","eu.darkbot.popcorn.def.CaptchaPicker","eu.darkbot.popcorn.def.FlashPatcher","eu.darkbot.popcorn.def.UserAgentUpdater"],"DISABLED_FEATURES":[]},"TYX Plugin_by_TeYroX":{"ENABLED_FEATURES":["eu.darkbot.teyrox.BOXList"],"DISABLED_FEATURES":[]},"DmPlugin_by_Dm94Dani":{"ENABLED_FEATURES":["com.deeme.tasks.AutoChangeMap"],"DISABLED_FEATURES":[]}},"GENERAL":{"CURRENT_MODULE":"eu.darkbot.shared.modules.CollectorModule","WORKING_MAP":13,"OFFENSIVE":{"CONFIG":1,"FORMATION":"2"},"ROAM":{"CONFIG":1,"FORMATION":"2"},"RUN":{"CONFIG":1,"FORMATION":"2"},"SAFETY":{"REPAIR_HP_RANGE":{"min":0.4,"max":0.95},"REPAIR_HP_NO_NPC":0.25,"REPAIR_TO_SHIELD":0,"REPAIR":{"CONFIG":1,"FORMATION":"2"},"MAX_DEATHS":-1,"REVIVE_LOCATION":1,"REVIVE":"BASE","WAIT_BEFORE_REVIVE":5,"WAIT_AFTER_REVIVE":20},"RUNNING":{"RUN_FROM_ENEMIES":false,"REMEMBER_ENEMIES_FOR":300,"RUN_FROM_ENEMIES_SIGHT":false,"STOP_RUNNING_NO_SIGHT":false,"MAX_SIGHT_DISTANCE":4000,"SHIP_ABILITY_MIN":1500,"RUN_FURTHEST_PORT":1500},"ROAMING":{"KEEP":true,"SEQUENTIAL":false,"ONLY_KILL_PREFERRED":false,"ENEMY_CBS_INVISIBLE":false}},"COLLECT":{"STAY_AWAY_FROM_ENEMIES":false,"AUTO_CLOACK":true,"AUTO_CLOACK_KEY":"1","RADIUS":400,"IGNORE_CONTESTED_BOXES":true,"BOX_INFOS":{"AGATUS_BOX":{"collect":false,"waitTime":0,"priority":-100},"CANDY_CARGO":{"collect":false,"waitTime":0,"priority":0},"FROZEN_LABYRINTH_BOX":{"collect":false,"waitTime":0,"priority":0},"GIFT_BOXES":{"collect":false,"waitTime":0,"priority":0},"PIRATE_BOOTY_BLUE":{"collect":false,"waitTime":4500,"priority":0},"PIRATE_BOOTY_GOLD":{"collect":false,"waitTime":5500,"priority":0},"ASTRAL_BOOTY_BOX":{"collect":false,"waitTime":4500,"priority":0},"PIRATE_BOOTY_RED":{"collect":false,"waitTime":4500,"priority":0},"BLACKLIGHT-CRYPT":{"collect":false,"waitTime":4500,"priority":0},"STYXUS_BOX":{"collect":false,"waitTime":750,"priority":0},"TREASURE":{"collect":false,"waitTime":100,"priority":0},"PIRATE_BOOTY":{"collect":false,"waitTime":4500,"priority":0},"BATTLEPASS":{"collect":false,"waitTime":4500,"priority":0},"BLACK_BOOTY_BOX":{"collect":false,"waitTime":5500,"priority":0},"MINI_PUMPKIN":{"collect":false,"waitTime":0,"priority":0},"BONUS_BOX":{"collect":true,"waitTime":0,"priority":0},"ALIEN_EGG":{"collect":false,"waitTime":0,"priority":0},"FLOWER":{"collect":false,"waitTime":0,"priority":0},"MASQUE_BOOTY_BOX":{"collect":false,"waitTime":5500,"priority":0},"BIRTHDAY":{"collect":false,"waitTime":0,"priority":0},"POISON_PUSAT_BOX_BLACK":{"collect":false,"waitTime":5500,"priority":0},"UNSTABLE_BLACKLIGHT_CACHE":{"collect":false,"waitTime":4500,"priority":0}}},"LOOT":{"SAB":{"ENABLED":false,"KEY":"2","PERCENT":0.8,"NPC_AMOUNT":12000},"RSB":{"ENABLED":false,"KEY":"3","AMMO_REFRESH":3500},"AMMO_KEY":"1","SHIP_ABILITY_MIN":150000,"MAX_CIRCLE_ITERATIONS":5,"RUN_CONFIG_IN_CIRCLE":true,"GROUP_NPCS":true,"NPC_INFOS":{"\\\\ Attend IX //":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[306,307]},"-=[ Mordon ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[3,4,7,8,12]},"-=[ Streuner ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[2,5,6,10]},"-=[ Recruit Streuner ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[2,6,10]},"-=[ Saimon ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[3,4,7,8,12]},"\\\\ Abide I //":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[306,307]},"\\\\ Steadfast III //":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[306]},"\\\\ Impulse II //":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[306,307,308]},"\\\\ Purpose XXI //":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[20,24,28]},"..::{ Boss Mordon }::..":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[7,11]},"-=[ Spinelus ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[4,8]},"..::{ Boss Lordakia }::..":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[2]},"-=[ Sibelon ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[4,8,12]},"-=[ Devolarium ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[7]},"-=[ Lordakia ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[2,3,4,6,7,8,10,11,12]},"-=[ Interceptor ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[13]},"..::{ Boss Devolarium }::..":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[3,7]},"-=[ StreuneR ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[20,24,28]},"-=[ Deadly Battleray ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[16,13,14]},"..::{ Boss Sibelon }::..":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[8]},"..::{ Boss StreuneR }::..":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[24]},"-=[ Aider Streuner ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[2]},"-=[ Agatus ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[4,8]},"..::{ Boss Saimon }::..":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[3,4,7,11,12]},"-=[ Spinel ]=-":{"radius":500,"priority":0,"kill":false,"extra":{"flags":[]},"mapList":[3,7,11,12]}},"NPC_DISTANCE_IGNORE":3000},"PET":{"ENABLED":true,"MODULE_ID":"LOOTER"},"GROUP":{"ACCEPT_INVITES":false,"OPEN_INVITES":false,"LEAVE_NO_WHITELISTED":false},"MISCELLANEOUS":{"REFRESH_AFTER_REVIVE":false,"REFRESH_TIME":30,"PAUSE_FOR":17,"RESET_REFRESH":false,"UPDATE_STATS_WHILE_PAUSED":false,"DRONE_REPAIR_PERCENTAGE":0.9,"HONOR_LOST_EXACT":true,"LOG_CHAT":true,"LOG_DEATHS":false,"AVOID_MINES":true,"USERNAME_ON_TITLE":true,"AUTO_REFINE":false},"BOT_SETTINGS":{"BOT_GUI":{"LOCALE":"en","CONFIRM_EXIT":true,"SAVE_GUI_POS":true,"BUTTON_SIZE":4,"ALWAYS_ON_TOP":true,"MAIN_GUI_WINDOW":null,"CONFIG_GUI_WINDOW":null},"API_CONFIG":{"BROWSER_API":"DARK_BOAT_HOOK","FULLY_HIDE_API":true,"FORCE_GAME_LANGUAGE":false,"ENFORCE_HW_ACCEL":true,"MAX_FPS":0,"DARK_HOOK_FLAGS":["COLLECT","TRAVEL","REFINE"],"width":1280,"height":800},"MAP_DISPLAY":{"TOGGLE":["RESOURCE_NAMES","SHOW_PET","GROUP_AREA","HERO_NAME","GROUP_NAMES","STATS_AREA","HP_SHIELD_NUM","ZONES","BOOSTER_AREA"],"TRAIL_LENGTH":15,"MAP_START_STOP":false,"cs":{"BACKGROUND":"#FF263238","TEXT":"#FFF2F2F2","TEXT_DARK":"#FFBBBBBB","GOING":"#FF8F9BFF","PORTALS":"#FFAEAEAE","HERO":"#FF22CC22","TRAIL_BASE":"#FFE0E0E0","FUEL":"#FFF2F2F2","BOXES":"#FFBBB830","MINES":"#FFFF8000","ALLIES":"#FF29B6F6","ENEMIES":"#FFD50000","NPCS":"#FFAA4040","TARGET":"#FF762C2C","PET":"#FF004C8C","PET_IN":"#FFC56000","HEALTH":"#FF388E3C","NANO_HULL":"#FFD0D024","SHIELD":"#FF0288D1","METEROID":"#FFAAAAAA","PING":"#2000FF00","PING_BORDER":"#8000FF00","BARRIER":"#20FFFFFF","BARRIER_BORDER":"#80FFFFFF","NO_CLOACK":"#2018A0FF","PREFER":"#2000FF80","AVOID":"#20FF0000","SAFETY":"#601080FF","BASES":"#FF00FF80","BASE_SPOTS":"#2000FF80","UNKNOWN":"#FF7C05D1","TEXTS_BACKGROUND":"#80263238","ACTION_BUTTON":"#A0FFFFFF","DARKEN_BACK":"#60000000","ZONE_EDITOR":{"LINES":"#80808080","HOVERING":"#FF0096C8","SELECTING":"#FF0080FF","ZONE":"#4000FF80"},"SAFETY_EDITOR":{"ZONE_HIGHLIGHT":"#6000FF80","ZONE_SELECTED":"#8000FF80","ZONE_SOLID":"#FF00FF80"},"FONTS":{"BIG":"32:Consolas","MID":"18:SansSerif","SMALL":"12:Consolas","TINY":"9:SansSerif"}}},"CUSTOM_BACKGROUND":{"ENABLED":false,"USE_GAME_BACKGROUND":false,"OPACITY":0.30000001192092896,"IMAGE":null},"OTHER":{"DISABLE_MASTER_PASSWORD":false,"ZONE_RESOLUTION":30,"MIN_TICK":15,"DEV_STUFF":false}},"EXTRA":{"ACTION_INFOS":{}}}
+{
+  "PLAYER_INFOS": { "13213213123": { "username": "TestName" } },
+  "AVOIDED": {},
+  "PREFERRED": {
+    "2": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAAQAAAAAIAAAEAAAAAAAAAAAACAAAAAAAEAAAAAAAQAAAAAAAACAAAQAAAAAAgAAAAAAABAAAAABAQAAAAAAACAAAAAAACAAAAAAAAAAAAAAAABAAAAAAAAIAIAgAAAAAAAAAAAA="
+    },
+    "3": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAEAAAAAAAEAAAQAAAAABAAAAAAAAAAACAAAAAAAAAAQAAIAAAAAAAAABAGAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAACAAAAAAAgAAAAAAAAAEAAAAAAA="
+    },
+    "4": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAIEAIAAAAAAAAAAAAAAAAAAAAAEAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgAIAAAAAAAAACAAAAAAAEAAICAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAgAAAAAAAIAAAAAAAAAA="
+    },
+    "6": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAQAAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAIAAAAgAAEAAAQAAAAAAAAAAAAAAAAAAABAAIAAAAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAA="
+    },
+    "7": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAACAAAAAAAAAAAACAAEAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAA="
+    },
+    "8": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAAAgAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAIAAAAAAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAAAgAAAAAAAAAACAAAAIAAAAAAAAFAAEAAAAAAAAAAAAAAAAAAAAAAAAA="
+    },
+    "10": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAgAIAAABAAAAAAAAAAAAAAAAAAQAAAhAAAAAAAAAAAACAAAEAAAAQAAAAAAEAAAAAAAABAAIEAAAAAIAAAAAAAAAAACIAAAAAAAAAAAAAAAAAAIAAAAAAgAAAgAAAACEAAAAAACAAAAAA="
+    },
+    "11": {
+      "resolution": 30,
+      "data": "AAAAAAgABAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAIIAAAEAAAAAAAAAAAAAAAAAAAAAAAECEAACAAQAAAAAAAAAAAAAAAAAAEAAAAAAAAAAgEBAAAAAAAAAAAA="
+    },
+    "12": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAQAAAgAAAgCAAgAAAAAAAAAAAAAAEAAAAAACAAAAgABAAAAAAAEAAAAAAABAAAAAEAEAAAAAAAAAAAAAAAAAgAAAAAgAAAQAAAAAAAAAAAAAA="
+    },
+    "13": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAAAAAAAAEAAAAAACAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAABACAAAAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgMAAAAAAAAAAAAAAAA="
+    },
+    "14": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAAAAAAAAAAQIAAAAACAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAAAAACAAAAAAAAAAAACQAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAAABAAAAAAAAA="
+    },
+    "15": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAAAAAAIQAAAAAIAAAAAAAAAAAAAAAAAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAAAAAAAACAAAAIAQAAAAAAAAAAAAAAAAAAACAgAAAAAAAAAAAAAAAAAA="
+    },
+    "20": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAABAAAAAABAAIAAAAAAAAAAAAAAAAAAAAAAAAAEAQAAAEAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAAABAAAAAAAAAAA="
+    },
+    "24": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAQAAAAAAEAAAAAAAECAAAAAAEAAAAAAAAAAAAAEAAAAgAGAAAAAAAAAAIABAAAAAAAAACAAAAAAACAAAAAAAAAQAIAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAAA="
+    },
+    "28": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAgAAgAAACAAEAAAAAAAgAAQAAACAAEAAAAAAAAAAAAgAAEAAAAAAAAABAAAAAAABAAAAAAAAACAAAAAAABAAAAAAAAAAAAAIABAAAAAAAAAAAAAAAAAAACAgAgAAAAQgAAAAAAAAAA="
+    },
+    "306": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAA8AAAADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+    },
+    "307": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAAADgAAgAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+    },
+    "308": {
+      "resolution": 30,
+      "data": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAgAEAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+    }
+  },
+  "SAFETY": {
+    "2": [],
+    "3": [
+      {
+        "type": "PORTAL",
+        "x": 18500,
+        "y": 2000,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      },
+      {
+        "type": "PORTAL",
+        "x": 2000,
+        "y": 2000,
+        "runMode": "NEVER",
+        "jumpMode": "NEVER"
+      }
+    ],
+    "4": [
+      {
+        "type": "PORTAL",
+        "x": 19000,
+        "y": 6000,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      }
+    ],
+    "5": [],
+    "6": [],
+    "7": [
+      {
+        "type": "PORTAL",
+        "x": 2000,
+        "y": 2000,
+        "runMode": "NEVER",
+        "jumpMode": "NEVER"
+      },
+      {
+        "type": "PORTAL",
+        "x": 2000,
+        "y": 11500,
+        "runMode": "NEVER",
+        "jumpMode": "ESCAPING"
+      }
+    ],
+    "8": [
+      {
+        "type": "PORTAL",
+        "x": 10000,
+        "y": 12000,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      }
+    ],
+    "10": [],
+    "11": [
+      {
+        "type": "PORTAL",
+        "x": 18500,
+        "y": 2000,
+        "runMode": "NEVER",
+        "jumpMode": "NEVER"
+      },
+      {
+        "type": "PORTAL",
+        "x": 2000,
+        "y": 2000,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      }
+    ],
+    "12": [
+      {
+        "type": "PORTAL",
+        "x": 10000,
+        "y": 1500,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      }
+    ],
+    "13": [
+      {
+        "type": "PORTAL",
+        "x": 18500,
+        "y": 2000,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      },
+      {
+        "type": "PORTAL",
+        "x": 10500,
+        "y": 6750,
+        "runMode": "NEVER",
+        "jumpMode": "NEVER"
+      },
+      {
+        "type": "PORTAL",
+        "x": 18500,
+        "y": 11500,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      }
+    ],
+    "14": [
+      {
+        "type": "PORTAL",
+        "x": 10500,
+        "y": 6750,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      }
+    ],
+    "15": [
+      {
+        "type": "PORTAL",
+        "x": 10500,
+        "y": 6750,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      },
+      {
+        "type": "PORTAL",
+        "x": 2000,
+        "y": 2000,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      },
+      {
+        "type": "PORTAL",
+        "x": 2000,
+        "y": 11500,
+        "runMode": "ALWAYS",
+        "jumpMode": "NEVER"
+      }
+    ],
+    "16": [],
+    "20": [],
+    "24": [],
+    "28": [],
+    "306": [],
+    "307": [],
+    "308": [],
+    "-1": []
+  },
+  "PLAYER_TAGS": [],
+  "CUSTOM_CONFIGS": {
+    "eu.darkbot.popcorn.def.AntiPush": {
+      "DRAWFIRE_PAUSE_TIME": 0,
+      "MAX_DEATHS": 7,
+      "DEATH_PAUSE_TIME": 0
+    },
+    "com.deeme.tasks.AutoChangeMap": {},
+    "eu.darkbot.teyrox.BOXList": {}
+  },
+  "PLUGIN_INFOS": {
+    "Default plugin_by_Popcorn": {
+      "ENABLED_FEATURES": [
+        "eu.darkbot.popcorn.def.AntiPush",
+        "eu.darkbot.popcorn.def.CaptchaPicker",
+        "eu.darkbot.popcorn.def.FlashPatcher",
+        "eu.darkbot.popcorn.def.UserAgentUpdater"
+      ],
+      "DISABLED_FEATURES": []
+    },
+    "TYX Plugin_by_TeYroX": {
+      "ENABLED_FEATURES": ["eu.darkbot.teyrox.BOXList"],
+      "DISABLED_FEATURES": []
+    },
+    "DmPlugin_by_Dm94Dani": {
+      "ENABLED_FEATURES": ["com.deeme.tasks.AutoChangeMap"],
+      "DISABLED_FEATURES": []
+    }
+  },
+  "GENERAL": {
+    "CURRENT_MODULE": "eu.darkbot.shared.modules.CollectorModule",
+    "WORKING_MAP": 13,
+    "OFFENSIVE": { "CONFIG": 1, "FORMATION": "2" },
+    "ROAM": { "CONFIG": 1, "FORMATION": "2" },
+    "RUN": { "CONFIG": 1, "FORMATION": "2" },
+    "SAFETY": {
+      "REPAIR_HP_RANGE": { "min": 0.4, "max": 0.95 },
+      "REPAIR_HP_NO_NPC": 0.25,
+      "REPAIR_TO_SHIELD": 0,
+      "REPAIR": { "CONFIG": 1, "FORMATION": "2" },
+      "MAX_DEATHS": -1,
+      "REVIVE_LOCATION": 1,
+      "REVIVE": "BASE",
+      "WAIT_BEFORE_REVIVE": 5,
+      "WAIT_AFTER_REVIVE": 20
+    },
+    "RUNNING": {
+      "RUN_FROM_ENEMIES": false,
+      "REMEMBER_ENEMIES_FOR": 300,
+      "RUN_FROM_ENEMIES_SIGHT": false,
+      "STOP_RUNNING_NO_SIGHT": false,
+      "MAX_SIGHT_DISTANCE": 4000,
+      "SHIP_ABILITY_MIN": 1500,
+      "RUN_FURTHEST_PORT": 1500
+    },
+    "ROAMING": {
+      "KEEP": true,
+      "SEQUENTIAL": false,
+      "ONLY_KILL_PREFERRED": false,
+      "ENEMY_CBS_INVISIBLE": false
+    }
+  },
+  "COLLECT": {
+    "STAY_AWAY_FROM_ENEMIES": false,
+    "AUTO_CLOACK": true,
+    "AUTO_CLOACK_KEY": "1",
+    "RADIUS": 400,
+    "IGNORE_CONTESTED_BOXES": true,
+    "BOX_INFOS": {
+      "AGATUS_BOX": { "collect": false, "waitTime": 0, "priority": -100 },
+      "CANDY_CARGO": { "collect": false, "waitTime": 0, "priority": 0 },
+      "FROZEN_LABYRINTH_BOX": {
+        "collect": false,
+        "waitTime": 0,
+        "priority": 0
+      },
+      "GIFT_BOXES": { "collect": false, "waitTime": 0, "priority": 0 },
+      "PIRATE_BOOTY_BLUE": {
+        "collect": false,
+        "waitTime": 4500,
+        "priority": 0
+      },
+      "PIRATE_BOOTY_GOLD": {
+        "collect": false,
+        "waitTime": 5500,
+        "priority": 0
+      },
+      "ASTRAL_BOOTY_BOX": { "collect": false, "waitTime": 4500, "priority": 0 },
+      "PIRATE_BOOTY_RED": { "collect": false, "waitTime": 4500, "priority": 0 },
+      "BLACKLIGHT-CRYPT": { "collect": false, "waitTime": 4500, "priority": 0 },
+      "STYXUS_BOX": { "collect": false, "waitTime": 750, "priority": 0 },
+      "TREASURE": { "collect": false, "waitTime": 100, "priority": 0 },
+      "PIRATE_BOOTY": { "collect": false, "waitTime": 4500, "priority": 0 },
+      "BATTLEPASS": { "collect": false, "waitTime": 4500, "priority": 0 },
+      "BLACK_BOOTY_BOX": { "collect": false, "waitTime": 5500, "priority": 0 },
+      "MINI_PUMPKIN": { "collect": false, "waitTime": 0, "priority": 0 },
+      "BONUS_BOX": { "collect": true, "waitTime": 0, "priority": 0 },
+      "ALIEN_EGG": { "collect": false, "waitTime": 0, "priority": 0 },
+      "FLOWER": { "collect": false, "waitTime": 0, "priority": 0 },
+      "MASQUE_BOOTY_BOX": { "collect": false, "waitTime": 5500, "priority": 0 },
+      "BIRTHDAY": { "collect": false, "waitTime": 0, "priority": 0 },
+      "POISON_PUSAT_BOX_BLACK": {
+        "collect": false,
+        "waitTime": 5500,
+        "priority": 0
+      },
+      "UNSTABLE_BLACKLIGHT_CACHE": {
+        "collect": false,
+        "waitTime": 4500,
+        "priority": 0
+      }
+    }
+  },
+  "LOOT": {
+    "SAB": {
+      "ENABLED": false,
+      "KEY": "2",
+      "PERCENT": 0.8,
+      "NPC_AMOUNT": 12000
+    },
+    "RSB": { "ENABLED": false, "KEY": "3", "AMMO_REFRESH": 3500 },
+    "AMMO_KEY": "1",
+    "SHIP_ABILITY_MIN": 150000,
+    "MAX_CIRCLE_ITERATIONS": 5,
+    "RUN_CONFIG_IN_CIRCLE": true,
+    "GROUP_NPCS": true,
+    "NPC_INFOS": {
+      "\\\\ Attend IX //": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [306, 307]
+      },
+      "-=[ Mordon ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [3, 4, 7, 8, 12]
+      },
+      "-=[ Streuner ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [2, 5, 6, 10]
+      },
+      "-=[ Recruit Streuner ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [2, 6, 10]
+      },
+      "-=[ Saimon ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [3, 4, 7, 8, 12]
+      },
+      "\\\\ Abide I //": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [306, 307]
+      },
+      "\\\\ Steadfast III //": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [306]
+      },
+      "\\\\ Impulse II //": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [306, 307, 308]
+      },
+      "\\\\ Purpose XXI //": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [20, 24, 28]
+      },
+      "..::{ Boss Mordon }::..": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [7, 11]
+      },
+      "-=[ Spinelus ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [4, 8]
+      },
+      "..::{ Boss Lordakia }::..": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [2]
+      },
+      "-=[ Sibelon ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [4, 8, 12]
+      },
+      "-=[ Devolarium ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [7]
+      },
+      "-=[ Lordakia ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [2, 3, 4, 6, 7, 8, 10, 11, 12]
+      },
+      "-=[ Interceptor ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [13]
+      },
+      "..::{ Boss Devolarium }::..": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [3, 7]
+      },
+      "-=[ StreuneR ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [20, 24, 28]
+      },
+      "-=[ Deadly Battleray ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [16, 13, 14]
+      },
+      "..::{ Boss Sibelon }::..": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [8]
+      },
+      "..::{ Boss StreuneR }::..": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [24]
+      },
+      "-=[ Aider Streuner ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [2]
+      },
+      "-=[ Agatus ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [4, 8]
+      },
+      "..::{ Boss Saimon }::..": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [3, 4, 7, 11, 12]
+      },
+      "-=[ Spinel ]=-": {
+        "radius": 500,
+        "priority": 0,
+        "kill": false,
+        "extra": { "flags": [] },
+        "mapList": [3, 7, 11, 12]
+      }
+    },
+    "NPC_DISTANCE_IGNORE": 3000
+  },
+  "PET": { "ENABLED": true, "MODULE_ID": "LOOTER" },
+  "GROUP": {
+    "ACCEPT_INVITES": false,
+    "OPEN_INVITES": false,
+    "LEAVE_NO_WHITELISTED": false
+  },
+  "MISCELLANEOUS": {
+    "REFRESH_AFTER_REVIVE": false,
+    "REFRESH_TIME": 30,
+    "PAUSE_FOR": 17,
+    "RESET_REFRESH": false,
+    "UPDATE_STATS_WHILE_PAUSED": false,
+    "DRONE_REPAIR_PERCENTAGE": 0.9,
+    "HONOR_LOST_EXACT": true,
+    "LOG_CHAT": true,
+    "LOG_DEATHS": false,
+    "AVOID_MINES": true,
+    "USERNAME_ON_TITLE": true,
+    "AUTO_REFINE": false
+  },
+  "BOT_SETTINGS": {
+    "BOT_GUI": {
+      "LOCALE": "en",
+      "CONFIRM_EXIT": true,
+      "SAVE_GUI_POS": true,
+      "BUTTON_SIZE": 4,
+      "ALWAYS_ON_TOP": true,
+      "MAIN_GUI_WINDOW": null,
+      "CONFIG_GUI_WINDOW": null
+    },
+    "API_CONFIG": {
+      "BROWSER_API": "DARK_BOAT_HOOK",
+      "FULLY_HIDE_API": true,
+      "FORCE_GAME_LANGUAGE": false,
+      "ENFORCE_HW_ACCEL": true,
+      "MAX_FPS": 0,
+      "DARK_HOOK_FLAGS": ["COLLECT", "TRAVEL", "REFINE"],
+      "width": 1280,
+      "height": 800
+    },
+    "MAP_DISPLAY": {
+      "TOGGLE": [
+        "RESOURCE_NAMES",
+        "SHOW_PET",
+        "GROUP_AREA",
+        "HERO_NAME",
+        "GROUP_NAMES",
+        "STATS_AREA",
+        "HP_SHIELD_NUM",
+        "ZONES",
+        "BOOSTER_AREA"
+      ],
+      "TRAIL_LENGTH": 15,
+      "MAP_START_STOP": false,
+      "cs": {
+        "BACKGROUND": "#FF263238",
+        "TEXT": "#FFF2F2F2",
+        "TEXT_DARK": "#FFBBBBBB",
+        "GOING": "#FF8F9BFF",
+        "PORTALS": "#FFAEAEAE",
+        "HERO": "#FF22CC22",
+        "TRAIL_BASE": "#FFE0E0E0",
+        "FUEL": "#FFF2F2F2",
+        "BOXES": "#FFBBB830",
+        "MINES": "#FFFF8000",
+        "ALLIES": "#FF29B6F6",
+        "ENEMIES": "#FFD50000",
+        "NPCS": "#FFAA4040",
+        "TARGET": "#FF762C2C",
+        "PET": "#FF004C8C",
+        "PET_IN": "#FFC56000",
+        "HEALTH": "#FF388E3C",
+        "NANO_HULL": "#FFD0D024",
+        "SHIELD": "#FF0288D1",
+        "METEROID": "#FFAAAAAA",
+        "PING": "#2000FF00",
+        "PING_BORDER": "#8000FF00",
+        "BARRIER": "#20FFFFFF",
+        "BARRIER_BORDER": "#80FFFFFF",
+        "NO_CLOACK": "#2018A0FF",
+        "PREFER": "#2000FF80",
+        "AVOID": "#20FF0000",
+        "SAFETY": "#601080FF",
+        "BASES": "#FF00FF80",
+        "BASE_SPOTS": "#2000FF80",
+        "UNKNOWN": "#FF7C05D1",
+        "TEXTS_BACKGROUND": "#80263238",
+        "ACTION_BUTTON": "#A0FFFFFF",
+        "DARKEN_BACK": "#60000000",
+        "ZONE_EDITOR": {
+          "LINES": "#80808080",
+          "HOVERING": "#FF0096C8",
+          "SELECTING": "#FF0080FF",
+          "ZONE": "#4000FF80"
+        },
+        "SAFETY_EDITOR": {
+          "ZONE_HIGHLIGHT": "#6000FF80",
+          "ZONE_SELECTED": "#8000FF80",
+          "ZONE_SOLID": "#FF00FF80"
+        },
+        "FONTS": {
+          "BIG": "32:Consolas",
+          "MID": "18:SansSerif",
+          "SMALL": "12:Consolas",
+          "TINY": "9:SansSerif"
+        }
+      }
+    },
+    "CUSTOM_BACKGROUND": {
+      "ENABLED": false,
+      "USE_GAME_BACKGROUND": false,
+      "OPACITY": 0.30000001192092896,
+      "IMAGE": null
+    },
+    "OTHER": {
+      "DISABLE_MASTER_PASSWORD": false,
+      "ZONE_RESOLUTION": 30,
+      "MIN_TICK": 15,
+      "DEV_STUFF": false
+    }
+  },
+  "EXTRA": { "ACTION_INFOS": {} }
+}
