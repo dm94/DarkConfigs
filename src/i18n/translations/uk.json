@@ -3,8 +3,10 @@
     "home": "Home",
     "uploadConfig": "Upload your config",
     "configDetail": "Config Detail",
+    "maker": "Condition Maker",
     "termAndConditions": "Terms and Conditions",
-    "discord": "Discord"
+    "discord": "Discord",
+    "tos": "TOS"
   },
   "home": {
     "title": "Dark Configs",
@@ -41,5 +43,8 @@
     "text": "We use cookies to improve our website, you can check our policies here: {link}",
     "acceptButton": "Accept",
     "rejectButton": "Reject"
+  },
+  "maker": {
+    "generateButton": "Generate condition"
   }
 }
