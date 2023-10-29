@@ -5,14 +5,17 @@ Blockly.Blocks["shipLocationValue"] = {
   init: function () {
     this.appendDummyInput()
       .appendField("Location from")
-      .appendField(new Blockly.FieldDropdown([
+      .appendField(
+        new Blockly.FieldDropdown([
           ["hero()", "hero()"],
           ["target()", "target()"],
-        ]), "shipType");
+        ]),
+        "shipType",
+      );
     this.setPreviousStatement(false);
     this.setNextStatement(false);
     this.setInputsInline(true);
-    this.setOutput(true, 'Location');
+    this.setOutput(true, "Location");
     this.setColour(60);
     this.setTooltip("Gets the current location of a ship");
   },

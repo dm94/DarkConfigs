@@ -8,15 +8,15 @@ Blockly.Blocks["mapConstant"] = {
       .appendField(new Blockly.FieldDropdown(this.generateMaps()), "map");
     this.setPreviousStatement(false);
     this.setNextStatement(false);
-    this.setOutput(true, 'Map');
+    this.setOutput(true, "Map");
     this.setColour(80);
     this.setTooltip("Creates a map constant");
   },
-  generateMaps: function() {
+  generateMaps: function () {
     let options: string[][] = [];
-    
-    for (let c = 1; c<4; c++) {
-      for (let s = 1; s<9; s++) {
+
+    for (let c = 1; c < 4; c++) {
+      for (let s = 1; s < 9; s++) {
         options.push([`${c}-${s}`, `${c}-${s}`]);
       }
       options.push([`${c}BL`, `${c}BL`]);
@@ -25,7 +25,7 @@ Blockly.Blocks["mapConstant"] = {
     options.push(["5-4", "5-4"]);
 
     return options;
-  }
+  },
 };
 
 javascriptGenerator.forBlock["mapConstant"] = function (block: any) {

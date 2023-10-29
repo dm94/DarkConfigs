@@ -2,15 +2,17 @@ import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
 
 Blockly.Blocks["hasEffectCondition"] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
       .appendField("Has effect")
-      .appendField(new Blockly.FieldDropdown(this.generateEffects), 'effect');
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([
-          ["hero()", "hero()"],
-          ["target()", "target()"],
-        ]), "ship");
+      .appendField(new Blockly.FieldDropdown(this.generateEffects), "effect");
+    this.appendDummyInput().appendField(
+      new Blockly.FieldDropdown([
+        ["hero()", "hero()"],
+        ["target()", "target()"],
+      ]),
+      "ship",
+    );
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setPreviousStatement(true, "Boolean");
@@ -18,7 +20,7 @@ Blockly.Blocks["hasEffectCondition"] = {
     this.setColour(200);
     this.setTooltip("Checks if a ship has an effect");
   },
-  generateEffects: function() {
+  generateEffects: function () {
     let options: string[][] = [];
     let allEffects = [
       "SOLACE_NANO_CLUSTER",
@@ -50,16 +52,16 @@ Blockly.Blocks["hasEffectCondition"] = {
       "SOLARIS_INCINERATE",
       "HOLO_REVERSAL_SELF",
       "HOLO_ENEMY_REVERSAL",
-      "CITADEL_PLUS_PRISMATIC_ENDURANCE"
+      "CITADEL_PLUS_PRISMATIC_ENDURANCE",
     ];
 
     allEffects.forEach((effect) => {
-      const custom = effect.toLowerCase().replaceAll("_","-");
+      const custom = effect.toLowerCase().replaceAll("_", "-");
       options.push([custom, custom]);
-    })
+    });
 
     return options;
-  }
+  },
 };
 
 javascriptGenerator.forBlock["hasEffectCondition"] = function (block: any) {

@@ -1,7 +1,7 @@
 export enum OrderByRequest {
   KARMA = "KARMA",
   DOWNLOADS = "DOWNLOADS",
-  NEWEST = "NEWEST"
+  NEWEST = "NEWEST",
 }
 
 export type getConfigParams = {

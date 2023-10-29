@@ -12,166 +12,166 @@ const code = ref();
 const { t } = useI18n();
 
 const toolbox = {
-    "kind": "categoryToolbox",
-    "contents": [
+  "kind": "categoryToolbox",
+  "contents": [
+    {
+      "kind": "category",
+      "name": "Conditions",
+      "colour": "200",
+      "contents": [
         {
-            "kind": "category",
-            "name": "Conditions",
-            "colour": "200",
-            "contents": [
-                {
-                    "kind": "block",
-                    "type": "afterCondition"
-                },
-                {
-                    "kind": "block",
-                    "type": "allCondition"
-                },
-                {
-                    "kind": "block",
-                    "type": "anyCondition"
-                },
-                {
-                    "kind": "block",
-                    "type": "equalCondition"
-                },
-                {
-                    "kind": "block",
-                    "type": "hasEffectCondition"
-                },
-                {
-                    "kind": "block",
-                    "type": "hasFormationCondition"
-                },
-                {
-                    "kind": "block",
-                    "type": "noneCondition"
-                },
-                {
-                    "kind": "block",
-                    "type": "numericalCondition"
-                },
-                {
-                    "kind": "block",
-                    "type": "oneCondition"
-                },
-                {
-                    "kind": "block",
-                    "type": "hasRelationCondition"
-                },
-                {
-                    "kind": "block",
-                    "type": "untilCondition"
-                },
-            ]
+          "kind": "block",
+          "type": "afterCondition",
         },
         {
-            "kind": "category",
-            "name": "Number values",
-            "colour": "40",
-            "contents": [
-                {
-                    "kind": "block",
-                    "type": "distanceValue"
-                },
-                {
-                    "kind": "block",
-                    "type": "hpTypeValue"
-                },
-                {
-                    "kind": "block",
-                    "type": "numberConstant"
-                },
-                {
-                    "kind": "block",
-                    "type": "percentConstant"
-                },
-                {
-                    "kind": "block",
-                    "type": "statTypeValue"
-                }
-            ]
+          "kind": "block",
+          "type": "allCondition",
         },
         {
-            "kind": "category",
-            "name": "Location values",
-            "colour": "60",
-            "contents": [
-                {
-                    "kind": "block",
-                    "type": "locationConstant"
-                },
-                {
-                    "kind": "block",
-                    "type": "shipLocationValue"
-                }
-            ]
+          "kind": "block",
+          "type": "anyCondition",
         },
         {
-            "kind": "category",
-            "name": "Map values",
-            "colour": "80",
-            "contents": [
-                {
-                    "kind": "block",
-                    "type": "heroMapValue"
-                },
-                {
-                    "kind": "block",
-                    "type": "mapConstant"
-                },
-                {
-                    "kind": "block",
-                    "type": "mapConstantString"
-                }
-            ]
+          "kind": "block",
+          "type": "equalCondition",
         },
         {
-            "kind": "category",
-            "name": "String values",
-            "colour": "100",
-            "contents": [
-                {
-                    "kind": "block",
-                    "type": "nameValue"
-                },
-                {
-                    "kind": "block",
-                    "type": "stringConstant"
-                }
-            ]
+          "kind": "block",
+          "type": "hasEffectCondition",
         },
         {
-            "kind": "category",
-            "name": "Other values",
-            "colour": "120",
-            "contents": [
-                {
-                    "kind": "block",
-                    "type": "booleanConstant"
-                },
-                {
-                    "kind": "block",
-                    "type": "healthValue"
-                }
-            ]
-        }
-    ]
+          "kind": "block",
+          "type": "hasFormationCondition",
+        },
+        {
+          "kind": "block",
+          "type": "noneCondition",
+        },
+        {
+          "kind": "block",
+          "type": "numericalCondition",
+        },
+        {
+          "kind": "block",
+          "type": "oneCondition",
+        },
+        {
+          "kind": "block",
+          "type": "hasRelationCondition",
+        },
+        {
+          "kind": "block",
+          "type": "untilCondition",
+        },
+      ],
+    },
+    {
+      "kind": "category",
+      "name": "Number values",
+      "colour": "40",
+      "contents": [
+        {
+          "kind": "block",
+          "type": "distanceValue",
+        },
+        {
+          "kind": "block",
+          "type": "hpTypeValue",
+        },
+        {
+          "kind": "block",
+          "type": "numberConstant",
+        },
+        {
+          "kind": "block",
+          "type": "percentConstant",
+        },
+        {
+          "kind": "block",
+          "type": "statTypeValue",
+        },
+      ],
+    },
+    {
+      "kind": "category",
+      "name": "Location values",
+      "colour": "60",
+      "contents": [
+        {
+          "kind": "block",
+          "type": "locationConstant",
+        },
+        {
+          "kind": "block",
+          "type": "shipLocationValue",
+        },
+      ],
+    },
+    {
+      "kind": "category",
+      "name": "Map values",
+      "colour": "80",
+      "contents": [
+        {
+          "kind": "block",
+          "type": "heroMapValue",
+        },
+        {
+          "kind": "block",
+          "type": "mapConstant",
+        },
+        {
+          "kind": "block",
+          "type": "mapConstantString",
+        },
+      ],
+    },
+    {
+      "kind": "category",
+      "name": "String values",
+      "colour": "100",
+      "contents": [
+        {
+          "kind": "block",
+          "type": "nameValue",
+        },
+        {
+          "kind": "block",
+          "type": "stringConstant",
+        },
+      ],
+    },
+    {
+      "kind": "category",
+      "name": "Other values",
+      "colour": "120",
+      "contents": [
+        {
+          "kind": "block",
+          "type": "booleanConstant",
+        },
+        {
+          "kind": "block",
+          "type": "healthValue",
+        },
+      ],
+    },
+  ],
 };
 
 const options = {
-    grid: {
-        spacing: 25,
-        length: 3,
-        colour: "#ccc",
-        snap: true,
-    },
-    sounds: false,
-    toolbox: toolbox,
+  grid: {
+    spacing: 25,
+    length: 3,
+    colour: "#ccc",
+    snap: true,
+  },
+  sounds: false,
+  toolbox: toolbox,
 };
 
 const generateCode = () => {
-    code.value = javascriptGenerator.workspaceToCode(blocky.value.workspace).replaceAll(";", "");
+  code.value = javascriptGenerator.workspaceToCode(blocky.value.workspace).replaceAll(";", "");
 };
 
 </script>
@@ -183,7 +183,7 @@ const generateCode = () => {
                 @click="generateCode()">{{ t("maker.generateButton") }}</button>
         <pre class="bg-gray-100 p-1">{{ code }}</pre>
         </p>
-        <BlocklyComponent id="blockly2" :options="options" ref="blocky"></BlocklyComponent>
+        <BlocklyComponent id="blockly2" ref="blocky" :options="options"></BlocklyComponent>
     </div>
 </template>
 <style>

@@ -1,16 +1,21 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
 
-Blockly.Blocks['hasFormationCondition'] = {
-  init: function() {
+Blockly.Blocks["hasFormationCondition"] = {
+  init: function () {
     this.appendDummyInput()
       .appendField("Has formation")
-      .appendField(new Blockly.FieldDropdown(this.generateFormations), 'formation');
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([
-          ["hero()", "hero()"],
-          ["target()", "target()"],
-        ]), "ship");
+      .appendField(
+        new Blockly.FieldDropdown(this.generateFormations),
+        "formation",
+      );
+    this.appendDummyInput().appendField(
+      new Blockly.FieldDropdown([
+        ["hero()", "hero()"],
+        ["target()", "target()"],
+      ]),
+      "ship",
+    );
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setPreviousStatement(true, "Boolean");
@@ -18,7 +23,7 @@ Blockly.Blocks['hasFormationCondition'] = {
     this.setColour(200);
     this.setTooltip("Checks if a ship has a formation");
   },
-  generateFormations: function() {
+  generateFormations: function () {
     let options: string[][] = [];
     let allFormations = [
       "STANDARD",
@@ -42,19 +47,19 @@ Blockly.Blocks['hasFormationCondition'] = {
       "WHEEL",
       "X",
       "WAVY",
-      "MOSQUITO"
+      "MOSQUITO",
     ];
 
     allFormations.forEach((formation) => {
-      const custom = formation.toLowerCase().replaceAll("_","-");
+      const custom = formation.toLowerCase().replaceAll("_", "-");
       options.push([custom, custom]);
-    })
+    });
 
     return options;
-  }
+  },
 };
 
-javascriptGenerator.forBlock['hasFormationCondition'] = function (block: any) {
+javascriptGenerator.forBlock["hasFormationCondition"] = function (block: any) {
   const formation = block.getFieldValue("formation");
   const ship = block.getFieldValue("ship");
 

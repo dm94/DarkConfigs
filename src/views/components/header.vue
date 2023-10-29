@@ -5,38 +5,58 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
 const DISCORD_URL: string = import.meta.env.VITE_APP_DISCORD as string;
-
 </script>
 <template>
   <header class="w-full">
     <nav
-      class="relative flex w-full items-center justify-between bg-white py-2 text-neutral-600 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200 md:flex-wrap md:justify-start">
+      class="relative flex w-full items-center justify-between bg-white py-2 text-neutral-600 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200 md:flex-wrap md:justify-start"
+    >
       <div class="flex w-full flex-wrap items-center justify-between px-3">
-        <ul itemscope itemtype="https://schema.org/SiteNavigationElement"
-          class="mr-auto flex flex-row w-full gap-2 justify-around lg:justify-start">
+        <ul
+          itemscope
+          itemtype="https://schema.org/SiteNavigationElement"
+          class="mr-auto flex flex-row w-full gap-2 justify-around lg:justify-start"
+        >
           <li itemprop="name">
-            <router-link :to="{ name: RouteName.HOME }"
-              class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200" :title="RouteName.HOME">{{
-                t("header.home") }}</router-link>
-          </li>
-          <li itemprop="name">
-            <router-link :to="{ name: RouteName.UPLOAD }"
+            <router-link
+              :to="{ name: RouteName.HOME }"
               class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200"
-              :title="RouteName.UPLOAD">{{ t("header.uploadConfig") }}</router-link>
+              :title="RouteName.HOME"
+              >{{ t("header.home") }}</router-link
+            >
           </li>
           <li itemprop="name">
-            <router-link :to="{ name: RouteName.CONDITION_MAKER }"
+            <router-link
+              :to="{ name: RouteName.UPLOAD }"
               class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200"
-              :title="RouteName.CONDITION_MAKER">{{ t("header.maker") }}</router-link>
+              :title="RouteName.UPLOAD"
+              >{{ t("header.uploadConfig") }}</router-link
+            >
           </li>
           <li itemprop="name">
-            <a class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200" :href="DISCORD_URL"
-              rel="external nofollow noopener" target="_blank">{{ t("header.discord") }}</a>
+            <router-link
+              :to="{ name: RouteName.CONDITION_MAKER }"
+              class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200"
+              :title="RouteName.CONDITION_MAKER"
+              >{{ t("header.maker") }}</router-link
+            >
+          </li>
+          <li itemprop="name">
+            <a
+              class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200"
+              :href="DISCORD_URL"
+              rel="external nofollow noopener"
+              target="_blank"
+              >{{ t("header.discord") }}</a
+            >
           </li>
           <li itemprop="name" class="lg:ml-auto">
-            <router-link :to="{ name: RouteName.TERMS_AND_CONDITIONS }"
+            <router-link
+              :to="{ name: RouteName.TERMS_AND_CONDITIONS }"
               class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200"
-              :title="RouteName.TERMS_AND_CONDITIONS">TOS</router-link>
+              :title="RouteName.TERMS_AND_CONDITIONS"
+              >TOS</router-link
+            >
           </li>
         </ul>
       </div>

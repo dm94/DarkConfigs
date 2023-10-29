@@ -1,21 +1,27 @@
 import * as Blockly from "blockly/core";
-import {javascriptGenerator, Order} from "blockly/javascript";
+import { javascriptGenerator, Order } from "blockly/javascript";
 
 Blockly.Blocks["statTypeValue"] = {
   init: function () {
     this.appendDummyInput()
       .appendField("Stat: ")
-      .appendField(new Blockly.FieldDropdown(this.generateTypeOptions), 'statType');
-      this.appendDummyInput()
+      .appendField(
+        new Blockly.FieldDropdown(this.generateTypeOptions),
+        "statType",
+      );
+    this.appendDummyInput()
       .appendField("Data Type:")
-      .appendField(new Blockly.FieldDropdown(this.generateDataOptions), 'dataType');
+      .appendField(
+        new Blockly.FieldDropdown(this.generateDataOptions),
+        "dataType",
+      );
     this.setPreviousStatement(false);
     this.setNextStatement(false);
-    this.setOutput(true, 'Number');
+    this.setOutput(true, "Number");
     this.setColour(40);
     this.setTooltip("Gets a certain HP type from a health");
   },
-  generateTypeOptions: function() {
+  generateTypeOptions: function () {
     let options: string[][] = [];
     let all = [
       "CREDITS",
@@ -45,33 +51,27 @@ Blockly.Blocks["statTypeValue"] = {
       "ASTRAL_SUPREME",
       "EMPYRIAN",
       "LUCENT",
-      "PERSEUS"
+      "PERSEUS",
     ];
 
     all.forEach((option) => {
-      const custom = option.toLowerCase().replaceAll("_","-");
+      const custom = option.toLowerCase().replaceAll("_", "-");
       options.push([custom, custom]);
-    })
+    });
 
     return options;
   },
-  generateDataOptions: function() {
+  generateDataOptions: function () {
     let options: string[][] = [];
-    let all = [
-      "INITIAL",
-      "CURRENT",
-      "EARNED",
-      "SPENT",
-      "DIFFERENCE"
-    ];
+    let all = ["INITIAL", "CURRENT", "EARNED", "SPENT", "DIFFERENCE"];
 
     all.forEach((option) => {
       const custom = option.toLowerCase();
       options.push([custom, custom]);
-    })
+    });
 
     return options;
-  }
+  },
 };
 
 javascriptGenerator.forBlock["statTypeValue"] = function (block: any) {

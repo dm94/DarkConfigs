@@ -8,13 +8,16 @@ Blockly.Blocks["equalCondition"] = {
     this.setPreviousStatement(true, "Boolean");
     this.setNextStatement(true, "Boolean");
     this.setInputsInline(true);
-    this.setOutput(true, 'Boolean');
+    this.setOutput(true, "Boolean");
     this.setColour(200);
     this.setTooltip("Returns true if both parameters are the same");
   },
 };
 
-javascriptGenerator.forBlock["equalCondition"] = function (block: any, generator: any) {
+javascriptGenerator.forBlock["equalCondition"] = function (
+  block: any,
+  generator: any,
+) {
   const first = generator.valueToCode(block, "firstValue", Order.ATOMIC);
   const second = generator.valueToCode(block, "secondValue", Order.ATOMIC);
   return `equal(${first},${second});`;

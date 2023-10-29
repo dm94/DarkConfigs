@@ -5,7 +5,7 @@ Blockly.Blocks["allCondition"] = {
   init: function () {
     this.appendStatementInput("conditions")
       .setCheck("Boolean")
-      .appendField("All")
+      .appendField("All");
     this.setPreviousStatement(true, "Boolean");
     this.setNextStatement(true, "Boolean");
     this.setOutput(true, "Boolean");
@@ -14,8 +14,13 @@ Blockly.Blocks["allCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["allCondition"] = function (block: any, generator: any) {
+javascriptGenerator.forBlock["allCondition"] = function (
+  block: any,
+  generator: any,
+) {
   const conditions = generator.statementToCode(block, "conditions").trim();
-  const conditionList = conditions.split(';').filter((value: string) => value.trim().length > 0);
-  return `all(${conditionList.join(',')});`;
+  const conditionList = conditions
+    .split(";")
+    .filter((value: string) => value.trim().length > 0);
+  return `all(${conditionList.join(",")});`;
 };

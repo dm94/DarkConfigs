@@ -1,22 +1,17 @@
 {
-  "extends": ["eslint:recommended"],
+  "extends": ["eslint:recommended", "plugin:vue/vue3-recommended", "prettier"],
   "env": {
     "node": true,
     "commonjs": true,
     "browser": true,
     "es6": true
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
-  "parser": "@babel/eslint-parser",
+  "ignorePatterns": [
+    "tailwind.config.js",
+    "postcss.config.js",
+    "setupTests.js"
+  ],
   "rules": {
-    "react/react-in-jsx-scope": "off",
-    "react/no-unknown-property": "off",
-    "react/no-string-refs": "warn",
-    "react/prop-types": 0,
     "arrow-spacing": ["warn", { "before": true, "after": true }],
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
     "comma-dangle": [

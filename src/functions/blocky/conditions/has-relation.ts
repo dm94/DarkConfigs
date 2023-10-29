@@ -1,17 +1,20 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
 
-Blockly.Blocks['hasRelationCondition'] = {
-  init: function() {
+Blockly.Blocks["hasRelationCondition"] = {
+  init: function () {
     this.appendDummyInput()
       .appendField("If")
-      .appendField(new Blockly.FieldDropdown([
+      .appendField(
+        new Blockly.FieldDropdown([
           ["hero()", "hero()"],
           ["target()", "target()"],
-        ]), "ship");
+        ]),
+        "ship",
+      );
     this.appendDummyInput()
       .appendField("has relation")
-      .appendField(new Blockly.FieldDropdown(this.generateOptions), 'relation');
+      .appendField(new Blockly.FieldDropdown(this.generateOptions), "relation");
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setPreviousStatement(true, "Boolean");
@@ -19,26 +22,20 @@ Blockly.Blocks['hasRelationCondition'] = {
     this.setColour(200);
     this.setTooltip("Checks the target type");
   },
-  generateOptions: function() {
+  generateOptions: function () {
     let options: string[][] = [];
-    let all = [
-      "NO_TARGET",
-      "NPC",
-      "ENEMY",
-      "ALLIED",
-      "NOT_ATTACK_PACT"
-    ];
+    let all = ["NO_TARGET", "NPC", "ENEMY", "ALLIED", "NOT_ATTACK_PACT"];
 
     all.forEach((option) => {
-      const custom = option.toLowerCase().replaceAll("_","-");
+      const custom = option.toLowerCase().replaceAll("_", "-");
       options.push([custom, custom]);
-    })
+    });
 
     return options;
-  }
+  },
 };
 
-javascriptGenerator.forBlock['hasRelationCondition'] = function (block: any) {
+javascriptGenerator.forBlock["hasRelationCondition"] = function (block: any) {
   const relation = block.getFieldValue("relation");
   const ship = block.getFieldValue("ship");
 
