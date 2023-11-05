@@ -4,21 +4,21 @@
     "uploadConfig": "Załaduj konfigurację",
     "configDetail": "Szczegóły konfiguracji",
     "maker": "Condition Maker",
-    "termAndConditions": "Terms and Conditions",
+    "termAndConditions": "Zasady i warunki",
     "discord": "Discord",
-    "tos": "TOS"
+    "tos": "Regulamin"
   },
   "home": {
     "title": "Dark Configs",
-    "subtitle": "Download and share your favourite configs securely",
+    "subtitle": "Pobierz i bezpiecznie udostępniaj swoje ulubione konfiguracje",
     "searchButton": "Szukaj",
     "searchInputPlaceHolder": "Wpisz to, co chcesz wyszukać",
-    "loadMoreButton": "Show more",
-    "orderby": "Order by {type}",
+    "loadMoreButton": "Pokaż więcej",
+    "orderby": "Sortuj wg {type}",
     "orderbyTypes": {
-      "karma": "Karma",
-      "downloads": "Downloads",
-      "newest": "Newest"
+      "karma": "Polubienia",
+      "downloads": "Pobrania",
+      "newest": "Najnowszy"
     }
   },
   "configDetail": {
@@ -30,19 +30,19 @@
     "downloadButton": "Pobierz"
   },
   "uploadPage": {
-    "title": "Title",
-    "description": "Description",
-    "features": "Features",
-    "config": "Config",
+    "title": "Tytuł",
+    "description": "Opis",
+    "features": "Funkcje",
+    "config": "Konfiguracja",
     "configDescription": "Both when uploading and downloading the configuration, we remove any data that could be compromising.",
-    "hidden": "Hidden",
+    "hidden": "Ukryte",
     "hiddenDescription": "When activated, it will not be shown in the public listing",
-    "saveButton": "Save"
+    "saveButton": "Zapisz"
   },
   "cookieAdvert": {
     "text": "We use cookies to improve our website, you can check our policies here: {link}",
-    "acceptButton": "Accept",
-    "rejectButton": "Reject"
+    "acceptButton": "Zaakceptuj",
+    "rejectButton": "Odrzuć"
   },
   "maker": {
     "generateButton": "Generate condition"
