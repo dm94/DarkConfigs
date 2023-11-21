@@ -5,6 +5,7 @@ import "@/functions/blocky/values";
 import { javascriptGenerator } from "blockly/javascript";
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
+import { showError } from "@/functions/error-management";
 
 const blocky = ref();
 const code = ref();
@@ -171,24 +172,29 @@ const options = {
 };
 
 const generateCode = () => {
-  code.value = javascriptGenerator.workspaceToCode(blocky.value.workspace).replaceAll(";", "");
+  try {
+    code.value = javascriptGenerator.workspaceToCode(blocky.value.workspace).replaceAll(";", "");
+  } catch (error) {
+    showError(String(error).toString());
+    console.error(error);
+  }
 };
 
 </script>
 <template>
-    <div class="flex container mx-auto p-4 gap-8 flex-col" data-testid="maker-page">
-        <p class="code flex p-4 gap-4 flex-col w-100">
-            <button
-                class="mx-auto max-w-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-                @click="generateCode()">{{ t("maker.generateButton") }}</button>
-        <pre class="bg-gray-100 p-1">{{ code }}</pre>
-        </p>
-        <BlocklyComponent id="blockly2" ref="blocky" :options="options"></BlocklyComponent>
-    </div>
+  <div class="flex container mx-auto p-4 gap-8 flex-col" data-testid="maker-page">
+    <p class="code flex p-4 gap-4 flex-col w-100">
+      <button
+        class="mx-auto max-w-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+        @click="generateCode()">{{ t("maker.generateButton") }}</button>
+    <pre class="bg-gray-100 p-1">{{ code }}</pre>
+    </p>
+    <BlocklyComponent id="blockly2" ref="blocky" :options="options"></BlocklyComponent>
+  </div>
 </template>
 <style>
 #blockly2 {
-    height: 80vh;
-    width: 100%;
+  height: 80vh;
+  width: 100%;
 }
 </style>

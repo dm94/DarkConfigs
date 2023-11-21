@@ -24,6 +24,10 @@ javascriptGenerator.forBlock["afterCondition"] = function (
   generator: any,
 ) {
   const seconds = generator.valueToCode(block, "seconds", Order.ATOMIC);
-  const condition = block.getFieldValue("condition");
-  return `after(${seconds},${condition});`;
+
+  const conditions = generator.statementToCode(block, "condition").trim();
+  const conditionList = conditions
+    .split(";")
+    .filter((value: string) => value.trim().length > 0);
+  return `after(${seconds},${conditionList.join(",")});`;
 };

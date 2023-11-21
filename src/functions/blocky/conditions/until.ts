@@ -20,8 +20,10 @@ Blockly.Blocks["untilCondition"] = {
 
 javascriptGenerator.forBlock["untilCondition"] = function (
   block: any,
+  generator: any, 
 ) {
-  const first = block.getFieldValue("firstValue");
-  const second = block.getFieldValue("secondValue");
-  return `until(${first},${second});`;
+  const firstConditions = generator.statementToCode(block, "firstValue").trim();
+  const second = generator.statementToCode(block, "secondValue").trim();
+  
+  return `until(${firstConditions},${second});`;
 };
