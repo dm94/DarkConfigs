@@ -1,5 +1,5 @@
 import * as Blockly from "blockly/core";
-import { javascriptGenerator, Order } from "blockly/javascript";
+import { javascriptGenerator } from "blockly/javascript";
 
 Blockly.Blocks["untilCondition"] = {
   init: function () {
@@ -20,9 +20,8 @@ Blockly.Blocks["untilCondition"] = {
 
 javascriptGenerator.forBlock["untilCondition"] = function (
   block: any,
-  generator: any,
 ) {
-  const first = generator.valueToCode(block, "firstValue", Order.ATOMIC);
-  const second = generator.valueToCode(block, "secondValue", Order.ATOMIC);
+  const first = block.getFieldValue("firstValue");
+  const second = block.getFieldValue("secondValue");
   return `until(${first},${second});`;
 };

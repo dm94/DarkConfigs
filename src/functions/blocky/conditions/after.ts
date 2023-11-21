@@ -24,6 +24,6 @@ javascriptGenerator.forBlock["afterCondition"] = function (
   generator: any,
 ) {
   const seconds = generator.valueToCode(block, "seconds", Order.ATOMIC);
-  const condition = generator.valueToCode(block, "condition", Order.ATOMIC);
+  const condition = block.getFieldValue("condition");
   return `after(${seconds},${condition});`;
 };
