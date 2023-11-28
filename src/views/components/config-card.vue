@@ -54,8 +54,8 @@ const karmaClasses = computed(() => {
       data-testid="config-card"
       class="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-400 w-72 py-4 px-6 flex gap-4 flex-col"
     >
-      <div class="font-bold text-xl mb-2">{{ props.name }}</div>
-      <p class="text-gray-700 text-base">
+      <div class="font-bold text-xl mb-2 title">{{ props.name }}</div>
+      <p class="text-gray-700 text-base description">
         {{ props.description }}
       </p>
       <div class="flex gap-2 flex-wrap">
@@ -106,3 +106,19 @@ const karmaClasses = computed(() => {
     </div>
   </router-link>
 </template>
+<style scoped>
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description {
+  max-height: 6rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+</style>

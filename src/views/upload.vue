@@ -109,7 +109,7 @@ const uploadConfig = async () => {
         <textarea
           v-model="form.description"
           class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded"
-          maxlength="100"
+          maxlength="300"
           data-testid="textarea-description"
           required
         />
