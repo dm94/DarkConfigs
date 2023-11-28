@@ -14,8 +14,7 @@ const searchValue = ref("");
 const page = ref<number>(1);
 const hasMoreConfigs = ref<boolean>(false);
 const CONFIGS_PER_PAGE = 12;
-const orderByValue = ref(OrderByRequest.KARMA);
-
+const orderByValue = ref(OrderByRequest.NEWEST);
 const configs = ref<ConfigInfo[]>([]);
 
 const loadConfigs = async (params?: getConfigParams) => {
