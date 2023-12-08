@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
-import router from "@/src/router";
+import router from "@/router";
 import { RouteName } from "@typec/routename";
 import { useI18n } from "vue-i18n";
 import { uploadConfigFile } from "@functions/connector";
