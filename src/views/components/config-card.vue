@@ -1,19 +1,15 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { RouteName } from "@typec/routename";
+import { ConfigInfo } from "@typec/configfile";
 
 const props = withDefaults(
-  defineProps<{
-    configId: string;
-    name: string;
-    description?: string;
-    downloads?: number;
-    karma?: number;
-  }>(),
+  defineProps<ConfigInfo>(),
   {
     description: "",
     downloads: 0,
     karma: 0,
+    features: () => [],
   },
 );
 
@@ -47,7 +43,7 @@ const karmaClasses = computed(() => {
     params: {
       id: props.configId,
     },
-  }">
+  }" :aria-label="props.name">
     <div data-testid="config-card"
       class="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-400 w-72 py-4 px-6 flex gap-4 flex-col">
       <div class="font-bold text-xl mb-2 title">{{ props.name }}</div>

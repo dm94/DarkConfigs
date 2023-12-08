@@ -11,9 +11,11 @@ import { getJsonFileName } from "@functions/general";
 import { UpdateKarmaType } from "@typec/requests";
 import { showError } from "@functions/error-management";
 import { gtag } from "@functions/ga";
+import { getPluginsFromFeatureList } from "@functions/get-modules";
 
 const config = ref<ConfigInfo>();
 const showVotePart = ref<boolean>(true);
+const requiredPlugins = ref<string[]>([]);
 
 const { t, locale } = useI18n();
 
@@ -42,6 +44,8 @@ onMounted(async () => {
   if (!config.value) {
     router.push({ name: RouteName.HOME });
   }
+
+  requiredPlugins.value = getPluginsFromFeatureList(config.value?.features);
 });
 
 const karmaClasses = computed(() => {
@@ -168,7 +172,7 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
     </button>
     <div class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700">
       <div class="flex">
-        <p class="text-xl">{{ t("configDetail.features") }}</p>
+        <p class="text-xl">{{ t("configDetail.requiredPlugins") }}</p>
         <div v-if="showVotePart" class="flex ml-auto p-2 gap-4 max-w-xl">
           <button class="flex gap-2 bg-green-600 rounded px-3 py-3 text-gray-700 items-center"
             @click="updateKarmaClick(UpdateKarmaType.LIKE)">
@@ -188,9 +192,20 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
           </button>
         </div>
       </div>
+      <div class="flex container mx-auto gap-2 flex-wrap">
+        <span v-for="(plugin, index) in requiredPlugins"
+          class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded truncate" :key="`plugin-${index}`">
+          {{ plugin }}
+        </span>
+      </div>
+    </div>
+    <div class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700">
+      <div class="flex">
+        <p class="text-xl">{{ t("configDetail.features") }}</p>
+      </div>
       <div class="flex container mx-auto gap-2 flex-col">
-        <p v-for="(feature, index) in config.features"
-          class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded" :key="`feature-${index}`">
+        <p v-for="(feature) in config.features"
+          class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded truncate" :key="feature">
           {{ feature }}
         </p>
       </div>
