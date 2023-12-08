@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { cleanConfig, getEnabledFeatures } from "@/functions/configcleaner";
+import { cleanConfig, getEnabledFeatures } from "@functions/configcleaner";
 
 import configTest from "../assets/config-test.json";
 

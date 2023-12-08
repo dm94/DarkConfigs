@@ -5,7 +5,7 @@ import { customRender } from "../custom-render";
 import { expect, vi } from "vitest";
 import configTest from "../assets/config-test.json";
 
-vi.mock("@/functions/connector", () => {
+vi.mock("@functions/connector", () => {
   return {
     uploadConfigFile: vi.fn(),
   };

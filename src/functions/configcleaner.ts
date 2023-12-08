@@ -1,4 +1,4 @@
-import { ConfigFile, PluginInfo } from "@/types/configfile";
+import { ConfigFile, PluginInfo } from "@typec/configfile";
 
 export const unnecesaryFeatureInfo = [
   "eu.darkbot.popcorn.def.UserAgentUpdater",

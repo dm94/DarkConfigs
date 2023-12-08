@@ -3,7 +3,9 @@
     class="flex container mx-auto p-4 gap-4 flex-col"
     data-testid="home-page"
   >
-    <h1 class="text-5xl font-bold mx-auto">Website Terms and conditions</h1>
+    <h1 class="text-5xl font-bold mx-auto">
+      Website Terms and conditions
+    </h1>
     <h1>Privacy Policy</h1>
     <p>Last updated: September 28, 2023</p>
     <p>
@@ -77,8 +79,7 @@
             href="https://darkconfigs.vercel.app"
             rel="external nofollow noopener"
             target="_blank"
-            >https://darkconfigs.vercel.app</a
-          >
+          >https://darkconfigs.vercel.app</a>
         </p>
       </li>
       <li>
@@ -146,8 +147,7 @@
         href="https://gdpr.eu/cookies/"
         rel="external nofollow noreferrer noopener"
         target="_blank"
-        >GDPR</a
-      >
+      >GDPR</a>
       article.
     </p>
     <p>
@@ -416,11 +416,12 @@
           href="https://discord.gg/FcecRtZ"
           rel="external nofollow noopener"
           target="_blank"
-          >https://discord.gg/FcecRtZ</a
-        >
+        >https://discord.gg/FcecRtZ</a>
       </li>
     </ul>
-    <h2 class="text-4xl font-bold mx-auto">Other - Terms and conditions</h2>
+    <h2 class="text-4xl font-bold mx-auto">
+      Other - Terms and conditions
+    </h2>
     <p>
       These terms and conditions ("Terms") govern the use of the website. By
       using this web, you agree to be bound by these Terms. If you do not agree

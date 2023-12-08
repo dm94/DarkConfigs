@@ -21,7 +21,7 @@ const baseConfig = {
 
 const NUMBER_OF_CONFIGS = 10;
 
-vi.mock("@/functions/connector", () => {
+vi.mock("@functions/connector", () => {
   return {
     getConfigs: vi.fn(() => Array(NUMBER_OF_CONFIGS).fill(baseConfig)),
   };

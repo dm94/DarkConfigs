@@ -1,5 +1,5 @@
-import { ConfigInfo, ConfigFile } from "@/types/configfile";
-import { UpdateKarmaType, getConfigParams } from "@/types/requests";
+import { ConfigInfo, ConfigFile } from "@typec/configfile";
+import { UpdateKarmaType, getConfigParams } from "@typec/requests";
 
 const baseUrl: string = import.meta.env.VITE_APP_API_URL as string;
 

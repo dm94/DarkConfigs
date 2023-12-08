@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouteName } from "@/types/routename";
+import { RouteName } from "@typec/routename";
 import { onBeforeMount, ref } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -22,13 +22,18 @@ const acceptCookies = () => {
     v-if="showAdvert"
     class="w-full flex justify-between p-3 bg-red-900 dark:bg-neutral-600 items-center fixed bottom-0"
   >
-    <i18n-t keypath="cookieAdvert.text" tag="p">
+    <i18n-t
+      keypath="cookieAdvert.text"
+      tag="p"
+    >
       <template #link>
         <router-link
           :to="{ name: RouteName.TERMS_AND_CONDITIONS }"
           class="text-blue-900 hover:text-blue-300 no-underline hover:underline"
-          >{{ t("header.termAndConditions") }}</router-link
         >
+          {{ t("header.termAndConditions")
+          }}
+        </router-link>
       </template>
     </i18n-t>
     <div class="flex gap-2">
@@ -38,9 +43,7 @@ const acceptCookies = () => {
       >
         {{ t("cookieAdvert.acceptButton") }}
       </button>
-      <button
-        class="flex gap-2 bg-red-900 rounded px-2 py-1 text-gray-200 items-center"
-      >
+      <button class="flex gap-2 bg-red-900 rounded px-2 py-1 text-gray-200 items-center">
         {{ t("cookieAdvert.rejectButton") }}
       </button>
     </div>

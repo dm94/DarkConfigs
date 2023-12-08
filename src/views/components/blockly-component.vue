@@ -24,9 +24,15 @@ onMounted(() => {
 
 <template>
   <div>
-    <div ref="blocklyDiv" class="blocklyDiv"></div>
-    <xml ref="blocklyToolbox" style="display: none">
-      <slot></slot>
+    <div
+      ref="blocklyDiv"
+      class="blocklyDiv"
+    />
+    <xml
+      ref="blocklyToolbox"
+      style="display: none"
+    >
+      <slot />
     </xml>
   </div>
 </template>

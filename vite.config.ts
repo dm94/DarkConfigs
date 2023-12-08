@@ -8,6 +8,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src/"),
+      "@public": path.resolve(__dirname, "./public"),
+      "@typec": path.resolve(__dirname, "./src/types/"),
+      "@functions": path.resolve(__dirname, "./src/functions/"),
       "@views": path.resolve(__dirname, "./src/views/"),
     },
   },
