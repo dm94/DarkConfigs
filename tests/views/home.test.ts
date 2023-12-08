@@ -1,6 +1,5 @@
 import { screen, waitFor, fireEvent } from "@testing-library/vue";
 import view from "../../src/views/home.vue";
-import { createRouter, createWebHistory } from "vue-router";
 import { customRender } from "../custom-render";
 import { expect, vi } from "vitest";
 
