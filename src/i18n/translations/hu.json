@@ -27,6 +27,7 @@
     "downloads": "Downloads",
     "karma": "Karma",
     "features": "Features",
+    "requiredPlugins": "Required Plugins",
     "downloadButton": "Download"
   },
   "uploadPage": {

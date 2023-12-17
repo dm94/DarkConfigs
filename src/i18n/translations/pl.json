@@ -3,7 +3,7 @@
     "home": "Strona główna",
     "uploadConfig": "Załaduj konfigurację",
     "configDetail": "Szczegóły konfiguracji",
-    "maker": "Condition Maker",
+    "maker": "Wytwórca warunków",
     "termAndConditions": "Zasady i warunki",
     "discord": "Discord",
     "tos": "Regulamin"
@@ -27,6 +27,7 @@
     "downloads": "Pobrane",
     "karma": "Karma",
     "features": "Funkcje",
+    "requiredPlugins": "Required Plugins",
     "downloadButton": "Pobierz"
   },
   "uploadPage": {
@@ -34,17 +35,17 @@
     "description": "Opis",
     "features": "Funkcje",
     "config": "Konfiguracja",
-    "configDescription": "Both when uploading and downloading the configuration, we remove any data that could be compromising.",
+    "configDescription": "Zarówno podczas wysyłania, jak i pobierania konfiguracji, usuwamy wszelkie dane, które mogą stanowić zagrożenie.",
     "hidden": "Ukryte",
-    "hiddenDescription": "When activated, it will not be shown in the public listing",
+    "hiddenDescription": "Po aktywacji, nie będzie wyświetlana na publicznej liście",
     "saveButton": "Zapisz"
   },
   "cookieAdvert": {
-    "text": "We use cookies to improve our website, you can check our policies here: {link}",
+    "text": "Korzystamy z plików cookies w celu poprawy naszej strony internetowej, możesz sprawdzić nasze zasady tutaj: {link}",
     "acceptButton": "Zaakceptuj",
     "rejectButton": "Odrzuć"
   },
   "maker": {
-    "generateButton": "Generate condition"
+    "generateButton": "Wygeneruj warunek"
   }
 }
