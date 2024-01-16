@@ -10,7 +10,6 @@ import { ConfigInfo } from "@typec/configfile";
 import { getJsonFileName } from "@functions/general";
 import { UpdateKarmaType } from "@typec/requests";
 import { showError } from "@functions/error-management";
-import { gtag } from "@functions/ga";
 import { getPluginsFromFeatureList } from "@functions/get-modules";
 
 const config = ref<ConfigInfo>();
@@ -107,7 +106,6 @@ const downloadConfig = async () => {
     console.error(error);
   }
 
-  gtag("event", "download", { config: config.value.configId });
 };
 
 const updateKarmaClick = async (type: UpdateKarmaType) => {

@@ -6,7 +6,6 @@ import { ConfigInfo } from "@typec/configfile";
 import { getConfigs } from "@functions/connector";
 import { getConfigParams, OrderByRequest } from "@typec/requests";
 import { showError } from "@functions/error-management";
-import { gtag } from "@functions/ga";
 
 const { t } = useI18n();
 
@@ -61,7 +60,6 @@ const loadMore = async () => {
 };
 
 const search = async () => {
-  gtag("event", "search", { term: searchValue.value });
   await loadConfigs({
     page: page.value,
     search: searchValue.value,
@@ -71,7 +69,6 @@ const search = async () => {
 };
 
 const updateOrderBy = async () => {
-  gtag("event", "orderby", { by: orderByValue.value });
   await loadConfigs({
     page: page.value,
     search: searchValue.value,
