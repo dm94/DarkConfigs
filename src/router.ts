@@ -1,4 +1,3 @@
-import { gtag } from "./functions/ga";
 import { RouteName } from "./types/routename";
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -34,7 +33,5 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
-
-router.afterEach(() => gtag());
 
 export default router;
