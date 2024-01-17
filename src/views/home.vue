@@ -6,6 +6,7 @@ import { ConfigInfo } from "@typec/configfile";
 import { getConfigs } from "@functions/connector";
 import { getConfigParams, OrderByRequest } from "@typec/requests";
 import { showError } from "@functions/error-management";
+import { plausible } from "@functions/plausible";
 
 const { t } = useI18n();
 
@@ -66,6 +67,8 @@ const search = async () => {
     size: CONFIGS_PER_PAGE,
     orderby: orderByValue.value,
   });
+
+  plausible("search", { props: { term: searchValue.value } });
 };
 
 const updateOrderBy = async () => {
@@ -75,6 +78,8 @@ const updateOrderBy = async () => {
     size: CONFIGS_PER_PAGE,
     orderby: orderByValue.value,
   });
+
+  plausible("orderby", { props: { by: orderByValue.value } });
 };
 </script>
 <template>

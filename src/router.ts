@@ -1,5 +1,6 @@
 import { RouteName } from "./types/routename";
 import { createRouter, createWebHistory } from "vue-router";
+import { initPlausible } from "./functions/plausible";
 
 const routes = [
   {
@@ -33,5 +34,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+router.afterEach(() => initPlausible());
 
 export default router;

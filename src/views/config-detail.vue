@@ -11,6 +11,7 @@ import { getJsonFileName } from "@functions/general";
 import { UpdateKarmaType } from "@typec/requests";
 import { showError } from "@functions/error-management";
 import { getPluginsFromFeatureList } from "@functions/get-modules";
+import { plausible } from "@functions/plausible";
 
 const config = ref<ConfigInfo>();
 const showVotePart = ref<boolean>(true);
@@ -105,7 +106,7 @@ const downloadConfig = async () => {
     showError(error as string);
     console.error(error);
   }
-
+  plausible("download", { props: { config: config.value.configId } });
 };
 
 const updateKarmaClick = async (type: UpdateKarmaType) => {
