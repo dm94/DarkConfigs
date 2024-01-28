@@ -12,6 +12,7 @@ import { UpdateKarmaType } from "@typec/requests";
 import { showError } from "@functions/error-management";
 import { getPluginsFromFeatureList } from "@functions/get-modules";
 import { plausible } from "@functions/plausible";
+import Giscus from "./components/giscus.vue";
 
 const config = ref<ConfigInfo>();
 const showVotePart = ref<boolean>(true);
@@ -209,5 +210,6 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
         </p>
       </div>
     </div>
+    <Giscus />
   </div>
 </template>
