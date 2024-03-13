@@ -134,13 +134,13 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
       <div class="flex container mx-auto gap-2 flex-col">
         <p class="text-xl">{{ t("configDetail.title") }}</p>
         <p class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded">
-          {{ config.name }}
+          {{ config.name.trim() }}
         </p>
       </div>
       <div class="flex container mx-auto gap-2 flex-col">
         <p class="text-xl">{{ t("configDetail.description") }}</p>
-        <p class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded">
-          {{ config.description }}
+        <p class="bg-neutral-700 border border-gray-900 text-gray-300 p-1 rounded w-full overflow-hidden whitespace-break-spaces">
+          {{ config.description.trim() }}
         </p>
       </div>
       <div class="flex container gap-4 justify-end">

@@ -65,8 +65,8 @@ const uploadConfig = async () => {
 
   try {
     const response = await uploadConfigFile(
-      form.name,
-      form.description,
+      form.name.trim(),
+      form.description.trim(),
       form.config,
       form.hidden,
     );
