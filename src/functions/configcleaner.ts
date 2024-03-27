@@ -12,6 +12,7 @@ export const oldFeatures = [
   "com.botorbit.darkplane.features.chaosalienmodule.ChaosAlienModule",
   "com.botorbit.darkplane.extrasplus.ExtrasPlus",
   "com.deeme.modules.AstralGate",
+  "com.pikapika.tasks.dispatch.Dispatch"
 ];
 
 export const oldModules = ["com.deemetool"];
