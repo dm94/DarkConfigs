@@ -6,6 +6,13 @@
     "browser": true,
     "es6": true
   },
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"],
+    "extraFileExtensions": [".vue"], 
+  },
   "ignorePatterns": [
     "tailwind.config.js",
     "postcss.config.js",
