@@ -38,14 +38,16 @@ const karmaClasses = computed(() => {
 });
 </script>
 <template>
-  <router-link :to="{
-    name: RouteName.CONFIG_DETAIL,
-    params: {
-      id: props.configId,
-    },
-  }" :aria-label="props.name">
-    <div data-testid="config-card"
-      class="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-400 w-72 py-4 px-6 flex gap-4 flex-col">
+  <router-link 
+    :to="{
+        name: RouteName.CONFIG_DETAIL,
+        params: {
+          id: props.configId,
+          },
+        }" 
+      :aria-label="props.name"
+      data-testid="config-card"
+      class="card max-w-sm rounded overflow-hidden shadow-lg bg-neutral-400 w-72 py-4 px-6 flex gap-4 flex-col">
       <div class="font-bold text-xl mb-2 title">{{ props.name }}</div>
       <p class="text-gray-700 text-base description">
         {{ props.description }}
@@ -71,10 +73,13 @@ const karmaClasses = computed(() => {
           <span>{{ downloads }}</span>
         </div>
       </div>
-    </div>
   </router-link>
 </template>
 <style scoped>
+.card {
+  flex-grow: 2;
+}
+
 .title {
   overflow: hidden;
   text-overflow: ellipsis;
