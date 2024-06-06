@@ -28,6 +28,11 @@ const routes = [
     name: RouteName.CONDITION_MAKER,
     component: () => import("@views/condition-maker.vue"),
   },
+  {
+    path: "/merger",
+    name: RouteName.CONFIG_MERGER,
+    component: () => import("@views/config-merger.vue"),
+  },
 ];
 
 const router = createRouter({
