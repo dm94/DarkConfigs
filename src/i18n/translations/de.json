@@ -1,10 +1,10 @@
 {
   "header": {
-    "home": "Home",
-    "uploadConfig": "Upload your config",
-    "configDetail": "Config Detail",
-    "maker": "Condition Maker",
-    "termAndConditions": "Terms and Conditions",
+    "home": "Start",
+    "uploadConfig": "Konfigurationsdatei hochladen",
+    "configDetail": "Konfigurationsdetails",
+    "maker": "Condition erstellen",
+    "termAndConditions": "Nutzungsbedingungen",
     "discord": "Discord",
     "tos": "TOS"
   },
