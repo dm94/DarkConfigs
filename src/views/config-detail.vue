@@ -6,7 +6,7 @@ import { RouteName } from "@typec/routename";
 import { useI18n } from "vue-i18n";
 import { getConfigFile, getConfig, updateKarma } from "@functions/connector";
 import { cleanConfig } from "@functions/configcleaner";
-import { ConfigInfo } from "@typec/configfile";
+import type { ConfigInfo } from "@typec/configfile";
 import { getJsonFileName } from "@functions/general";
 import { UpdateKarmaType } from "@typec/requests";
 import { showError } from "@functions/error-management";
@@ -19,6 +19,8 @@ const showVotePart = ref<boolean>(true);
 const requiredPlugins = ref<string[]>([]);
 
 const { t, locale } = useI18n();
+
+const INITIAL_KARMA_VALUE: number = 0;
 
 const loadConfigDetail = async (id: string) => {
   try {
@@ -67,11 +69,11 @@ const karmaClasses = computed(() => {
     return classes;
   }
 
-  if (config.value.karma == 0) {
+  if (config.value.karma == INITIAL_KARMA_VALUE) {
     classes.push("bg-gray-200");
-  } else if (config.value.karma > 0) {
+  } else if (config.value.karma > INITIAL_KARMA_VALUE) {
     classes.push("bg-green-200");
-  } else if (config.value.karma < 0) {
+  } else if (config.value.karma < INITIAL_KARMA_VALUE) {
     classes.push("bg-red-200");
   }
   return classes;
@@ -81,7 +83,7 @@ const download = (filename: string, text: string) => {
   const element = document.createElement("a");
   element.setAttribute(
     "href",
-    "data:text/plain;charset=utf-8," + encodeURIComponent(text),
+    `data:text/plain;charset=utf-8,${encodeURIComponent(text)}`,
   );
   element.setAttribute("download", filename);
 

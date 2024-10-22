@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { RouteName } from "@typec/routename";
-import { ConfigInfo } from "@typec/configfile";
+import type { ConfigInfo } from "@typec/configfile";
 
 const props = withDefaults(
   defineProps<ConfigInfo>(),
@@ -12,6 +12,8 @@ const props = withDefaults(
     features: () => [],
   },
 );
+
+const INITIAL_KARMA_VALUE: number = 0;
 
 const karmaClasses = computed(() => {
   const classes = [
@@ -27,11 +29,11 @@ const karmaClasses = computed(() => {
     "items-center",
   ];
 
-  if (props.karma == 0) {
+  if (props.karma == INITIAL_KARMA_VALUE) {
     classes.push("bg-gray-200");
-  } else if (props.karma > 0) {
+  } else if (props.karma > INITIAL_KARMA_VALUE) {
     classes.push("bg-green-200");
-  } else if (props.karma < 0) {
+  } else if (props.karma < INITIAL_KARMA_VALUE) {
     classes.push("bg-red-200");
   }
   return classes;
@@ -91,6 +93,7 @@ const karmaClasses = computed(() => {
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
