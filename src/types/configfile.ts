@@ -9,37 +9,38 @@ export interface BotGUI {
   SAVE_GUI_POS?: boolean;
   BUTTON_SIZE?: number;
   ALWAYS_ON_TOP?: boolean;
-  MAIN_GUI_WINDOW?: unknown;
-  CONFIG_GUI_WINDOW?: unknown;
+  MAIN_GUI_WINDOW?: any;
+  CONFIG_GUI_WINDOW?: any;
   CONFIG_LEVEL?: string;
 }
 
 export type BotSettings = {
   BOT_GUI?: BotGUI;
-  API_CONFIG?: unknown;
-  MAP_DISPLAY?: unknown;
-  CUSTOM_BACKGROUND?: unknown;
-  OTHER?: unknown;
+  API_CONFIG?: any;
+  MAP_DISPLAY?: any;
+  CUSTOM_BACKGROUND?: any;
+  OTHER?: any;
 }
 
 export type ConfigFile = {
-  AVOIDED?: unknown;
-  PREFERRED?: unknown;
-  SAFETY?: unknown;
-  PLAYER_INFOS?: unknown;
+  AVOIDED?: any;
+  PREFERRED?: any;
+  SAFETY?: any;
+  PLAYER_INFOS?: any;
   PLAYER_TAGS?: string[];
-  CUSTOM_CONFIGS?: unknown;
+  CUSTOM_CONFIGS?: any;
   PLUGIN_INFOS?: { 
     [key: string]: PluginInfo 
   };
-  GENERAL?: unknown;
-  COLLECT?: unknown;
-  LOOT?: unknown;
-  PET?: unknown;
-  GROUP?: unknown;
-  MISCELLANEOUS?: unknown;
+  GENERAL?: any;
+  COLLECT?: any;
+  LOOT?: any;
+  PET?: any;
+  GROUP?: any;
+  MISCELLANEOUS?: any;
   BOT_SETTINGS?: BotSettings;
-  EXTRA?: unknown;
+  EXTRA?: any;
+  UNRESOLVED?: any;
 }
 
 export type ConfigInfo = {

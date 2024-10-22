@@ -137,7 +137,7 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
 
   const pluginInfo = config.PLUGIN_INFOS;
   const pluginInfoCopy: {
-    [key: string]: unknown;
+    [key: string]: any;
   } = {};
 
   const keys = Object.keys(pluginInfo);
@@ -170,7 +170,7 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
   const customConfigsKeys = Object.keys(customConfigs);
 
   const customConfigsCleaned: {
-    [key: string]: unknown;
+    [key: string]: any;
   } = {};
 
   const filteredKeys = customConfigsKeys.filter((key) => enableFeatures.includes(key));
@@ -190,14 +190,14 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
 
 export const cleanLeakInfoFromFeatures = (
   featureKey: string,
-  feature: unknown
-): unknown => {
+  feature: any
+): any => {
   if (!featureKey || !feature || typeof feature !== "object") {
     return feature;
   }
 
   const featureCopy: {
-    [key: string]: unknown;
+    [key: string]: any;
   } = {};
 
   const keys = Object.keys(feature);
