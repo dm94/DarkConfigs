@@ -8,15 +8,14 @@ export const getPluginsFromFeatureList = (features: string[] = []): string[] => 
     }
 
     const plugins: string[] = [];
-    let pluginList: PluginItem[]  = json;
+    const pluginList: PluginItem[]  = json;
 
-
-    features.forEach(feature => {
+    for (const feature of features) {
         const plugin = pluginList.find((pl) => feature.includes(pl.id));
         if (plugin && !plugins.includes(plugin.plugin)) {
             plugins.push(plugin.plugin);
         }
-    });
+    }
 
     return plugins;
 }

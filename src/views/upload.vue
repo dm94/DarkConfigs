@@ -5,7 +5,7 @@ import { RouteName } from "@typec/routename";
 import { useI18n } from "vue-i18n";
 import { uploadConfigFile } from "@functions/connector";
 import { cleanConfig, getEnabledFeatures } from "@functions/configcleaner";
-import { ConfigFile } from "@typec/configfile";
+import type { ConfigFile } from "@typec/configfile";
 import { showError } from "@functions/error-management";
 
 const form = reactive<{
@@ -33,7 +33,7 @@ const readFile = (event: DragEvent | Event) => {
     return;
   }
 
-  let file = (<HTMLInputElement>event.target).files?.[0];
+  const file = (<HTMLInputElement>event.target).files?.[0];
 
   if (!file) {
     return;

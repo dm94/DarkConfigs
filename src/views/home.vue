@@ -2,9 +2,9 @@
 import { ref, onMounted } from "vue";
 import configCard from "./components/config-card.vue";
 import { useI18n } from "vue-i18n";
-import { ConfigInfo } from "@typec/configfile";
+import type { ConfigInfo } from "@typec/configfile";
 import { getConfigs } from "@functions/connector";
-import { getConfigParams, OrderByRequest } from "@typec/requests";
+import { type getConfigParams, OrderByRequest } from "@typec/requests";
 import { showError } from "@functions/error-management";
 import { plausible } from "@functions/plausible";
 

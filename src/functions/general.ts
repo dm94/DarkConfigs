@@ -1,6 +1,6 @@
 export const toCamelCase = (value: string): string => {
   return clearSymbols(
-    value.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+    value.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => {
       if (+match === 0) return "";
       return index === 0 ? match.toLowerCase() : match.toUpperCase();
     }),

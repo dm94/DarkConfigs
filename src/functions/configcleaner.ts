@@ -1,17 +1,20 @@
-import { ConfigFile, PluginInfo } from "@typec/configfile";
+import type { ConfigFile, PluginInfo } from "@/types/configfile";
 
 export const unnecesaryFeatureInfo = [
   "eu.darkbot.popcorn.def.UserAgentUpdater",
 ];
 export const oldFeatures = [
   "com.deeme.modules.PallladiumHangar",
-  "eu.darkbot.drmalito.minicore.MiniTrain",
   "com.deeme.modules.PaladiumModule",
-  "eu.darkbot.leanon00.Main.Features.GGSpinner",
   "com.deeme.tasks.Discord",
+  "com.deeme.tasks.Ifttt",
+  "com.deeme.tasks.Skylab",
+  "com.deeme.modules.UrgentDetectorDummy",
+  "com.deeme.modules.AstralGate",
+  "eu.darkbot.drmalito.minicore.MiniTrain",
+  "eu.darkbot.leanon00.Main.Features.GGSpinner",
   "com.botorbit.darkplane.features.chaosalienmodule.ChaosAlienModule",
   "com.botorbit.darkplane.extrasplus.ExtrasPlus",
-  "com.deeme.modules.AstralGate",
   "com.pikapika.tasks.dispatch.Dispatch"
 ];
 
@@ -42,7 +45,7 @@ export const leakInfoFromFeatues = [
   "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.GATE_HANGER",
   "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.SPIN_HANGER",
   "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.SPIN_PROFILE.HANGER",
-  "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.GATE_PROFILE.HANGER",
+  "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.GATE_PROFILE.HANGER"
 ];
 
 export const unnecesaryInfoFromFeatures = [
@@ -87,7 +90,7 @@ export const cleanConfig = (
   delete configCopy?.["BOT_SETTINGS"]?.["BOT_GUI"]?.["MAIN_GUI_WINDOW"];
   delete configCopy?.["BOT_SETTINGS"]?.["BOT_GUI"]?.["CONFIG_GUI_WINDOW"];
   delete configCopy?.["BOT_SETTINGS"]?.["CUSTOM_BACKGROUND"]?.["IMAGE"];
-
+  
   if (configCopy?.["BOT_SETTINGS"]?.["BOT_GUI"]?.["LOCALE"]) {
     configCopy["BOT_SETTINGS"]["BOT_GUI"]["LOCALE"] = language;
   }
@@ -105,9 +108,9 @@ export const getEnabledFeatures = (config: ConfigFile): string[] => {
   const keys = Object.keys(pluginInfo);
   let enableFeatures: string[] = [];
 
-  keys.forEach((key) => {
+  for (const key of keys) {
     if (oldPluginsByName.includes(key)) {
-      return;
+      continue;
     }
 
     const pluginInfoValue: PluginInfo = pluginInfo[key];
@@ -116,11 +119,11 @@ export const getEnabledFeatures = (config: ConfigFile): string[] => {
       pluginInfoValue.ENABLED_FEATURES.length > 0
     ) {
       const features = pluginInfoValue.ENABLED_FEATURES.filter((f) =>
-        permitFeature(f),
+        permitFeature(f)
       );
       enableFeatures = enableFeatures.concat(features);
     }
-  });
+  }
 
   return enableFeatures;
 };
@@ -140,14 +143,14 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
   const keys = Object.keys(pluginInfo);
   let enableFeatures: string[] = [];
 
-  keys.forEach((key) => {
+  for (const key of keys) {
     const pluginInfoValue: PluginInfo = pluginInfo[key];
     if (
       pluginInfoValue.ENABLED_FEATURES &&
       pluginInfoValue.ENABLED_FEATURES.length > 0
     ) {
       const features = pluginInfoValue.ENABLED_FEATURES.filter((f) =>
-        permitFeature(f),
+        permitFeature(f)
       );
       enableFeatures = enableFeatures.concat(features);
       pluginInfoCopy[key] = {
@@ -155,7 +158,7 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
         DISABLED_FEATURES: pluginInfoValue.DISABLED_FEATURES ?? [],
       };
     }
-  });
+  }
 
   configCopy["PLUGIN_INFOS"] = pluginInfoCopy;
 
@@ -170,14 +173,15 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
     [key: string]: any;
   } = {};
 
-  customConfigsKeys
-    .filter((key) => enableFeatures.includes(key))
-    .forEach((key) => {
-      customConfigsCleaned[key] = cleanLeakInfoFromFeatures(
-        key,
-        customConfigs[key],
-      );
-    });
+  const filteredKeys = customConfigsKeys.filter((key) => enableFeatures.includes(key));
+
+
+  for (const key of filteredKeys) {
+    customConfigsCleaned[key] = cleanLeakInfoFromFeatures(
+      key,
+      customConfigs[key]
+    );
+  }
 
   configCopy["CUSTOM_CONFIGS"] = customConfigsCleaned;
 
@@ -186,7 +190,7 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
 
 export const cleanLeakInfoFromFeatures = (
   featureKey: string,
-  feature: any,
+  feature: any
 ): any => {
   if (!featureKey || !feature || typeof feature !== "object") {
     return feature;
@@ -198,7 +202,7 @@ export const cleanLeakInfoFromFeatures = (
 
   const keys = Object.keys(feature);
 
-  keys.forEach((key) => {
+  for (const key of keys) {
     const fullKey = `${featureKey}.${key}`;
 
     if (
@@ -214,7 +218,7 @@ export const cleanLeakInfoFromFeatures = (
     }
 
     featureCopy[key] = feature[key];
-  });
+  }
 
   return featureCopy;
 };

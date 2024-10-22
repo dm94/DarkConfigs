@@ -1,5 +1,5 @@
-import { ConfigInfo, ConfigFile } from "@typec/configfile";
-import { UpdateKarmaType, getConfigParams } from "@typec/requests";
+import type { ConfigInfo, ConfigFile } from "@typec/configfile";
+import { UpdateKarmaType, type getConfigParams } from "@typec/requests";
 
 const baseUrl: string = import.meta.env.VITE_APP_API_URL as string;
 
@@ -50,14 +50,15 @@ export const getConfigs = async (
   const url = new URL(`${baseUrl}/configs`);
 
   if (params) {
-    Object.keys(params).forEach((key) => {
+    const keys = Object.keys(params);
+    for (const key of keys) {
       if (params[key as keyof typeof params]) {
         url.searchParams.append(
           key,
           params[key as keyof typeof params] as string,
         );
       }
-    });
+    }
   }
 
   const response = await fetch(url, {
@@ -117,11 +118,12 @@ export const updateKarma = async (
   id: string,
   type: UpdateKarmaType,
 ): Promise<Response> => {
+  const params = new URLSearchParams({
+    vote: type,
+  });
+
   const response = await fetch(
-    `${baseUrl}/configs/${id}/vote?` +
-      new URLSearchParams({
-        vote: type,
-      }),
+    `${baseUrl}/configs/${id}/vote?${params}` ,
     {
       method: "POST",
     },
