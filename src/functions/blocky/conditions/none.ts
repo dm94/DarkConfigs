@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
 
-Blockly.Blocks["noneCondition"] = {
+Blockly.Blocks.noneCondition = {
   init: function () {
     this.appendStatementInput("conditions")
       .setCheck("Boolean")
@@ -14,7 +14,7 @@ Blockly.Blocks["noneCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["noneCondition"] = (
+javascriptGenerator.forBlock.noneCondition = (
   block: any,
   generator: any,
 ) => {

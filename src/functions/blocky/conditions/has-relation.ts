@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
 
-Blockly.Blocks["hasRelationCondition"] = {
+Blockly.Blocks.hasRelationCondition = {
   init: function () {
     this.appendDummyInput()
       .appendField("If")
@@ -35,7 +35,7 @@ Blockly.Blocks["hasRelationCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["hasRelationCondition"] = (block: any) => {
+javascriptGenerator.forBlock.hasRelationCondition = (block: any) => {
   const relation = block.getFieldValue("relation");
   const ship = block.getFieldValue("ship");
 

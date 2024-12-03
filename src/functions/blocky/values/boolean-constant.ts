@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["booleanConstant"] = {
+Blockly.Blocks.booleanConstant = {
   init: function () {
     this.appendDummyInput()
       .appendField("Boolean:")
@@ -20,7 +20,7 @@ Blockly.Blocks["booleanConstant"] = {
   },
 };
 
-javascriptGenerator.forBlock["booleanConstant"] = (block: any) => {
+javascriptGenerator.forBlock.booleanConstant = (block: any) => {
   const type = block.getFieldValue("type");
   return [`boolean(${type})`, Order.ATOMIC];
 };

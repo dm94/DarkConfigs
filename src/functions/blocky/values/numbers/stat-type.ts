@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["statTypeValue"] = {
+Blockly.Blocks.statTypeValue = {
   init: function () {
     this.appendDummyInput()
       .appendField("Stat: ")
@@ -74,7 +74,7 @@ Blockly.Blocks["statTypeValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["statTypeValue"] = (block: any) => {
+javascriptGenerator.forBlock.statTypeValue = (block: any) => {
   const statType = block.getFieldValue("statType");
   const dataType = block.getFieldValue("dataType");
   return [`stat-type(${statType}, ${dataType})`, Order.ATOMIC];

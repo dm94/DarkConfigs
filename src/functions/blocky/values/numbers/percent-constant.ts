@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["percentConstant"] = {
+Blockly.Blocks.percentConstant = {
   init: function () {
     this.appendDummyInput()
       .appendField("Percent:")
@@ -15,7 +15,7 @@ Blockly.Blocks["percentConstant"] = {
   },
 };
 
-javascriptGenerator.forBlock["percentConstant"] = (block: any) => {
+javascriptGenerator.forBlock.percentConstant = (block: any) => {
   const first = block.getFieldValue("number") as number;
   return [`percent(${first})`, Order.ATOMIC];
 };

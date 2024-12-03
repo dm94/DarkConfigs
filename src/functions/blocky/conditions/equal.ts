@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["equalCondition"] = {
+Blockly.Blocks.equalCondition = {
   init: function () {
     this.appendValueInput("firstValue");
     this.appendValueInput("secondValue").appendField("equals");
@@ -14,7 +14,7 @@ Blockly.Blocks["equalCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["equalCondition"] = (
+javascriptGenerator.forBlock.equalCondition = (
   block: any,
   generator: any,
 ) => {

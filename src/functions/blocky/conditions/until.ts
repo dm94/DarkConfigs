@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
 
-Blockly.Blocks["untilCondition"] = {
+Blockly.Blocks.untilCondition = {
   init: function () {
     this.appendValueInput("firstValue").setCheck("Boolean");
     this.appendValueInput("secondValue")
@@ -18,7 +18,7 @@ Blockly.Blocks["untilCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["untilCondition"] = (
+javascriptGenerator.forBlock.untilCondition = (
   block: any,
   generator: any,
 ) => {

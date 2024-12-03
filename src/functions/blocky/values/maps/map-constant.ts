@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["mapConstant"] = {
+Blockly.Blocks.mapConstant = {
   init: function () {
     this.appendDummyInput()
       .appendField("Map Name:")
@@ -28,7 +28,7 @@ Blockly.Blocks["mapConstant"] = {
   },
 };
 
-javascriptGenerator.forBlock["mapConstant"] = (block: any) => {
+javascriptGenerator.forBlock.mapConstant = (block: any) => {
   const type = block.getFieldValue("map");
   return [`map("${type}")`, Order.ATOMIC];
 };

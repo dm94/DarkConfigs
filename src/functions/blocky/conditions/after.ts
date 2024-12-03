@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["afterCondition"] = {
+Blockly.Blocks.afterCondition = {
   init: function () {
     this.appendValueInput("seconds")
       .setCheck("Number")
@@ -19,7 +19,7 @@ Blockly.Blocks["afterCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["afterCondition"] = (
+javascriptGenerator.forBlock.afterCondition = (
   block: any,
   generator: any,
 ) => {

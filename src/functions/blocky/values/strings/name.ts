@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["nameValue"] = {
+Blockly.Blocks.nameValue = {
   init: function () {
     this.appendDummyInput()
       .appendField("Name of")
@@ -21,7 +21,7 @@ Blockly.Blocks["nameValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["nameValue"] = (block: any) => {
+javascriptGenerator.forBlock.nameValue = (block: any) => {
   const shipType = block.getFieldValue("shipType");
   return [`name("${shipType}")`, Order.ATOMIC];
 };

@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
 
-Blockly.Blocks["hasEffectCondition"] = {
+Blockly.Blocks.hasEffectCondition = {
   init: function () {
     this.appendDummyInput()
       .appendField("Has effect")
@@ -64,7 +64,7 @@ Blockly.Blocks["hasEffectCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["hasEffectCondition"] = (block: any) => {
+javascriptGenerator.forBlock.hasEffectCondition = (block: any) => {
   const effect = block.getFieldValue("effect");
   const ship = block.getFieldValue("ship");
 

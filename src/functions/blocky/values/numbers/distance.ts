@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["distanceValue"] = {
+Blockly.Blocks.distanceValue = {
   init: function () {
     this.appendValueInput("firstValue")
       .setCheck("Location")
@@ -16,7 +16,7 @@ Blockly.Blocks["distanceValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["distanceValue"] = (
+javascriptGenerator.forBlock.distanceValue = (
   block: any,
   generator: any,
 ) => {

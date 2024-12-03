@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["hpTypeValue"] = {
+Blockly.Blocks.hpTypeValue = {
   init: function () {
     this.appendDummyInput()
       .appendField("HP Type")
@@ -27,7 +27,7 @@ Blockly.Blocks["hpTypeValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["hpTypeValue"] = (block: any, generator: any) => {
+javascriptGenerator.forBlock.hpTypeValue = (block: any, generator: any) => {
   const hpType = block.getFieldValue("hpType");
   const second = generator.valueToCode(block, "from", Order.ATOMIC);
   return [`hp-type(${hpType}, ${second})`, Order.ATOMIC];

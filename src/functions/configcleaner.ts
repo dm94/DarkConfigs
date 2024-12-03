@@ -85,14 +85,14 @@ export const cleanConfig = (
 ): ConfigFile => {
   const configCopy = { ...config };
 
-  delete configCopy?.["PLAYER_INFOS"];
-  delete configCopy?.["UNRESOLVED"];
-  delete configCopy?.["BOT_SETTINGS"]?.["BOT_GUI"]?.["MAIN_GUI_WINDOW"];
-  delete configCopy?.["BOT_SETTINGS"]?.["BOT_GUI"]?.["CONFIG_GUI_WINDOW"];
-  delete configCopy?.["BOT_SETTINGS"]?.["CUSTOM_BACKGROUND"]?.["IMAGE"];
+  delete configCopy?.PLAYER_INFOS;
+  delete configCopy?.UNRESOLVED;
+  delete configCopy?.BOT_SETTINGS?.BOT_GUI?.MAIN_GUI_WINDOW;
+  delete configCopy?.BOT_SETTINGS?.BOT_GUI?.CONFIG_GUI_WINDOW;
+  delete configCopy?.BOT_SETTINGS?.CUSTOM_BACKGROUND?.IMAGE;
 
-  if (configCopy?.["BOT_SETTINGS"]?.["BOT_GUI"]?.["LOCALE"]) {
-    configCopy["BOT_SETTINGS"]["BOT_GUI"]["LOCALE"] = language;
+  if (configCopy?.BOT_SETTINGS?.BOT_GUI?.LOCALE) {
+    configCopy.BOT_SETTINGS.BOT_GUI.LOCALE = language;
   }
 
   return cleanDisabledFeatures(configCopy);
@@ -160,7 +160,7 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
     }
   }
 
-  configCopy["PLUGIN_INFOS"] = pluginInfoCopy;
+  configCopy.PLUGIN_INFOS = pluginInfoCopy;
 
   if (!config?.CUSTOM_CONFIGS) {
     return configCopy;
@@ -184,7 +184,7 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
     );
   }
 
-  configCopy["CUSTOM_CONFIGS"] = customConfigsCleaned;
+  configCopy.CUSTOM_CONFIGS = customConfigsCleaned;
 
   return configCopy;
 };
