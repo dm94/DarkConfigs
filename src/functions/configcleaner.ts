@@ -15,7 +15,7 @@ export const oldFeatures = [
   "eu.darkbot.leanon00.Main.Features.GGSpinner",
   "com.botorbit.darkplane.features.chaosalienmodule.ChaosAlienModule",
   "com.botorbit.darkplane.extrasplus.ExtrasPlus",
-  "com.pikapika.tasks.dispatch.Dispatch"
+  "com.pikapika.tasks.dispatch.Dispatch",
 ];
 
 export const oldModules = ["com.deemetool"];
@@ -45,7 +45,7 @@ export const leakInfoFromFeatues = [
   "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.GATE_HANGER",
   "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.SPIN_HANGER",
   "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.SPIN_PROFILE.HANGER",
-  "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.GATE_PROFILE.HANGER"
+  "com.pikapika.behaviour.gateSpinShipChanger.GateSpinShipChanger.GATE_PROFILE.HANGER",
 ];
 
 export const unnecesaryInfoFromFeatures = [
@@ -85,14 +85,14 @@ export const cleanConfig = (
 ): ConfigFile => {
   const configCopy = { ...config };
 
-  delete configCopy?.["PLAYER_INFOS"];
-  delete configCopy?.["UNRESOLVED"];
-  delete configCopy?.["BOT_SETTINGS"]?.["BOT_GUI"]?.["MAIN_GUI_WINDOW"];
-  delete configCopy?.["BOT_SETTINGS"]?.["BOT_GUI"]?.["CONFIG_GUI_WINDOW"];
-  delete configCopy?.["BOT_SETTINGS"]?.["CUSTOM_BACKGROUND"]?.["IMAGE"];
-  
-  if (configCopy?.["BOT_SETTINGS"]?.["BOT_GUI"]?.["LOCALE"]) {
-    configCopy["BOT_SETTINGS"]["BOT_GUI"]["LOCALE"] = language;
+  delete configCopy?.PLAYER_INFOS;
+  delete configCopy?.UNRESOLVED;
+  delete configCopy?.BOT_SETTINGS?.BOT_GUI?.MAIN_GUI_WINDOW;
+  delete configCopy?.BOT_SETTINGS?.BOT_GUI?.CONFIG_GUI_WINDOW;
+  delete configCopy?.BOT_SETTINGS?.CUSTOM_BACKGROUND?.IMAGE;
+
+  if (configCopy?.BOT_SETTINGS?.BOT_GUI?.LOCALE) {
+    configCopy.BOT_SETTINGS.BOT_GUI.LOCALE = language;
   }
 
   return cleanDisabledFeatures(configCopy);
@@ -119,7 +119,7 @@ export const getEnabledFeatures = (config: ConfigFile): string[] => {
       pluginInfoValue.ENABLED_FEATURES.length > 0
     ) {
       const features = pluginInfoValue.ENABLED_FEATURES.filter((f) =>
-        permitFeature(f)
+        permitFeature(f),
       );
       enableFeatures = enableFeatures.concat(features);
     }
@@ -150,7 +150,7 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
       pluginInfoValue.ENABLED_FEATURES.length > 0
     ) {
       const features = pluginInfoValue.ENABLED_FEATURES.filter((f) =>
-        permitFeature(f)
+        permitFeature(f),
       );
       enableFeatures = enableFeatures.concat(features);
       pluginInfoCopy[key] = {
@@ -160,7 +160,7 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
     }
   }
 
-  configCopy["PLUGIN_INFOS"] = pluginInfoCopy;
+  configCopy.PLUGIN_INFOS = pluginInfoCopy;
 
   if (!config?.CUSTOM_CONFIGS) {
     return configCopy;
@@ -173,24 +173,25 @@ export const cleanDisabledFeatures = (config: ConfigFile): ConfigFile => {
     [key: string]: any;
   } = {};
 
-  const filteredKeys = customConfigsKeys.filter((key) => enableFeatures.includes(key));
-
+  const filteredKeys = customConfigsKeys.filter((key) =>
+    enableFeatures.includes(key),
+  );
 
   for (const key of filteredKeys) {
     customConfigsCleaned[key] = cleanLeakInfoFromFeatures(
       key,
-      customConfigs[key]
+      customConfigs[key],
     );
   }
 
-  configCopy["CUSTOM_CONFIGS"] = customConfigsCleaned;
+  configCopy.CUSTOM_CONFIGS = customConfigsCleaned;
 
   return configCopy;
 };
 
 export const cleanLeakInfoFromFeatures = (
   featureKey: string,
-  feature: any
+  feature: any,
 ): any => {
   if (!featureKey || !feature || typeof feature !== "object") {
     return feature;

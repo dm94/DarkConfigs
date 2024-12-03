@@ -1,7 +1,7 @@
 {
   "name": "darkconfigs",
   "private": true,
-  "version": "0.2.5",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "lint": "eslint --ext src/**/*.{js,vue} --ignore-path .gitignore --fix"
+    "lint": "biome lint --write ./src",
+    "format": "biome format --write ./src"
   },
   "dependencies": {
     "@giscus/vue": "^2.4.0",
@@ -19,7 +20,7 @@
     "vue-router": "4"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.22.15",
+    "@biomejs/biome": "1.9.4",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/user-event": "^14.5.1",
     "@testing-library/vue": "^7.0.0",
@@ -28,12 +29,8 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitest/coverage-v8": "^0.34.5",
     "autoprefixer": "^10.4.15",
-    "eslint": "^8.55.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-vue": "^9.32.0",
     "jsdom": "^22.1.0",
     "postcss": "^8.4.49",
-    "prettier": "^3.0.3",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.5.5",

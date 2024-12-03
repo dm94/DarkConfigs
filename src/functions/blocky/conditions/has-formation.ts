@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
 
-Blockly.Blocks["hasFormationCondition"] = {
+Blockly.Blocks.hasFormationCondition = {
   init: function () {
     this.appendDummyInput()
       .appendField("Has formation")
@@ -23,9 +23,9 @@ Blockly.Blocks["hasFormationCondition"] = {
     this.setColour(200);
     this.setTooltip("Checks if a ship has a formation");
   },
-  generateFormations: function () {
-    let options: string[][] = [];
-    let allFormations = [
+  generateFormations: () => {
+    const options: string[][] = [];
+    const allFormations = [
       "STANDARD",
       "TURTLE",
       "ARROW",
@@ -59,7 +59,7 @@ Blockly.Blocks["hasFormationCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["hasFormationCondition"] = function (block: any) {
+javascriptGenerator.forBlock.hasFormationCondition = (block: any) => {
   const formation = block.getFieldValue("formation");
   const ship = block.getFieldValue("ship");
 

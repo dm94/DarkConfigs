@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["afterCondition"] = {
+Blockly.Blocks.afterCondition = {
   init: function () {
     this.appendValueInput("seconds")
       .setCheck("Number")
@@ -19,10 +19,10 @@ Blockly.Blocks["afterCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["afterCondition"] = function (
+javascriptGenerator.forBlock.afterCondition = (
   block: any,
   generator: any,
-) {
+) => {
   const seconds = generator.valueToCode(block, "seconds", Order.ATOMIC);
 
   const conditions = generator.statementToCode(block, "condition").trim();

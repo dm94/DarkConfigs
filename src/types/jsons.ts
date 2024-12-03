@@ -1,4 +1,4 @@
 export type PluginItem = {
-    id: string;
-    plugin: string;
+  id: string;
+  plugin: string;
 };

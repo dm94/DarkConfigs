@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["shipLocationValue"] = {
+Blockly.Blocks.shipLocationValue = {
   init: function () {
     this.appendDummyInput()
       .appendField("Location from")
@@ -21,7 +21,7 @@ Blockly.Blocks["shipLocationValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["shipLocationValue"] = function (block: any) {
+javascriptGenerator.forBlock.shipLocationValue = (block: any) => {
   const shipType = block.getFieldValue("shipType");
   return [`ship-loc(${shipType})`, Order.ATOMIC];
 };

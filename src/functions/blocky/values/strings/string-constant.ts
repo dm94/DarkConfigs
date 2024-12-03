@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["stringConstant"] = {
+Blockly.Blocks.stringConstant = {
   init: function () {
     this.appendDummyInput()
       .appendField("Text:")
@@ -15,7 +15,7 @@ Blockly.Blocks["stringConstant"] = {
   },
 };
 
-javascriptGenerator.forBlock["stringConstant"] = function (block: any) {
+javascriptGenerator.forBlock.stringConstant = (block: any) => {
   const first = block.getFieldValue("firstValue");
   return [`string("${first}")`, Order.ATOMIC];
 };

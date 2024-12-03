@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["numericalCondition"] = {
+Blockly.Blocks.numericalCondition = {
   init: function () {
     this.appendValueInput("firstNumber").setCheck("Number").appendField("if");
     this.appendDummyInput().appendField(
@@ -24,10 +24,10 @@ Blockly.Blocks["numericalCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["numericalCondition"] = function (
+javascriptGenerator.forBlock.numericalCondition = (
   block: any,
   generator: any,
-) {
+) => {
   const firstNumber = generator.valueToCode(block, "firstNumber", Order.ATOMIC);
   const operator = block.getFieldValue("operator");
   const secondNumber = generator.valueToCode(

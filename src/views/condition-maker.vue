@@ -13,147 +13,147 @@ const code = ref();
 const { t } = useI18n();
 
 const toolbox = {
-  "kind": "categoryToolbox",
-  "contents": [
+  kind: "categoryToolbox",
+  contents: [
     {
-      "kind": "category",
-      "name": "Conditions",
-      "colour": "200",
-      "contents": [
+      kind: "category",
+      name: "Conditions",
+      colour: "200",
+      contents: [
         {
-          "kind": "block",
-          "type": "afterCondition",
+          kind: "block",
+          type: "afterCondition",
         },
         {
-          "kind": "block",
-          "type": "allCondition",
+          kind: "block",
+          type: "allCondition",
         },
         {
-          "kind": "block",
-          "type": "anyCondition",
+          kind: "block",
+          type: "anyCondition",
         },
         {
-          "kind": "block",
-          "type": "equalCondition",
+          kind: "block",
+          type: "equalCondition",
         },
         {
-          "kind": "block",
-          "type": "hasEffectCondition",
+          kind: "block",
+          type: "hasEffectCondition",
         },
         {
-          "kind": "block",
-          "type": "hasFormationCondition",
+          kind: "block",
+          type: "hasFormationCondition",
         },
         {
-          "kind": "block",
-          "type": "noneCondition",
+          kind: "block",
+          type: "noneCondition",
         },
         {
-          "kind": "block",
-          "type": "numericalCondition",
+          kind: "block",
+          type: "numericalCondition",
         },
         {
-          "kind": "block",
-          "type": "oneCondition",
+          kind: "block",
+          type: "oneCondition",
         },
         {
-          "kind": "block",
-          "type": "hasRelationCondition",
+          kind: "block",
+          type: "hasRelationCondition",
         },
         {
-          "kind": "block",
-          "type": "untilCondition",
+          kind: "block",
+          type: "untilCondition",
         },
       ],
     },
     {
-      "kind": "category",
-      "name": "Number values",
-      "colour": "40",
-      "contents": [
+      kind: "category",
+      name: "Number values",
+      colour: "40",
+      contents: [
         {
-          "kind": "block",
-          "type": "distanceValue",
+          kind: "block",
+          type: "distanceValue",
         },
         {
-          "kind": "block",
-          "type": "hpTypeValue",
+          kind: "block",
+          type: "hpTypeValue",
         },
         {
-          "kind": "block",
-          "type": "numberConstant",
+          kind: "block",
+          type: "numberConstant",
         },
         {
-          "kind": "block",
-          "type": "percentConstant",
+          kind: "block",
+          type: "percentConstant",
         },
         {
-          "kind": "block",
-          "type": "statTypeValue",
-        },
-      ],
-    },
-    {
-      "kind": "category",
-      "name": "Location values",
-      "colour": "60",
-      "contents": [
-        {
-          "kind": "block",
-          "type": "locationConstant",
-        },
-        {
-          "kind": "block",
-          "type": "shipLocationValue",
+          kind: "block",
+          type: "statTypeValue",
         },
       ],
     },
     {
-      "kind": "category",
-      "name": "Map values",
-      "colour": "80",
-      "contents": [
+      kind: "category",
+      name: "Location values",
+      colour: "60",
+      contents: [
         {
-          "kind": "block",
-          "type": "heroMapValue",
+          kind: "block",
+          type: "locationConstant",
         },
         {
-          "kind": "block",
-          "type": "mapConstant",
-        },
-        {
-          "kind": "block",
-          "type": "mapConstantString",
+          kind: "block",
+          type: "shipLocationValue",
         },
       ],
     },
     {
-      "kind": "category",
-      "name": "String values",
-      "colour": "100",
-      "contents": [
+      kind: "category",
+      name: "Map values",
+      colour: "80",
+      contents: [
         {
-          "kind": "block",
-          "type": "nameValue",
+          kind: "block",
+          type: "heroMapValue",
         },
         {
-          "kind": "block",
-          "type": "stringConstant",
+          kind: "block",
+          type: "mapConstant",
+        },
+        {
+          kind: "block",
+          type: "mapConstantString",
         },
       ],
     },
     {
-      "kind": "category",
-      "name": "Other values",
-      "colour": "120",
-      "contents": [
+      kind: "category",
+      name: "String values",
+      colour: "100",
+      contents: [
         {
-          "kind": "block",
-          "type": "booleanConstant",
+          kind: "block",
+          type: "nameValue",
         },
         {
-          "kind": "block",
-          "type": "healthValue",
+          kind: "block",
+          type: "stringConstant",
+        },
+      ],
+    },
+    {
+      kind: "category",
+      name: "Other values",
+      colour: "120",
+      contents: [
+        {
+          kind: "block",
+          type: "booleanConstant",
+        },
+        {
+          kind: "block",
+          type: "healthValue",
         },
       ],
     },
@@ -173,13 +173,14 @@ const options = {
 
 const generateCode = () => {
   try {
-    code.value = javascriptGenerator.workspaceToCode(blocky.value.workspace).replaceAll(";", "");
+    code.value = javascriptGenerator
+      .workspaceToCode(blocky.value.workspace)
+      .replaceAll(";", "");
   } catch (error) {
     showError(String(error).toString());
     console.error(error);
   }
 };
-
 </script>
 <template>
   <div

@@ -1,82 +1,82 @@
 [
-    {
-        "id": "eu.darkbot.popcorn.disc",
-        "plugin": "Discord presence"
-    },
-    {
-        "id": "eu.darkbot.popcorn.don",
-        "plugin": "Donor plugin"
-    },
-    {
-        "id": "eu.darkbot.popcorn.def",
-        "plugin": "Default Plugin"
-    },
-    {
-        "id": "com.deeme",
-        "plugin": "DmPlugin"
-    },
-    {
-        "id": "com.botorbit.darkplane",
-        "plugin": "DarkPlane"
-    },
-    {
-        "id": "eu.darkbot.ter.dks",
-        "plugin": "DksPlugin"
-    },
-    {
-        "id": "com.punikekk",
-        "plugin": "Kekka Reloaded"
-    },
-    {
-        "id": "eu.darkbot.kekawce",
-        "plugin": "KEKW"
-    },
-    {
-        "id": "eu.darkbot.kaiserdj.lac",
-        "plugin": "Launch"
-    },
-    {
-        "id": "eu.darkbot.leanon00",
-        "plugin": "LeanPlugin"
-    },
-    {
-        "id": "eu.darkbot.drmalito.minicore",
-        "plugin": "MiniCore"
-    },
-    {
-        "id": "eu.darkbot.devskoo",
-        "plugin": "Optimal"
-    },
-    {
-        "id": "com.hii666",
-        "plugin": "Osiris"
-    },
-    {
-        "id": "eu.darkbot.marek",
-        "plugin": "Penguin Plugin"
-    },
-    {
-        "id": "eu.darkbot.fabio",
-        "plugin": "Penguin Plugin"
-    },
-    {
-        "id": "com.pikapika",
-        "plugin": "Pika Plugin"
-    },
-    {
-        "id": "eu.darkbot.asurax",
-        "plugin": "REEE"
-    },
-    {
-        "id": "eu.darkbot.teyrox",
-        "plugin": "TYX Plugin"
-    },
-    {
-        "id": "com.maol",
-        "plugin": "Maol-Plugin"
-    },
-    {
-        "id": "eu.darkbot.ruski",
-        "plugin": "Ruski plugin"
-    }
+  {
+    "id": "eu.darkbot.popcorn.disc",
+    "plugin": "Discord presence"
+  },
+  {
+    "id": "eu.darkbot.popcorn.don",
+    "plugin": "Donor plugin"
+  },
+  {
+    "id": "eu.darkbot.popcorn.def",
+    "plugin": "Default Plugin"
+  },
+  {
+    "id": "com.deeme",
+    "plugin": "DmPlugin"
+  },
+  {
+    "id": "com.botorbit.darkplane",
+    "plugin": "DarkPlane"
+  },
+  {
+    "id": "eu.darkbot.ter.dks",
+    "plugin": "DksPlugin"
+  },
+  {
+    "id": "com.punikekk",
+    "plugin": "Kekka Reloaded"
+  },
+  {
+    "id": "eu.darkbot.kekawce",
+    "plugin": "KEKW"
+  },
+  {
+    "id": "eu.darkbot.kaiserdj.lac",
+    "plugin": "Launch"
+  },
+  {
+    "id": "eu.darkbot.leanon00",
+    "plugin": "LeanPlugin"
+  },
+  {
+    "id": "eu.darkbot.drmalito.minicore",
+    "plugin": "MiniCore"
+  },
+  {
+    "id": "eu.darkbot.devskoo",
+    "plugin": "Optimal"
+  },
+  {
+    "id": "com.hii666",
+    "plugin": "Osiris"
+  },
+  {
+    "id": "eu.darkbot.marek",
+    "plugin": "Penguin Plugin"
+  },
+  {
+    "id": "eu.darkbot.fabio",
+    "plugin": "Penguin Plugin"
+  },
+  {
+    "id": "com.pikapika",
+    "plugin": "Pika Plugin"
+  },
+  {
+    "id": "eu.darkbot.asurax",
+    "plugin": "REEE"
+  },
+  {
+    "id": "eu.darkbot.teyrox",
+    "plugin": "TYX Plugin"
+  },
+  {
+    "id": "com.maol",
+    "plugin": "Maol-Plugin"
+  },
+  {
+    "id": "eu.darkbot.ruski",
+    "plugin": "Ruski plugin"
+  }
 ]

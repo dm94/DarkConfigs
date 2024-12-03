@@ -3,7 +3,11 @@
 export const plausible = (...data: unknown): void => {
   initPlausible();
 
-  window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+  window.plausible =
+    window.plausible ||
+    (() => {
+      (window.plausible.q = window.plausible.q || []).push(arguments);
+    });
 
   window.plausible(...data);
 };
@@ -11,13 +15,14 @@ export const plausible = (...data: unknown): void => {
 export const initPlausible = (): void => {
   const script = document.querySelector('script[src*="analytics"]');
   if (script) {
-      return;
+    return;
   }
 
-  const PLAUSIBLE_URL: string = import.meta.env.VITE_APP_PLAUSIBLE_URL as string;
+  const PLAUSIBLE_URL: string = import.meta.env
+    .VITE_APP_PLAUSIBLE_URL as string;
 
   if (!PLAUSIBLE_URL || PLAUSIBLE_URL.length <= 0) {
-      return;
+    return;
   }
 
   const element = document.createElement("script");

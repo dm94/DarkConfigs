@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
 
-Blockly.Blocks["hasRelationCondition"] = {
+Blockly.Blocks.hasRelationCondition = {
   init: function () {
     this.appendDummyInput()
       .appendField("If")
@@ -22,9 +22,9 @@ Blockly.Blocks["hasRelationCondition"] = {
     this.setColour(200);
     this.setTooltip("Checks the target type");
   },
-  generateOptions: function () {
-    let options: string[][] = [];
-    let all = ["NO_TARGET", "NPC", "ENEMY", "ALLIED", "NOT_ATTACK_PACT"];
+  generateOptions: () => {
+    const options: string[][] = [];
+    const all = ["NO_TARGET", "NPC", "ENEMY", "ALLIED", "NOT_ATTACK_PACT"];
 
     all.forEach((option) => {
       const custom = option.toLowerCase().replaceAll("_", "-");
@@ -35,7 +35,7 @@ Blockly.Blocks["hasRelationCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["hasRelationCondition"] = function (block: any) {
+javascriptGenerator.forBlock.hasRelationCondition = (block: any) => {
   const relation = block.getFieldValue("relation");
   const ship = block.getFieldValue("ship");
 

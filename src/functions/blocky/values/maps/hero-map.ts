@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["heroMapValue"] = {
+Blockly.Blocks.heroMapValue = {
   init: function () {
     this.appendDummyInput().appendField("hero-map()");
     this.setPreviousStatement(false);
@@ -13,6 +13,7 @@ Blockly.Blocks["heroMapValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["heroMapValue"] = function () {
-  return [`hero-map()`, Order.ATOMIC];
-};
+javascriptGenerator.forBlock.heroMapValue = () => [
+  "hero-map()",
+  Order.ATOMIC,
+];

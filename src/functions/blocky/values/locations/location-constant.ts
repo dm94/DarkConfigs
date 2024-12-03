@@ -1,7 +1,7 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator, Order } from "blockly/javascript";
 
-Blockly.Blocks["locationConstant"] = {
+Blockly.Blocks.locationConstant = {
   init: function () {
     this.appendValueInput("firstNumber").setCheck("Number").appendField("X");
     this.appendValueInput("secondNumber").setCheck("Number").appendField("Y");
@@ -12,10 +12,10 @@ Blockly.Blocks["locationConstant"] = {
   },
 };
 
-javascriptGenerator.forBlock["locationConstant"] = function (
+javascriptGenerator.forBlock.locationConstant = (
   block: any,
   generator: any,
-) {
+) => {
   const firstNumber = generator.valueToCode(block, "firstNumber", Order.ATOMIC);
   const secondNumber = generator.valueToCode(
     block,
