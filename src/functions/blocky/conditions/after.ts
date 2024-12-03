@@ -19,10 +19,7 @@ Blockly.Blocks.afterCondition = {
   },
 };
 
-javascriptGenerator.forBlock.afterCondition = (
-  block: any,
-  generator: any,
-) => {
+javascriptGenerator.forBlock.afterCondition = (block: any, generator: any) => {
   const seconds = generator.valueToCode(block, "seconds", Order.ATOMIC);
 
   const conditions = generator.statementToCode(block, "condition").trim();

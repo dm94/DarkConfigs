@@ -1,99 +1,99 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
-	"files": { "ignoreUnknown": false, "ignore": [] },
-	"formatter": {
-		"enabled": true,
-		"useEditorconfig": true,
-		"formatWithErrors": false,
-		"indentStyle": "space",
-		"indentWidth": 2,
-		"attributePosition": "auto",
-		"bracketSpacing": true
-	},
-	"organizeImports": { "enabled": true },
-	
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"complexity": {
-				"noExtraBooleanCast": "error",
-				"noMultipleSpacesInRegularExpressionLiterals": "error",
-				"noUselessCatch": "error",
-				"noWith": "error"
-			},
-			"correctness": {
-				"noConstAssign": "error",
-				"noConstantCondition": "error",
-				"noEmptyCharacterClassInRegex": "error",
-				"noEmptyPattern": "error",
-				"noGlobalObjectCalls": "error",
-				"noInnerDeclarations": "error",
-				"noInvalidConstructorSuper": "error",
-				"noNewSymbol": "error",
-				"noNonoctalDecimalEscape": "error",
-				"noPrecisionLoss": "error",
-				"noSelfAssign": "error",
-				"noSetterReturn": "error",
-				"noSwitchDeclarations": "error",
-				"noUndeclaredVariables": "error",
-				"noUnreachable": "error",
-				"noUnreachableSuper": "error",
-				"noUnsafeFinally": "error",
-				"noUnsafeOptionalChaining": "error",
-				"noUnusedLabels": "error",
-				"noUnusedVariables": "error",
-				"useIsNan": "error",
-				"useValidForDirection": "error",
-				"useYield": "error"
-			},
-			"style": {
-				"noVar": "error",
-				"noYodaExpression": "error",
-				"useBlockStatements": "error",
-				"useCollapsedElseIf": "error",
-				"useConst": "error"
-			},
-			"suspicious": {
-				"noAssignInExpressions": "error",
-				"noAsyncPromiseExecutor": "error",
-				"noCatchAssign": "error",
-				"noClassAssign": "error",
-				"noCompareNegZero": "error",
-				"noConsole": "off",
-				"noControlCharactersInRegex": "error",
-				"noDebugger": "error",
-				"noDuplicateCase": "error",
-				"noDuplicateClassMembers": "error",
-				"noDuplicateObjectKeys": "error",
-				"noDuplicateParameters": "error",
-				"noEmptyBlockStatements": "error",
-				"noFallthroughSwitchClause": "error",
-				"noFunctionAssign": "error",
-				"noGlobalAssign": "error",
-				"noImportAssign": "error",
-				"noMisleadingCharacterClass": "error",
-				"noPrototypeBuiltins": "error",
-				"noRedeclare": "error",
-				"noShadowRestrictedNames": "error",
-				"noSparseArray": "error",
-				"noUnsafeNegation": "error",
-				"useGetterReturn": "error",
-				"useValidTypeof": "error"
-			}
-		},
-		"ignore": [
-			"**/tailwind.config.js",
-			"**/postcss.config.js",
-			"**/setupTests.js"
-		]
-	},
-	"javascript": { "formatter": { "quoteStyle": "double" } },
-	"overrides": [
-		{
-			"include": ["*.svelte", "*.astro", "*.vue"],
-			"linter": {
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": { "ignoreUnknown": false, "ignore": ["./node_modules", "./dist"] },
+  "formatter": {
+    "enabled": true,
+    "useEditorconfig": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "attributePosition": "auto",
+    "bracketSpacing": true
+  },
+  "organizeImports": { "enabled": true },
+
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noExtraBooleanCast": "error",
+        "noMultipleSpacesInRegularExpressionLiterals": "error",
+        "noUselessCatch": "error",
+        "noWith": "error"
+      },
+      "correctness": {
+        "noConstAssign": "error",
+        "noConstantCondition": "error",
+        "noEmptyCharacterClassInRegex": "error",
+        "noEmptyPattern": "error",
+        "noGlobalObjectCalls": "error",
+        "noInnerDeclarations": "error",
+        "noInvalidConstructorSuper": "error",
+        "noNewSymbol": "error",
+        "noNonoctalDecimalEscape": "error",
+        "noPrecisionLoss": "error",
+        "noSelfAssign": "error",
+        "noSetterReturn": "error",
+        "noSwitchDeclarations": "error",
+        "noUndeclaredVariables": "error",
+        "noUnreachable": "error",
+        "noUnreachableSuper": "error",
+        "noUnsafeFinally": "error",
+        "noUnsafeOptionalChaining": "error",
+        "noUnusedLabels": "error",
+        "noUnusedVariables": "error",
+        "useIsNan": "error",
+        "useValidForDirection": "error",
+        "useYield": "error"
+      },
+      "style": {
+        "noVar": "error",
+        "noYodaExpression": "error",
+        "useBlockStatements": "error",
+        "useCollapsedElseIf": "error",
+        "useConst": "error"
+      },
+      "suspicious": {
+        "noAssignInExpressions": "error",
+        "noAsyncPromiseExecutor": "error",
+        "noCatchAssign": "error",
+        "noClassAssign": "error",
+        "noCompareNegZero": "error",
+        "noConsole": "off",
+        "noControlCharactersInRegex": "error",
+        "noDebugger": "error",
+        "noDuplicateCase": "error",
+        "noDuplicateClassMembers": "error",
+        "noDuplicateObjectKeys": "error",
+        "noDuplicateParameters": "error",
+        "noEmptyBlockStatements": "error",
+        "noFallthroughSwitchClause": "error",
+        "noFunctionAssign": "error",
+        "noGlobalAssign": "error",
+        "noImportAssign": "error",
+        "noMisleadingCharacterClass": "error",
+        "noPrototypeBuiltins": "error",
+        "noRedeclare": "error",
+        "noShadowRestrictedNames": "error",
+        "noSparseArray": "error",
+        "noUnsafeNegation": "error",
+        "useGetterReturn": "error",
+        "useValidTypeof": "error"
+      }
+    },
+    "ignore": [
+      "**/tailwind.config.js",
+      "**/postcss.config.js",
+      "**/setupTests.js"
+    ]
+  },
+  "javascript": { "formatter": { "quoteStyle": "double" } },
+  "overrides": [
+    {
+      "include": ["*.svelte", "*.astro", "*.vue"],
+      "linter": {
         "rules": {
           "style": {
             "useConst": "off",
@@ -103,7 +103,7 @@
             "noUnusedVariables": "off"
           }
         }
-			}
-		}
+      }
+    }
   ]
 }

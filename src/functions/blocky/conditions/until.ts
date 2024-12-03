@@ -18,10 +18,7 @@ Blockly.Blocks.untilCondition = {
   },
 };
 
-javascriptGenerator.forBlock.untilCondition = (
-  block: any,
-  generator: any,
-) => {
+javascriptGenerator.forBlock.untilCondition = (block: any, generator: any) => {
   const firstConditions = generator.statementToCode(block, "firstValue").trim();
   const second = generator.statementToCode(block, "secondValue").trim();
 
