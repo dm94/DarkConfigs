@@ -1,7 +1,7 @@
 export type PluginInfo = {
   DISABLED_FEATURES?: string[];
-  ENABLED_FEATURES?:  string[];
-}
+  ENABLED_FEATURES?: string[];
+};
 
 export interface BotGUI {
   LOCALE?: string;
@@ -20,7 +20,7 @@ export type BotSettings = {
   MAP_DISPLAY?: any;
   CUSTOM_BACKGROUND?: any;
   OTHER?: any;
-}
+};
 
 export type ConfigFile = {
   AVOIDED?: any;
@@ -29,8 +29,8 @@ export type ConfigFile = {
   PLAYER_INFOS?: any;
   PLAYER_TAGS?: string[];
   CUSTOM_CONFIGS?: any;
-  PLUGIN_INFOS?: { 
-    [key: string]: PluginInfo 
+  PLUGIN_INFOS?: {
+    [key: string]: PluginInfo;
   };
   GENERAL?: any;
   COLLECT?: any;
@@ -41,7 +41,7 @@ export type ConfigFile = {
   BOT_SETTINGS?: BotSettings;
   EXTRA?: any;
   UNRESOLVED?: any;
-}
+};
 
 export type ConfigInfo = {
   configId: string;

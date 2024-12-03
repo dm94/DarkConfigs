@@ -12,7 +12,7 @@ Blockly.Blocks["mapConstantString"] = {
   },
 };
 
-javascriptGenerator.forBlock["mapConstantString"] = function (block: any) {
+javascriptGenerator.forBlock["mapConstantString"] = (block: any) => {
   const type = block.getFieldValue("map");
   return [`map("${type}")`, Order.ATOMIC];
 };

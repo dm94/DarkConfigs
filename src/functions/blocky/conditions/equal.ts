@@ -14,10 +14,10 @@ Blockly.Blocks["equalCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["equalCondition"] = function (
+javascriptGenerator.forBlock["equalCondition"] = (
   block: any,
   generator: any,
-) {
+) => {
   const first = generator.valueToCode(block, "firstValue", Order.ATOMIC);
   const second = generator.valueToCode(block, "secondValue", Order.ATOMIC);
   return `equal(${first},${second});`;

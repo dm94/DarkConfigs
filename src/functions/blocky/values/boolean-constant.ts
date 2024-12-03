@@ -20,7 +20,7 @@ Blockly.Blocks["booleanConstant"] = {
   },
 };
 
-javascriptGenerator.forBlock["booleanConstant"] = function (block: any) {
+javascriptGenerator.forBlock["booleanConstant"] = (block: any) => {
   const type = block.getFieldValue("type");
   return [`boolean(${type})`, Order.ATOMIC];
 };

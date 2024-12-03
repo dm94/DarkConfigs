@@ -21,7 +21,7 @@ Blockly.Blocks["nameValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["nameValue"] = function (block: any) {
+javascriptGenerator.forBlock["nameValue"] = (block: any) => {
   const shipType = block.getFieldValue("shipType");
   return [`name("${shipType}")`, Order.ATOMIC];
 };

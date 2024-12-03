@@ -21,7 +21,7 @@ Blockly.Blocks["shipLocationValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["shipLocationValue"] = function (block: any) {
+javascriptGenerator.forBlock["shipLocationValue"] = (block: any) => {
   const shipType = block.getFieldValue("shipType");
   return [`ship-loc(${shipType})`, Order.ATOMIC];
 };

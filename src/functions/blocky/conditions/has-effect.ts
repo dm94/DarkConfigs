@@ -20,9 +20,9 @@ Blockly.Blocks["hasEffectCondition"] = {
     this.setColour(200);
     this.setTooltip("Checks if a ship has an effect");
   },
-  generateEffects: function () {
-    let options: string[][] = [];
-    let allEffects = [
+  generateEffects: () => {
+    const options: string[][] = [];
+    const allEffects = [
       "SOLACE_NANO_CLUSTER",
       "DIMINISHER_WEAKEN_SHIELDS",
       "SPECTRUM_PRISMATIC_SHIELD",
@@ -64,7 +64,7 @@ Blockly.Blocks["hasEffectCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["hasEffectCondition"] = function (block: any) {
+javascriptGenerator.forBlock["hasEffectCondition"] = (block: any) => {
   const effect = block.getFieldValue("effect");
   const ship = block.getFieldValue("ship");
 

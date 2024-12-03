@@ -13,6 +13,7 @@ Blockly.Blocks["heroMapValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["heroMapValue"] = function () {
-  return [`hero-map()`, Order.ATOMIC];
-};
+javascriptGenerator.forBlock["heroMapValue"] = () => [
+  `hero-map()`,
+  Order.ATOMIC,
+];

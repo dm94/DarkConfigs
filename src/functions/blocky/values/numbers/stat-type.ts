@@ -21,9 +21,9 @@ Blockly.Blocks["statTypeValue"] = {
     this.setColour(40);
     this.setTooltip("Gets a certain HP type from a health");
   },
-  generateTypeOptions: function () {
-    let options: string[][] = [];
-    let all = [
+  generateTypeOptions: () => {
+    const options: string[][] = [];
+    const all = [
       "CREDITS",
       "URIDIUM",
       "EXPERIENCE",
@@ -61,9 +61,9 @@ Blockly.Blocks["statTypeValue"] = {
 
     return options;
   },
-  generateDataOptions: function () {
-    let options: string[][] = [];
-    let all = ["INITIAL", "CURRENT", "EARNED", "SPENT", "DIFFERENCE"];
+  generateDataOptions: () => {
+    const options: string[][] = [];
+    const all = ["INITIAL", "CURRENT", "EARNED", "SPENT", "DIFFERENCE"];
 
     all.forEach((option) => {
       const custom = option.toLowerCase();
@@ -74,7 +74,7 @@ Blockly.Blocks["statTypeValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["statTypeValue"] = function (block: any) {
+javascriptGenerator.forBlock["statTypeValue"] = (block: any) => {
   const statType = block.getFieldValue("statType");
   const dataType = block.getFieldValue("dataType");
   return [`stat-type(${statType}, ${dataType})`, Order.ATOMIC];

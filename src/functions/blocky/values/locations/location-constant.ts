@@ -12,10 +12,10 @@ Blockly.Blocks["locationConstant"] = {
   },
 };
 
-javascriptGenerator.forBlock["locationConstant"] = function (
+javascriptGenerator.forBlock["locationConstant"] = (
   block: any,
   generator: any,
-) {
+) => {
   const firstNumber = generator.valueToCode(block, "firstNumber", Order.ATOMIC);
   const secondNumber = generator.valueToCode(
     block,

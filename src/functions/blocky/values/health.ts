@@ -21,7 +21,7 @@ Blockly.Blocks["healthValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["healthValue"] = function (block: any) {
+javascriptGenerator.forBlock["healthValue"] = (block: any) => {
   const shipType = block.getFieldValue("shipType");
   return [`health(${shipType})`, Order.ATOMIC];
 };

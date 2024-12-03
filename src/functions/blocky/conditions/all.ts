@@ -14,10 +14,7 @@ Blockly.Blocks["allCondition"] = {
   },
 };
 
-javascriptGenerator.forBlock["allCondition"] = function (
-  block: any,
-  generator: any,
-) {
+javascriptGenerator.forBlock["allCondition"] = (block: any, generator: any) => {
   const conditions = generator.statementToCode(block, "conditions").trim();
   const conditionList = conditions
     .split(";")

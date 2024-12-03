@@ -14,7 +14,6 @@ onBeforeMount(() => {
     showGitCus.value = true;
   }
 });
-
 </script>
 
 <template>

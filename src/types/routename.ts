@@ -4,4 +4,4 @@ export enum RouteName {
   UPLOAD = "Upload",
   TERMS_AND_CONDITIONS = "Terms and Conditions",
   CONDITION_MAKER = "Condition Maker",
-};
+}

@@ -16,10 +16,10 @@ Blockly.Blocks["distanceValue"] = {
   },
 };
 
-javascriptGenerator.forBlock["distanceValue"] = function (
+javascriptGenerator.forBlock["distanceValue"] = (
   block: any,
   generator: any,
-) {
+) => {
   const first = generator.valueToCode(block, "firstValue", Order.ATOMIC);
   const second = generator.valueToCode(block, "secondValue", Order.ATOMIC);
   return [`distance(${first}, ${second})`, Order.ATOMIC];

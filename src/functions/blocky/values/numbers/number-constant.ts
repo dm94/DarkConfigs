@@ -15,7 +15,7 @@ Blockly.Blocks["numberConstant"] = {
   },
 };
 
-javascriptGenerator.forBlock["numberConstant"] = function (block: any) {
+javascriptGenerator.forBlock["numberConstant"] = (block: any) => {
   const first = block.getFieldValue("number");
   return [`number(${first})`, Order.ATOMIC];
 };

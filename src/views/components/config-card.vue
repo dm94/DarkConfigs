@@ -3,15 +3,12 @@ import { computed } from "vue";
 import { RouteName } from "@typec/routename";
 import type { ConfigInfo } from "@typec/configfile";
 
-const props = withDefaults(
-  defineProps<ConfigInfo>(),
-  {
-    description: "",
-    downloads: 0,
-    karma: 0,
-    features: () => [],
-  },
-);
+const props = withDefaults(defineProps<ConfigInfo>(), {
+  description: "",
+  downloads: 0,
+  karma: 0,
+  features: () => [],
+});
 
 const INITIAL_KARMA_VALUE: number = 0;
 
