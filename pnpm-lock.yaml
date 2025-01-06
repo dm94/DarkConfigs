@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@giscus/vue':
-        specifier: ^3.0.0
-        version: 3.0.0(vue@3.5.13(typescript@5.7.2))
+        specifier: ^3.1.1
+        version: 3.1.1(vue@3.5.13(typescript@5.7.2))
       blockly:
         specifier: ^10.2.2
         version: 10.2.2
@@ -303,8 +303,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@giscus/vue@3.0.0':
-    resolution: {integrity: sha512-ZoSUmlc3ee2a+kdumCaXFDZaB4h9b1BYWzsmmRP7zoGEQKYopdAnzGvJK7RdvrYGAzNqZtGUxI0NnBl8/UA6bQ==}
+  '@giscus/vue@3.1.1':
+    resolution: {integrity: sha512-xgsc93MibRQ0d1glBxN1BrEREHTIf3BPYs/3R+UZHNqawFFoWBV6iJ7uVCXMqoEKZdE2c78B3aKt5gfGqo8I5A==}
     peerDependencies:
       vue: '>=3.2.0'
 
@@ -910,8 +910,8 @@ packages:
   get-intrinsic@1.2.2:
     resolution: {integrity: sha512-0gSo4ml/0j98Y3lngkFEot/zhiCeWsbYIlZ+uZOVgzLyLaUw7wxUL+nCTP0XJvJg1AXulJRI3UJi8GsbDuxdGA==}
 
-  giscus@1.5.0:
-    resolution: {integrity: sha512-t3LL0qbSO3JXq3uyQeKpF5CegstGfKX/0gI6eDe1cmnI7D56R7j52yLdzw4pdKrg3VnufwCgCM3FDz7G1Qr6lg==}
+  giscus@1.6.0:
+    resolution: {integrity: sha512-Zrsi8r4t1LVW950keaWcsURuZUQwUaMKjvJgTCY125vkW6OiEBkatE7ScJDbpqKHdZwb///7FVC21SE3iFK3PQ==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -2026,9 +2026,9 @@ snapshots:
   '@esbuild/win32-x64@0.18.20':
     optional: true
 
-  '@giscus/vue@3.0.0(vue@3.5.13(typescript@5.7.2))':
+  '@giscus/vue@3.1.1(vue@3.5.13(typescript@5.7.2))':
     dependencies:
-      giscus: 1.5.0
+      giscus: 1.6.0
       vue: 3.5.13(typescript@5.7.2)
 
   '@intlify/core-base@11.0.1':
@@ -2737,7 +2737,7 @@ snapshots:
       has-symbols: 1.0.3
       hasown: 2.0.0
 
-  giscus@1.5.0:
+  giscus@1.6.0:
     dependencies:
       lit: 3.2.1
 
