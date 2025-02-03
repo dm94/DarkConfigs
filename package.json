@@ -16,7 +16,7 @@
     "@giscus/vue": "^3.1.1",
     "blockly": "^10.2.2",
     "vue": "^3.5.13",
-    "vue-i18n": "^11.0.1",
+    "vue-i18n": "^11.1.0",
     "vue-router": "4"
   },
   "devDependencies": {
