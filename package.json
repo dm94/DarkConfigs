@@ -14,27 +14,27 @@
   },
   "dependencies": {
     "@giscus/vue": "^3.1.1",
-    "blockly": "^10.2.2",
-    "vue": "^3.5.16",
-    "vue-i18n": "^11.1.5",
-    "vue-router": "4"
+    "blockly": "^11.0.0",
+    "vue": "^3.5.18",
+    "vue-i18n": "^11.1.11",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/user-event": "^14.6.1",
     "@testing-library/vue": "^8.1.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.15.30",
-    "@vitejs/plugin-vue": "^4.6.2",
-    "@vitest/coverage-v8": "^0.34.5",
+    "@types/node": "^22.17.1",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
     "autoprefixer": "^10.4.21",
     "jsdom": "^26.1.0",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.2",
-    "vite": "^4.5.14",
-    "vitest": "^0.34.5",
+    "typescript": "^5.9.2",
+    "vite": "^6.0.0",
+    "vitest": "^2.0.0",
     "vue-tsc": "^3.0.5"
   }
 }

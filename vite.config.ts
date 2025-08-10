@@ -1,17 +1,17 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import path from "path";
+import { fileURLToPath, URL } from "node:url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src/"),
-      "@public": path.resolve(__dirname, "./public/"),
-      "@typec": path.resolve(__dirname, "./src/types/"),
-      "@functions": path.resolve(__dirname, "./src/functions/"),
-      "@views": path.resolve(__dirname, "./src/views/"),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@public": fileURLToPath(new URL("./public", import.meta.url)),
+      "@typec": fileURLToPath(new URL("./src/types", import.meta.url)),
+      "@functions": fileURLToPath(new URL("./src/functions", import.meta.url)),
+      "@views": fileURLToPath(new URL("./src/views", import.meta.url)),
     },
   },
 });
