@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouteName } from "@typec/routename";
 import { useI18n } from "vue-i18n";
+import LanguageSelector from "./language-selector.vue";
 
 const { t } = useI18n();
 
@@ -36,6 +37,9 @@ const discordUrl = (import.meta.env.VITE_APP_DISCORD as string) ?? "";
             <router-link :to="{ name: RouteName.TERMS_AND_CONDITIONS }"
               class="block disabled:text-black/30 dark:text-white lg:p-2 hover:text-green-200"
               :title="RouteName.TERMS_AND_CONDITIONS">{{ t("header.tos") }}</router-link>
+          </li>
+          <li class="flex items-center ml-2">
+            <LanguageSelector />
           </li>
         </ul>
       </div>
