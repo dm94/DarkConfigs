@@ -1,12 +1,14 @@
 //@ts-nocheck
 
-export const plausible = (...data: unknown): void => {
+export const plausible = (...data: unknown[]): void => {
   initPlausible();
 
   window.plausible =
     window.plausible ||
-    (() => {
-      (window.plausible.q = window.plausible.q || []).push(arguments);
+    ((...args: unknown[]) => {
+      // @ts-expect-error Plausible error
+      // biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
+      (window.plausible.q = window.plausible.q || []).push(args);
     });
 
   window.plausible(...data);
