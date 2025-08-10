@@ -50,10 +50,10 @@ Blockly.Blocks.hasFormationCondition = {
       "MOSQUITO",
     ];
 
-    allFormations.forEach((formation) => {
+    for (const formation of allFormations) {
       const custom = formation.toLowerCase().replaceAll("_", "-");
       options.push([custom, custom]);
-    });
+    }
 
     return options;
   },

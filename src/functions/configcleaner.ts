@@ -83,19 +83,39 @@ export const cleanConfig = (
   config: ConfigFile,
   language = "en",
 ): ConfigFile => {
-  const configCopy = { ...config };
+  const { PLAYER_INFOS, UNRESOLVED, BOT_SETTINGS, ...configCopy } = config;
 
-  delete configCopy?.PLAYER_INFOS;
-  delete configCopy?.UNRESOLVED;
-  delete configCopy?.BOT_SETTINGS?.BOT_GUI?.MAIN_GUI_WINDOW;
-  delete configCopy?.BOT_SETTINGS?.BOT_GUI?.CONFIG_GUI_WINDOW;
-  delete configCopy?.BOT_SETTINGS?.CUSTOM_BACKGROUND?.IMAGE;
+  // Clean BOT_SETTINGS by removing specific nested properties
+  const cleanedBotSettings = BOT_SETTINGS
+    ? {
+        ...BOT_SETTINGS,
+        BOT_GUI: BOT_SETTINGS.BOT_GUI
+          ? {
+              ...BOT_SETTINGS.BOT_GUI,
+              MAIN_GUI_WINDOW: undefined,
+              CONFIG_GUI_WINDOW: undefined,
+            }
+          : BOT_SETTINGS.BOT_GUI,
+        CUSTOM_BACKGROUND: BOT_SETTINGS.CUSTOM_BACKGROUND
+          ? {
+              ...BOT_SETTINGS.CUSTOM_BACKGROUND,
+              IMAGE: undefined,
+            }
+          : BOT_SETTINGS.CUSTOM_BACKGROUND,
+      }
+    : undefined;
 
-  if (configCopy?.BOT_SETTINGS?.BOT_GUI?.LOCALE) {
-    configCopy.BOT_SETTINGS.BOT_GUI.LOCALE = language;
+  const cleanedConfig = {
+    ...configCopy,
+    ...(cleanedBotSettings && { BOT_SETTINGS: cleanedBotSettings }),
+  };
+
+  // Update locale if it exists
+  if (cleanedConfig?.BOT_SETTINGS?.BOT_GUI?.LOCALE) {
+    cleanedConfig.BOT_SETTINGS.BOT_GUI.LOCALE = language;
   }
 
-  return cleanDisabledFeatures(configCopy);
+  return cleanDisabledFeatures(cleanedConfig);
 };
 
 export const getEnabledFeatures = (config: ConfigFile): string[] => {

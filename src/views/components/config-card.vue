@@ -26,7 +26,7 @@ const karmaClasses = computed(() => {
     "items-center",
   ];
 
-  if (props.karma == INITIAL_KARMA_VALUE) {
+  if (props.karma === INITIAL_KARMA_VALUE) {
     classes.push("bg-gray-200");
   } else if (props.karma > INITIAL_KARMA_VALUE) {
     classes.push("bg-green-200");

@@ -18,10 +18,10 @@ Blockly.Blocks.hpTypeValue = {
     const options: string[][] = [];
     const all = ["HP_PERCENT", "SHIELD_PERCENT", "HP", "SHIELD", "NANO_HULL"];
 
-    all.forEach((option) => {
+    for (const option of all) {
       const custom = option.toLowerCase().replaceAll("_", "-");
       options.push([custom, custom]);
-    });
+    }
 
     return options;
   },

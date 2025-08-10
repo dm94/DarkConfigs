@@ -26,10 +26,10 @@ Blockly.Blocks.hasRelationCondition = {
     const options: string[][] = [];
     const all = ["NO_TARGET", "NPC", "ENEMY", "ALLIED", "NOT_ATTACK_PACT"];
 
-    all.forEach((option) => {
+    for (const option of all) {
       const custom = option.toLowerCase().replaceAll("_", "-");
       options.push([custom, custom]);
-    });
+    }
 
     return options;
   },
