@@ -18,7 +18,7 @@ const baseConfig = {
   ],
 };
 
-const NUMBER_OF_CONFIGS = 10;
+const NUMBER_OF_CONFIGS = 12;
 
 vi.mock("@functions/connector", () => {
   return {

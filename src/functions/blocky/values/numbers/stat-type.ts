@@ -54,10 +54,10 @@ Blockly.Blocks.statTypeValue = {
       "PERSEUS",
     ];
 
-    all.forEach((option) => {
+    for (const option of all) {
       const custom = option.toLowerCase().replaceAll("_", "-");
       options.push([custom, custom]);
-    });
+    }
 
     return options;
   },
@@ -65,10 +65,10 @@ Blockly.Blocks.statTypeValue = {
     const options: string[][] = [];
     const all = ["INITIAL", "CURRENT", "EARNED", "SPENT", "DIFFERENCE"];
 
-    all.forEach((option) => {
+    for (const option of all) {
       const custom = option.toLowerCase();
       options.push([custom, custom]);
-    });
+    }
 
     return options;
   },

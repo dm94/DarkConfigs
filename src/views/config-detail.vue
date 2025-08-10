@@ -69,7 +69,7 @@ const karmaClasses = computed(() => {
     return classes;
   }
 
-  if (config.value.karma == INITIAL_KARMA_VALUE) {
+  if (config.value.karma === INITIAL_KARMA_VALUE) {
     classes.push("bg-gray-200");
   } else if (config.value.karma > INITIAL_KARMA_VALUE) {
     classes.push("bg-green-200");

@@ -11,6 +11,7 @@ export default defineConfig({
     },
     environment: "jsdom",
     setupFiles: "./tests/setupTests.js",
+    exclude: ["**/node_modules/**", "**/dist/**", "**/public/**"],
   },
   plugins: [vue()],
   resolve: {

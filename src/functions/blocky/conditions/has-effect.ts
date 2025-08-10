@@ -55,10 +55,10 @@ Blockly.Blocks.hasEffectCondition = {
       "CITADEL_PLUS_PRISMATIC_ENDURANCE",
     ];
 
-    allEffects.forEach((effect) => {
+    for (const effect of allEffects) {
       const custom = effect.toLowerCase().replaceAll("_", "-");
       options.push([custom, custom]);
-    });
+    }
 
     return options;
   },
