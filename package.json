@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.4",
+    "@tailwindcss/vite": "^4.1.11",
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/user-event": "^14.6.1",
     "@testing-library/vue": "^8.1.0",
@@ -31,7 +32,7 @@
     "autoprefixer": "^10.4.21",
     "jsdom": "^26.1.0",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.9.2",
     "vite": "^7.1.1",
     "vitest": "^3.2.4",
