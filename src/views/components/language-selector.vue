@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const { locale, availableLocales } = useI18n();
 
 const isOpen = ref(false);
+const dropdownRef = ref<HTMLElement | null>(null);
 
 const languages = [
   { code: "en", name: "English", flag: "US" },
@@ -43,10 +44,24 @@ const changeLanguage = (languageCode: string) => {
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value;
 };
+
+const handleClickOutside = (event: Event) => {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
+    isOpen.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside);
+});
 </script>
 
 <template>
-  <div class="relative inline-block text-left language-dropdown" @blur="isOpen = false">
+  <div ref="dropdownRef" class="relative inline-block text-left language-dropdown">
     <button
       @click="toggleDropdown"
       class="inline-flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:bg-neutral-700 dark:text-white dark:border-neutral-600 dark:hover:bg-neutral-600"
