@@ -83,6 +83,7 @@ export const cleanConfig = (
   config: ConfigFile,
   language = "en",
 ): ConfigFile => {
+  // biome-ignore lint/correctness/noUnusedVariables: This is for clear the config
   const { PLAYER_INFOS, UNRESOLVED, BOT_SETTINGS, ...configCopy } = config;
 
   // Clean BOT_SETTINGS by removing specific nested properties
