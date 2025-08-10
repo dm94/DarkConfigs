@@ -1,20 +1,6 @@
 import { defineConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
-import { createHash } from "crypto";
-
-// Polyfill for crypto.hash bug in Vite 7.x
-if (typeof globalThis.crypto === "object" && !globalThis.crypto?.hash) {
-  Object.defineProperty(globalThis.crypto, "hash", {
-    value: (algorithm: string, data: string | Buffer, encoding?: string) => {
-      const hash = createHash(algorithm);
-      hash.update(data);
-      return encoding ? hash.digest(encoding as any) : hash.digest();
-    },
-    writable: true,
-    configurable: true,
-  });
-}
 
 export default defineConfig({
   test: {
