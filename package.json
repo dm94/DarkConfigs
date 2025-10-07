@@ -20,7 +20,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.4",
+    "@biomejs/biome": "2.2.5",
     "@tailwindcss/vite": "^4.1.14",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/user-event": "^14.6.1",
