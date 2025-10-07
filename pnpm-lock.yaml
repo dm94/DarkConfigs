@@ -12,8 +12,8 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(vue@3.5.22(typescript@5.9.3))
       blockly:
-        specifier: ^12.3.0
-        version: 12.3.0
+        specifier: ^12.3.1
+        version: 12.3.1
       vue:
         specifier: ^3.5.22
         version: 3.5.22(typescript@5.9.3)
@@ -883,8 +883,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  blockly@12.3.0:
-    resolution: {integrity: sha512-dtxM6Dk8cm0QW4vMJTXmn7xi7a4GnQdXu28Esuuofx7DsYfq73456O5tm3ShUMDcXaFg8w3GVfgoH8I9v6gSVA==}
+  blockly@12.3.1:
+    resolution: {integrity: sha512-BbWUcpqroY241XgSxTuAiEMHeIZ6u3+oD2zOATf3Fi+0NMWJ/MdMtuSkOcDCSk6Nc7WR3z5n9GHKqz2L+3kQOQ==}
     engines: {node: '>=18'}
 
   brace-expansion@2.0.2:
@@ -2660,7 +2660,7 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  blockly@12.3.0:
+  blockly@12.3.1:
     dependencies:
       jsdom: 26.1.0
     transitivePeerDependencies:
