@@ -5,6 +5,7 @@ import ConfigCard from "@views/components/config-card.vue";
 import { deleteConfig } from "@functions/connector";
 import router from "@/router";
 import { getDomain } from "@/functions/get-domain";
+import { RouteName } from "@/types/routename";
 
 const items = ref([] as any[]);
 const isAuthenticated = ref<boolean>(Boolean(getAuthToken()));
@@ -20,8 +21,7 @@ onMounted(async () => {
     const response = await getMyConfigs();
     items.value = response;
   } catch {
-    // If token invalid or expired, go to auth
-    router.replace({ path: "/auth/callback" });
+    router.push({ name: RouteName.AUTH_CALLBACK });
   }
 });
 
