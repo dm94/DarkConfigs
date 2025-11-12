@@ -47,5 +47,11 @@
   },
   "maker": {
     "generateButton": "Generate condition"
+  },
+  "profile": {
+    "loginRequired": "Inicio de sesión requerido",
+    "loginWithDiscord": "Iniciar sesión con Discord",
+    "delete": "Eliminar",
+    "noConfigs": "No tienes ninguna configuración aún"
   }
 }

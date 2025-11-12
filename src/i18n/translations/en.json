@@ -50,5 +50,11 @@
   },
   "maker": {
     "generateButton": "Generate condition"
+  },
+  "profile": {
+    "loginRequired": "Login required",
+    "loginWithDiscord": "Login with Discord",
+    "delete": "Delete",
+    "noConfigs": "You have no configs yet"
   }
 }
