@@ -3,10 +3,11 @@ import { reactive, ref } from "vue";
 import router from "@/router";
 import { RouteName } from "@typec/routename";
 import { useI18n } from "vue-i18n";
-import { uploadConfigFile } from "@functions/connector";
+import { uploadConfigFile, getAuthToken } from "@functions/connector";
 import { cleanConfig, getEnabledFeatures } from "@functions/configcleaner";
 import type { ConfigFile } from "@typec/configfile";
 import { showError } from "@functions/error-management";
+import { getDomain } from "@/functions/get-domain";
 
 const form = reactive<{
   name: string;
@@ -23,6 +24,11 @@ const form = reactive<{
 const configFeatures = ref<string[]>([]);
 
 const { t } = useI18n();
+
+const isAuthenticated = ref<boolean>(Boolean(getAuthToken()));
+const loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${
+    import.meta.env.VITE_DISCORD_CLIENT_ID as string
+  }&redirect_uri=${getDomain()}/auth/callback&scope=identify%20guilds&response_type=code`;
 
 const readFile = (event: DragEvent | Event) => {
   if (!event?.target) {
@@ -58,6 +64,10 @@ const readFile = (event: DragEvent | Event) => {
 };
 
 const uploadConfig = async () => {
+  if (!isAuthenticated.value) {
+    showError("You must be logged in to upload");
+    return;
+  }
   if (configFeatures.value.length <= 0 || !form.config) {
     console.error("Error: Upload a valid config");
     return;
@@ -86,6 +96,10 @@ const uploadConfig = async () => {
 </script>
 <template>
   <form class="flex py-4 gap-8 flex-col" @submit.prevent="uploadConfig" data-testid="upload-page">
+    <div v-if="!isAuthenticated" class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700">
+      <p class="text-xl">Login required</p>
+      <a :href="loginUrl" class="mx-auto text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Login with Discord</a>
+    </div>
     <div class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700">
       <div class="flex container mx-auto gap-2 flex-col">
         <p class="text-xl">{{ t("uploadPage.title") }}</p>
@@ -123,7 +137,7 @@ const uploadConfig = async () => {
         </p>
       </div>
     </div>
-    <button type="submit" data-testid="upload-button"
+    <button type="submit" data-testid="upload-button" :disabled="!isAuthenticated"
       class="mx-auto max-w-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
       {{ t("uploadPage.saveButton") }}
     </button>

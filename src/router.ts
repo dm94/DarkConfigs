@@ -19,6 +19,11 @@ const routes = [
     component: () => import("@views/upload.vue"),
   },
   {
+    path: "/auth/callback",
+    name: RouteName.AUTH_CALLBACK,
+    component: () => import("@views/auth-callback.vue"),
+  },
+  {
     path: "/terms",
     name: RouteName.TERMS_AND_CONDITIONS,
     component: () => import("@views/terms.vue"),
@@ -27,6 +32,11 @@ const routes = [
     path: "/maker",
     name: RouteName.CONDITION_MAKER,
     component: () => import("@views/condition-maker.vue"),
+  },
+  {
+    path: "/me",
+    name: RouteName.PROFILE,
+    component: () => import("@views/me.vue"),
   },
 ];
 

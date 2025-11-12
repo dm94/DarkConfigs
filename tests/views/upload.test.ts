@@ -8,6 +8,7 @@ import configTest from "../assets/config-test.json";
 vi.mock("@functions/connector", () => {
   return {
     uploadConfigFile: vi.fn(),
+    getAuthToken: vi.fn().mockReturnValue(null),
   };
 });
 

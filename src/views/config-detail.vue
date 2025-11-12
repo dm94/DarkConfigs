@@ -4,7 +4,7 @@ import { computed, onMounted, ref } from "vue";
 import router from "../router";
 import { RouteName } from "@typec/routename";
 import { useI18n } from "vue-i18n";
-import { getConfigFile, getConfig, updateKarma } from "@functions/connector";
+import { getConfigFile, getConfig, updateKarma, getMyConfigs, deleteConfig, getAuthToken } from "@functions/connector";
 import { cleanConfig } from "@functions/configcleaner";
 import type { ConfigInfo } from "@typec/configfile";
 import { getJsonFileName } from "@functions/general";
@@ -17,6 +17,7 @@ import Giscus from "./components/giscus.vue";
 const config = ref<ConfigInfo>();
 const showVotePart = ref<boolean>(true);
 const requiredPlugins = ref<string[]>([]);
+const isOwner = ref<boolean>(false);
 
 const { t, locale } = useI18n();
 
@@ -49,6 +50,12 @@ onMounted(async () => {
   }
 
   requiredPlugins.value = getPluginsFromFeatureList(config.value?.features);
+  if (getAuthToken() && route?.params?.id) {
+    try {
+      const my = await getMyConfigs();
+      isOwner.value = !!my.find((m) => m.configId === route.params.id);
+    } catch {}
+  }
 });
 
 const karmaClasses = computed(() => {
@@ -128,6 +135,19 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
 
   await loadConfigDetail(config.value.configId);
 };
+
+const deleteOwnConfig = async () => {
+  if (!config.value) {
+    return;
+  }
+  try {
+    await deleteConfig(config.value.configId);
+    router.push({ name: RouteName.HOME });
+  } catch (error) {
+    showError(error as string);
+    console.error(error);
+  }
+};
 </script>
 <template>
   <div v-if="config" class="flex py-4 gap-8 flex-col">
@@ -171,6 +191,11 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
       class="mx-auto max-w-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
       @click="downloadConfig">
       {{ t("configDetail.downloadButton") }}
+    </button>
+    <button v-if="isOwner"
+      class="mx-auto max-w-xl text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5"
+      @click="deleteOwnConfig">
+      Delete this config
     </button>
     <div class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700">
       <div class="flex">
