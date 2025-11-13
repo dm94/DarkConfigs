@@ -38,6 +38,7 @@ export const getConfig = async (id: string): Promise<ConfigInfo> => {
     karma: json.karma,
     downloads: json.downloads,
     features: json.features,
+    ownerId: json.ownerId,
   } as ConfigInfo;
 };
 
@@ -96,6 +97,7 @@ export const getConfigs = async (
       karma: p.karma,
       downloads: p.downloads,
       features: p.features,
+      ownerId: p.ownerId,
     };
   });
 };
@@ -130,6 +132,7 @@ export const getMyConfigs = async (): Promise<ConfigInfo[]> => {
       karma: p.karma,
       downloads: p.downloads,
       features: p.features,
+      ownerId: p.ownerId,
     };
   });
 };

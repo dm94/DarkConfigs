@@ -8,7 +8,7 @@ import {
   getConfigFile,
   getConfig,
   updateKarma,
-  getMyConfigs,
+  getMe,
   deleteConfig,
   getAuthToken,
 } from "@functions/connector";
@@ -59,8 +59,8 @@ onMounted(async () => {
   requiredPlugins.value = getPluginsFromFeatureList(config.value?.features);
   if (getAuthToken()) {
     try {
-      const my = await getMyConfigs();
-      isOwner.value = !!my.find((m) => m.configId === route.params.id);
+      const me = await getMe();
+      isOwner.value = config.value?.ownerId === me.userId;
     } catch {
       // Silent error
     }
