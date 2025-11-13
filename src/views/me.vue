@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { getMyConfigs, getAuthToken } from "@functions/connector";
 import ConfigCard from "@views/components/config-card.vue";
@@ -9,12 +9,13 @@ import { getDomain } from "@/functions/get-domain";
 import { RouteName } from "@/types/routename";
 
 const items = ref([] as any[]);
-const isAuthenticated = ref<boolean>(Boolean(getAuthToken()));
 const loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${
   import.meta.env.VITE_DISCORD_CLIENT_ID as string
 }&redirect_uri=${getDomain()}/auth/callback&scope=identify%20guilds&response_type=code`;
 
 const { t } = useI18n();
+
+const isAuthenticated = computed(() => Boolean(getAuthToken()));
 
 onMounted(async () => {
   if (!isAuthenticated.value) {

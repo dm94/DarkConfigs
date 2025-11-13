@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue";
+import { computed, reactive, ref } from "vue";
 import router from "@/router";
 import { RouteName } from "@typec/routename";
 import { useI18n } from "vue-i18n";
@@ -25,10 +25,11 @@ const configFeatures = ref<string[]>([]);
 
 const { t } = useI18n();
 
-const isAuthenticated = ref<boolean>(Boolean(getAuthToken()));
 const loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${
   import.meta.env.VITE_DISCORD_CLIENT_ID as string
 }&redirect_uri=${getDomain()}/auth/callback&scope=identify%20guilds&response_type=code`;
+
+const isAuthenticated = computed(() => Boolean(getAuthToken()));
 
 const readFile = (event: DragEvent | Event) => {
   if (!event?.target) {

@@ -188,7 +188,7 @@ export const updateKarma = async (
   return parsed;
 };
 
-export const discordCallback = async (code: string): Promise<void> => {
+export const discordCallback = async (code: string): Promise<string> => {
   const response = await fetch(`${baseUrl}/auth/discord`, {
     method: "POST",
     headers: {
