@@ -27,8 +27,8 @@ const { t } = useI18n();
 
 const isAuthenticated = ref<boolean>(Boolean(getAuthToken()));
 const loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${
-    import.meta.env.VITE_DISCORD_CLIENT_ID as string
-  }&redirect_uri=${getDomain()}/auth/callback&scope=identify%20guilds&response_type=code`;
+  import.meta.env.VITE_DISCORD_CLIENT_ID as string
+}&redirect_uri=${getDomain()}/auth/callback&scope=identify%20guilds&response_type=code`;
 
 const readFile = (event: DragEvent | Event) => {
   if (!event?.target) {

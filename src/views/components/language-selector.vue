@@ -28,16 +28,16 @@ const languages = [
 ];
 
 const availableLanguages = computed(() => {
-  return languages.filter(lang => availableLocales.includes(lang.code));
+  return languages.filter((lang) => availableLocales.includes(lang.code));
 });
 
 const currentLanguage = computed(() => {
-  return languages.find(lang => lang.code === locale.value) ?? languages[0];
+  return languages.find((lang) => lang.code === locale.value) ?? languages[0];
 });
 
 const changeLanguage = (languageCode: string) => {
   locale.value = languageCode;
-  localStorage.setItem('selectedLanguage', languageCode);
+  localStorage.setItem("selectedLanguage", languageCode);
   isOpen.value = false;
 };
 
@@ -52,11 +52,11 @@ const handleClickOutside = (event: Event) => {
 };
 
 onMounted(() => {
-  document.addEventListener('click', handleClickOutside);
+  document.addEventListener("click", handleClickOutside);
 });
 
 onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside);
+  document.removeEventListener("click", handleClickOutside);
 });
 </script>
 

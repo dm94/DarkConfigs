@@ -1,4 +1,4 @@
-import type { ConfigInfo, ConfigFile } from "@typec/configfile";
+import type { ConfigInfo, ConfigFile, UserInfo } from "@typec/configfile";
 import type { UpdateKarmaType, getConfigParams } from "@typec/requests";
 
 const baseUrl: string = import.meta.env.VITE_APP_API_URL as string;
@@ -100,7 +100,7 @@ export const getConfigs = async (
   });
 };
 
-export const getMyConfigs = async(): Promise<ConfigInfo[]> => {
+export const getMyConfigs = async (): Promise<ConfigInfo[]> => {
   const url = new URL(`${baseUrl}/users/me/configs`);
   const token = getAuthToken();
 
@@ -132,7 +132,7 @@ export const getMyConfigs = async(): Promise<ConfigInfo[]> => {
       features: p.features,
     };
   });
-}
+};
 
 export const uploadConfigFile = async (
   name: string,
@@ -221,4 +221,23 @@ export const deleteConfig = async (id: string): Promise<void> => {
     }
     throw Error(`Request failed with status ${response.status}`);
   }
+};
+
+export const getMe = async (): Promise<UserInfo> => {
+  const token = getAuthToken();
+  const response = await fetch(`${baseUrl}/users/me`, {
+    method: "GET",
+    headers: {
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    },
+  });
+  if (!response.ok) {
+    const parsed = await response.json().catch(() => ({}));
+    if (parsed?.message) {
+      throw Error(parsed?.message);
+    }
+    throw Error(`Request failed with status ${response.status}`);
+  }
+  const parsed = await response.json();
+  return parsed as UserInfo;
 };

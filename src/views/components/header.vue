@@ -12,8 +12,8 @@ const discordUrl = (import.meta.env.VITE_APP_DISCORD as string) ?? "";
 const isMobileMenuOpen = ref(false);
 
 const loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${
-    import.meta.env.VITE_DISCORD_CLIENT_ID as string
-  }&redirect_uri=${getDomain()}/auth/callback&scope=identify%20guilds&response_type=code`;
+  import.meta.env.VITE_DISCORD_CLIENT_ID as string
+}&redirect_uri=${getDomain()}/auth/callback&scope=identify%20guilds&response_type=code`;
 
 const toggleMobileMenu = (): void => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
@@ -26,8 +26,7 @@ const logout = () => {
 
 const isAuthenticated = computed(() => {
   return Boolean(getAuthToken());
-})
-
+});
 </script>
 <template>
   <header class="w-full">

@@ -4,7 +4,14 @@ import { computed, onMounted, ref } from "vue";
 import router from "../router";
 import { RouteName } from "@typec/routename";
 import { useI18n } from "vue-i18n";
-import { getConfigFile, getConfig, updateKarma, getMyConfigs, deleteConfig, getAuthToken } from "@functions/connector";
+import {
+  getConfigFile,
+  getConfig,
+  updateKarma,
+  getMyConfigs,
+  deleteConfig,
+  getAuthToken,
+} from "@functions/connector";
 import { cleanConfig } from "@functions/configcleaner";
 import type { ConfigInfo } from "@typec/configfile";
 import { getJsonFileName } from "@functions/general";
@@ -50,11 +57,13 @@ onMounted(async () => {
   }
 
   requiredPlugins.value = getPluginsFromFeatureList(config.value?.features);
-  if (getAuthToken() && route?.params?.id) {
+  if (getAuthToken()) {
     try {
       const my = await getMyConfigs();
       isOwner.value = !!my.find((m) => m.configId === route.params.id);
-    } catch {}
+    } catch {
+      // Silent error
+    }
   }
 });
 
