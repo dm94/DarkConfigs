@@ -57,5 +57,11 @@
     "loginWithDiscord": "Login with Discord",
     "delete": "Delete",
     "noConfigs": "You have no configs yet"
+  },
+  "authCallback": {
+    "title": "Authenticating",
+    "processing": "Processing authentication…",
+    "success": "Authenticated. Redirecting…",
+    "error": "Authentication failed. Redirecting…"
   }
 }

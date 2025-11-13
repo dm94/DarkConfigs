@@ -54,5 +54,11 @@
     "loginWithDiscord": "Iniciar sesión con Discord",
     "delete": "Eliminar",
     "noConfigs": "No tienes ninguna configuración aún"
+  },
+  "authCallback": {
+    "title": "Autenticando",
+    "processing": "Procesando autenticación…",
+    "success": "Autenticado. Redirigiendo…",
+    "error": "La autenticación falló. Redirigiendo…"
   }
 }
