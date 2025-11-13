@@ -1,17 +1,32 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { RouteName } from "@typec/routename";
 import { useI18n } from "vue-i18n";
 import LanguageSelector from "./language-selector.vue";
+import { clearAuthToken, getAuthToken } from "@functions/connector";
+import { getDomain } from "@functions/get-domain";
 
 const { t } = useI18n();
 
 const discordUrl = (import.meta.env.VITE_APP_DISCORD as string) ?? "";
 const isMobileMenuOpen = ref(false);
 
+const loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${
+  import.meta.env.VITE_DISCORD_CLIENT_ID as string
+}&redirect_uri=${getDomain()}/auth/callback&scope=identify%20guilds&response_type=code`;
+
 const toggleMobileMenu = (): void => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
 };
+
+const logout = () => {
+  clearAuthToken();
+  globalThis.location.reload();
+};
+
+const isAuthenticated = computed(() => {
+  return Boolean(getAuthToken());
+});
 </script>
 <template>
   <header class="w-full">
@@ -52,6 +67,25 @@ const toggleMobileMenu = (): void => {
             :href="discordUrl" rel="external nofollow noopener" target="_blank">
             {{ t("header.discord") }}
           </a>
+        </li>
+        <li itemprop="name" v-if="isAuthenticated">
+          <router-link :to="{ name: RouteName.PROFILE }"
+            class="block px-3 py-2 text-sm font-medium disabled:text-black/30 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+            :title="t('header.profile')">
+            {{ t("header.profile") }}
+          </router-link>
+        </li>
+        <li itemprop="name" v-if="!isAuthenticated">
+          <a class="block px-3 py-2 text-sm font-medium disabled:text-black/30 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+            :href="loginUrl" rel="external nofollow noopener">
+            {{ t("header.login") }}
+          </a>
+        </li>
+        <li itemprop="name" v-else>
+          <button class="px-3 py-2 text-sm font-medium disabled:text-black/30 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+            @click="logout">
+            {{ t("header.logout") }}
+          </button>
         </li>
         <li itemprop="name">
           <router-link :to="{ name: RouteName.TERMS_AND_CONDITIONS }"
@@ -117,6 +151,26 @@ const toggleMobileMenu = (): void => {
               :title="t('header.tos')">
               {{ t("header.tos") }}
             </router-link>
+          </li>
+          <li itemprop="name" v-if="isAuthenticated">
+            <router-link :to="{ name: RouteName.PROFILE }"
+              @click="isMobileMenuOpen = false"
+              class="block px-4 py-3 text-base font-medium text-neutral-600 dark:text-white hover:text-green-600 dark:hover:text-green-400 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors duration-200"
+              :title="t('header.profile')">
+              {{ t("header.profile") }}
+            </router-link>
+          </li>
+          <li itemprop="name" v-if="!isAuthenticated">
+            <a class="block px-4 py-3 text-base font-medium text-neutral-600 dark:text-white hover:text-green-600 dark:hover:text-green-400 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors duration-200"
+              :href="loginUrl" rel="external nofollow noopener" @click="isMobileMenuOpen = false">
+              {{ t("header.login") }}
+            </a>
+          </li>
+          <li itemprop="name" v-else>
+            <button class="block px-4 py-3 text-base font-medium text-neutral-600 dark:text-white hover:text-green-600 dark:hover:text-green-400 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors duration-200"
+              @click="logout">
+              {{ t("header.logout") }}
+            </button>
           </li>
         </ul>
       </div>
