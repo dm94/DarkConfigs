@@ -4,7 +4,7 @@ import router from "@/router";
 import { discordCallback } from "@functions/connector";
 
 onMounted(async () => {
-  const search = new URLSearchParams(window.location.search);
+  const search = new URLSearchParams(globalThis.location.search);
   const code = search.get("code");
   if (code) {
     try {
@@ -15,7 +15,7 @@ onMounted(async () => {
     }
   }
   router.replace({ path: "/" });
-  window.location.reload();
+  globalThis.location.reload();
 });
 </script>
 <template>

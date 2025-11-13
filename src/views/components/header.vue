@@ -21,7 +21,7 @@ const toggleMobileMenu = (): void => {
 
 const logout = () => {
   clearAuthToken();
-  window.location.reload();
+  globalThis.location.reload();
 };
 
 const isAuthenticated = computed(() => {
