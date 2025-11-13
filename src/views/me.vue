@@ -29,8 +29,12 @@ onMounted(async () => {
 });
 
 const removeItem = async (id: string) => {
-  await deleteConfig(id);
-  items.value = items.value.filter((i: any) => i.configId !== id);
+  try {
+    await deleteConfig(id);
+    items.value = items.value.filter((i: any) => i.configId !== id);
+  } catch (error) {
+    console.error(error);
+  }
 };
 </script>
 <template>

@@ -142,7 +142,7 @@ const deleteOwnConfig = async () => {
   }
   try {
     await deleteConfig(config.value.configId);
-    router.push({ name: RouteName.HOME });
+    await router.push({ name: RouteName.HOME });
   } catch (error) {
     showError(error as string);
     console.error(error);
