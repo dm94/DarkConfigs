@@ -14,6 +14,9 @@ vi.mock("@functions/connector", () => {
 
 describe("Views -> Upload", () => {
   it("It should render the upload page", async () => {
+    const connector = await import("@functions/connector");
+    connector.getAuthToken.mockReturnValue("token");
+
     customRender(view);
     const page = screen.getByTestId("upload-page");
     expect(page).toBeInTheDocument();
@@ -47,9 +50,24 @@ describe("Views -> Upload", () => {
     await userEvent.click(uploadButton);
 
     await waitFor(() => {
-      const listOfFeaturesWithUpload =
-        screen.queryAllByTestId("feauture-config");
+      const listOfFeaturesWithUpload = screen.queryAllByTestId("feauture-config");
       expect(listOfFeaturesWithUpload).toHaveLength(5);
     });
+  });
+
+  it("It should render login prompt when unauthenticated", async () => {
+    const connector = await import("@functions/connector");
+    connector.getAuthToken.mockReturnValue(null);
+
+    customRender(view);
+    const page = screen.queryByTestId("upload-page");
+    expect(page).toBeNull();
+
+    const loginTitle = await screen.findByText(/Login required/i);
+    expect(loginTitle).toBeInTheDocument();
+
+    const loginLink = screen.getByRole("link", { name: /Login with Discord/i });
+    expect(loginLink).toBeInTheDocument();
+    expect(loginLink.getAttribute("href") || "").toContain("discord.com/api/oauth2/authorize");
   });
 });
