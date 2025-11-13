@@ -28,7 +28,7 @@ export const getConfig = async (id: string): Promise<ConfigInfo> => {
   const json = await response.json();
 
   if (json?.message) {
-    throw Error(json?.message);
+    throw new Error(json?.message);
   }
 
   return {
@@ -53,7 +53,7 @@ export const getConfigFile = async (id: string): Promise<ConfigFile> => {
   const parsed = await response.json();
 
   if (parsed?.message) {
-    throw Error(parsed?.message);
+    throw new Error(parsed?.message);
   }
 
   return parsed as ConfigFile;
@@ -86,7 +86,7 @@ export const getConfigs = async (
   const parsed = await response.json();
 
   if (parsed?.message) {
-    throw Error(parsed?.message);
+    throw new Error(parsed?.message);
   }
 
   return parsed.map((p: ConfigInfo) => {
@@ -107,7 +107,7 @@ export const getMyConfigs = async (): Promise<ConfigInfo[]> => {
   const token = getAuthToken();
 
   if (!token) {
-    throw Error("No auth token found");
+    throw new Error("No auth token found");
   }
 
   const response = await fetch(url, {
@@ -121,7 +121,7 @@ export const getMyConfigs = async (): Promise<ConfigInfo[]> => {
   const parsed = await response.json();
 
   if (parsed?.message) {
-    throw Error(parsed?.message);
+    throw new Error(parsed?.message);
   }
 
   return parsed.map((p: ConfigInfo) => {
@@ -161,7 +161,7 @@ export const uploadConfigFile = async (
   const parsed = await response.json();
 
   if (parsed?.message) {
-    throw Error(parsed?.message);
+    throw new Error(parsed?.message);
   }
 
   return parsed as ConfigInfo;
@@ -182,7 +182,7 @@ export const updateKarma = async (
   const parsed = await response.json();
 
   if (parsed?.message) {
-    throw Error(parsed?.message);
+    throw new Error(parsed?.message);
   }
 
   return parsed;
@@ -201,7 +201,7 @@ export const discordCallback = async (code: string): Promise<string> => {
 
   const parsed = await response.json();
   if (parsed?.message) {
-    throw Error(parsed?.message);
+    throw new Error(parsed?.message);
   }
 
   setAuthToken(parsed.token);
@@ -220,9 +220,9 @@ export const deleteConfig = async (id: string): Promise<void> => {
   if (!response.ok) {
     const parsed = await response.json().catch(() => ({}));
     if (parsed?.message) {
-      throw Error(parsed?.message);
+      throw new Error(parsed?.message);
     }
-    throw Error(`Request failed with status ${response.status}`);
+    throw new Error(`Request failed with status ${response.status}`);
   }
 };
 
@@ -237,9 +237,9 @@ export const getMe = async (): Promise<UserInfo> => {
   if (!response.ok) {
     const parsed = await response.json().catch(() => ({}));
     if (parsed?.message) {
-      throw Error(parsed?.message);
+      throw new Error(parsed?.message);
     }
-    throw Error(`Request failed with status ${response.status}`);
+    throw new Error(`Request failed with status ${response.status}`);
   }
   const parsed = await response.json();
   return parsed as UserInfo;
