@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import { getMyConfigs, getAuthToken } from "@functions/connector";
+import { getMyConfigs, getAuthToken, deleteConfig } from "@functions/connector";
 import ConfigCard from "@views/components/config-card.vue";
-import { deleteConfig } from "@functions/connector";
 import router from "@/router";
 import { getDomain } from "@/functions/get-domain";
 import { RouteName } from "@/types/routename";
