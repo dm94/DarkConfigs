@@ -7,9 +7,15 @@ onMounted(async () => {
   const search = new URLSearchParams(window.location.search);
   const code = search.get("code");
   if (code) {
-    await discordCallback(code);
+    try {
+      await discordCallback(code);
+    } catch {
+      router.replace({ path: "/" });
+      return;
+    }
   }
   router.replace({ path: "/" });
+  window.location.reload();
 });
 </script>
 <template>
