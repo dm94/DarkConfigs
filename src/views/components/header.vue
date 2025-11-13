@@ -69,13 +69,6 @@ const isAuthenticated = computed(() => {
             {{ t("header.discord") }}
           </a>
         </li>
-        <li itemprop="name">
-          <router-link :to="{ name: RouteName.TERMS_AND_CONDITIONS }"
-            class="block px-3 py-2 text-sm font-medium disabled:text-black/30 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
-            :title="t('header.tos')">
-            {{ t("header.tos") }}
-          </router-link>
-        </li>
         <li itemprop="name" v-if="isAuthenticated">
           <router-link :to="{ name: RouteName.PROFILE }"
             class="block px-3 py-2 text-sm font-medium disabled:text-black/30 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
@@ -94,6 +87,13 @@ const isAuthenticated = computed(() => {
             @click="logout">
             {{ t("header.logout") }}
           </button>
+        </li>
+        <li itemprop="name">
+          <router-link :to="{ name: RouteName.TERMS_AND_CONDITIONS }"
+            class="block px-3 py-2 text-sm font-medium disabled:text-black/30 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+            :title="t('header.tos')">
+            {{ t("header.tos") }}
+          </router-link>
         </li>
       </ul>
 

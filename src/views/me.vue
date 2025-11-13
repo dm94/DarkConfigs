@@ -43,7 +43,7 @@ const removeItem = async (id: string) => {
       <p class="text-xl">{{ t('profile.loginRequired') }}</p>
       <a :href="loginUrl" class="mx-auto text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">{{ t('profile.loginWithDiscord') }}</a>
     </div>
-    <div v-else class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 rounded-lg border border-neutral-700">
+    <div v-else class="flex container mx-auto p-2 gap-4 flex-col rounded-lg">
       <div v-if="items.length === 0" class="flex flex-col gap-3 items-center py-6">
         <p class="text-xl">{{ t('profile.noConfigs') }}</p>
         <router-link :to="{ name: RouteName.UPLOAD }" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
