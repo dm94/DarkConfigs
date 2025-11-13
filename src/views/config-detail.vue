@@ -196,16 +196,18 @@ const deleteOwnConfig = async () => {
         </div>
       </div>
     </div>
-    <button
-      class="mx-auto max-w-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-      @click="downloadConfig">
-      {{ t("configDetail.downloadButton") }}
-    </button>
-    <button v-if="isOwner"
-      class="mx-auto max-w-xl text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5"
-      @click="deleteOwnConfig">
-      Delete this config
-    </button>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <button
+        class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+        @click="downloadConfig">
+        {{ t("configDetail.downloadButton") }}
+      </button>
+      <button v-if="isOwner"
+        class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5"
+        @click="deleteOwnConfig">
+        Delete this config
+      </button>
+    </div>
     <div class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700">
       <div class="flex">
         <p class="text-xl">{{ t("configDetail.requiredPlugins") }}</p>
