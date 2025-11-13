@@ -6,7 +6,10 @@
     "maker": "Criador de Condições",
     "termAndConditions": "Termos e condições",
     "discord": "Discord",
-    "tos": "TOS"
+    "tos": "TOS",
+    "profile": "Profile",
+    "login": "Login",
+    "logout": "Logout"
   },
   "home": {
     "title": "Configurações DarkBot",
@@ -38,7 +41,8 @@
     "configDescription": "Tanto ao enviar quanto baixar a configuração, nós removemos todos os dados que possam estar comprometidos.",
     "hidden": "Oculto",
     "hiddenDescription": "Quando ativado, não será mostrado na listagem pública",
-    "saveButton": "Salvar"
+    "saveButton": "Salvar",
+    "loginMessage": "To upload configurations you must log in."
   },
   "cookieAdvert": {
     "text": "Nós usamos cookies para melhorar o nosso site, você pode consultar as nossas políticas aqui: {link}",
@@ -47,5 +51,17 @@
   },
   "maker": {
     "generateButton": "Gerar condição"
+  },
+  "profile": {
+    "loginRequired": "Login required",
+    "loginWithDiscord": "Login with Discord",
+    "delete": "Delete",
+    "noConfigs": "You have no configs yet"
+  },
+  "authCallback": {
+    "title": "Authenticating",
+    "processing": "Processing authentication…",
+    "success": "Authenticated. Redirecting…",
+    "error": "Authentication failed. Redirecting…"
   }
 }
