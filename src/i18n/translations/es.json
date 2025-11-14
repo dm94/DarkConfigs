@@ -6,7 +6,10 @@
     "maker": "Condition Maker",
     "termAndConditions": "Terms and Conditions",
     "discord": "Discord",
-    "tos": "TOS"
+    "tos": "TOS",
+    "profile": "Profile",
+    "login": "Login",
+    "logout": "Logout"
   },
   "home": {
     "title": "Dark Configs",

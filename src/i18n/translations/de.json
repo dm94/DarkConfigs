@@ -6,7 +6,10 @@
     "maker": "Bedingungsersteller",
     "termAndConditions": "Allgemeine Geschäftsbedingungen",
     "discord": "Discord",
-    "tos": "Nutzungsbedingungen"
+    "tos": "Nutzungsbedingungen",
+    "profile": "Profile",
+    "login": "Login",
+    "logout": "Logout"
   },
   "home": {
     "title": "Dark Configs",
@@ -38,7 +41,8 @@
     "configDescription": "Sowohl beim Hochladen als auch beim Herunterladen der Konfiguration entfernen wir alle Daten, die auf dich zurückführen könnten.",
     "hidden": "Versteckt",
     "hiddenDescription": "Wird diese Option aktiviert, wird sie nicht in der öffentlichen Liste angezeigt",
-    "saveButton": "Speichern"
+    "saveButton": "Speichern",
+    "loginMessage": "To upload configurations you must log in."
   },
   "cookieAdvert": {
     "text": "Wir verwenden Cookies, um unsere Website zu verbessern. Hier können Sie unsere Richtlinien einsehen: {link}",
@@ -47,5 +51,17 @@
   },
   "maker": {
     "generateButton": "Bedingung generieren"
+  },
+  "profile": {
+    "loginRequired": "Login required",
+    "loginWithDiscord": "Login with Discord",
+    "delete": "Delete",
+    "noConfigs": "You have no configs yet"
+  },
+  "authCallback": {
+    "title": "Authenticating",
+    "processing": "Processing authentication…",
+    "success": "Authenticated. Redirecting…",
+    "error": "Authentication failed. Redirecting…"
   }
 }
