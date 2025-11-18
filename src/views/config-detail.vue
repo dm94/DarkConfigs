@@ -4,7 +4,14 @@ import { computed, onMounted, ref } from "vue";
 import router from "../router";
 import { RouteName } from "@typec/routename";
 import { useI18n } from "vue-i18n";
-import { getConfigFile, getConfig, updateKarma } from "@functions/connector";
+import {
+  getConfigFile,
+  getConfig,
+  updateKarma,
+  getMe,
+  deleteConfig,
+  getAuthToken,
+} from "@functions/connector";
 import { cleanConfig } from "@functions/configcleaner";
 import type { ConfigInfo } from "@typec/configfile";
 import { getJsonFileName } from "@functions/general";
@@ -17,6 +24,7 @@ import Giscus from "./components/giscus.vue";
 const config = ref<ConfigInfo>();
 const showVotePart = ref<boolean>(true);
 const requiredPlugins = ref<string[]>([]);
+const isOwner = ref<boolean>(false);
 
 const { t, locale } = useI18n();
 
@@ -49,6 +57,14 @@ onMounted(async () => {
   }
 
   requiredPlugins.value = getPluginsFromFeatureList(config.value?.features);
+  if (getAuthToken()) {
+    try {
+      const me = await getMe();
+      isOwner.value = config.value?.ownerId === me.userId;
+    } catch {
+      // Silent error
+    }
+  }
 });
 
 const karmaClasses = computed(() => {
@@ -128,6 +144,19 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
 
   await loadConfigDetail(config.value.configId);
 };
+
+const deleteOwnConfig = async () => {
+  if (!config.value) {
+    return;
+  }
+  try {
+    await deleteConfig(config.value.configId);
+    await router.push({ name: RouteName.HOME });
+  } catch (error) {
+    showError(error as string);
+    console.error(error);
+  }
+};
 </script>
 <template>
   <div v-if="config" class="flex py-4 gap-8 flex-col">
@@ -167,11 +196,18 @@ const updateKarmaClick = async (type: UpdateKarmaType) => {
         </div>
       </div>
     </div>
-    <button
-      class="mx-auto max-w-xl text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-      @click="downloadConfig">
-      {{ t("configDetail.downloadButton") }}
-    </button>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <button
+        class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+        @click="downloadConfig">
+        {{ t("configDetail.downloadButton") }}
+      </button>
+      <button v-if="isOwner"
+        class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5"
+        @click="deleteOwnConfig">
+        Delete this config
+      </button>
+    </div>
     <div class="flex container mx-auto p-2 gap-4 flex-col bg-neutral-400 max-w-xl rounded-lg border border-neutral-700">
       <div class="flex">
         <p class="text-xl">{{ t("configDetail.requiredPlugins") }}</p>

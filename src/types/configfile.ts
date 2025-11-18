@@ -50,4 +50,12 @@ export type ConfigInfo = {
   karma: number;
   downloads: number;
   features?: string[];
+  ownerId?: string;
+};
+
+export type UserInfo = {
+  userId: string;
+  discordId: string;
+  username: string;
+  avatar?: string;
 };

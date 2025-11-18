@@ -6,7 +6,10 @@
     "maker": "Condition Maker",
     "termAndConditions": "Terms and Conditions",
     "discord": "Discord",
-    "tos": "TOS"
+    "tos": "TOS",
+    "profile": "Profile",
+    "login": "Login",
+    "logout": "Logout"
   },
   "home": {
     "title": "Dark Configs",
@@ -38,7 +41,8 @@
     "configDescription": "Both when uploading and downloading the configuration, we remove any data that could be compromising.",
     "hidden": "Hidden",
     "hiddenDescription": "When activated, it will not be shown in the public listing",
-    "saveButton": "Save"
+    "saveButton": "Save",
+    "loginMessage": "To upload configurations you must log in."
   },
   "cookieAdvert": {
     "text": "We use cookies to improve our website, you can check our policies here: {link}",
@@ -47,5 +51,17 @@
   },
   "maker": {
     "generateButton": "Generate condition"
+  },
+  "profile": {
+    "loginRequired": "Login required",
+    "loginWithDiscord": "Login with Discord",
+    "delete": "Delete",
+    "noConfigs": "You have no configs yet"
+  },
+  "authCallback": {
+    "title": "Authenticating",
+    "processing": "Processing authentication…",
+    "success": "Authenticated. Redirecting…",
+    "error": "Authentication failed. Redirecting…"
   }
 }
