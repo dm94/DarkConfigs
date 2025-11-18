@@ -25,6 +25,10 @@ onMounted(async () => {
       router.replace({ path: "/" });
       return;
     }
+  } else {
+    status.value = AuthStatus.Error;
+    router.replace({ path: "/" });
+    return;
   }
   router.replace({ path: "/" });
   globalThis.location.reload();
