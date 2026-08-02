@@ -53,13 +53,13 @@ importers:
         version: 3.2.4(vitest@4.1.0(@types/node@26.0.0)(jsdom@29.1.1)(vite@7.3.5(@types/node@26.0.0)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.9.0)))
       autoprefixer:
         specifier: ^10.5.0
-        version: 10.5.0(postcss@8.5.10)
+        version: 10.5.0(postcss@8.5.18)
       jsdom:
         specifier: ^29.1.1
         version: 29.1.1
       postcss:
-        specifier: ^8.5.10
-        version: 8.5.10
+        specifier: ^8.5.18
+        version: 8.5.18
       tailwindcss:
         specifier: ^4.3.0
         version: 4.3.0
@@ -73,8 +73,8 @@ importers:
         specifier: ^4.1.0
         version: 4.1.0(@types/node@26.0.0)(jsdom@29.1.1)(vite@7.3.5(@types/node@26.0.0)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.9.0))
       vue-tsc:
-        specifier: ^3.3.4
-        version: 3.3.4(typescript@5.9.3)
+        specifier: ^3.3.5
+        version: 3.3.5(typescript@5.9.3)
 
 packages:
 
@@ -903,8 +903,14 @@ packages:
   '@vue/compiler-core@3.5.35':
     resolution: {integrity: sha512-BUmHaR1J+O+CKZ9uJucdVTEr1LHsdyvv7vG3eNRhK3CczEHeMd/LtsHAuD7PbrxvI2envCY2v7HI1vC1aBRzKw==}
 
+  '@vue/compiler-core@3.5.38':
+    resolution: {integrity: sha512-s99aGxWYig9ErHbct27KXEGhrBYlRI6c4MwAgXErOAbX9xiW37/uMa+XUDO69zLz83dng8UUZ70CTOJrLrYrEQ==}
+
   '@vue/compiler-dom@3.5.35':
     resolution: {integrity: sha512-k+bprkXxuqhVajgTx5mUHuir7TwQzUKOWR40ng1ncAqQRPnrLngGGgqVEEhOnTMlc8btHYVKmrP8s5Qyg0hvYA==}
+
+  '@vue/compiler-dom@3.5.38':
+    resolution: {integrity: sha512-JTqp25l8aFfJYF7/KmsXZjAxJz7T+SjmTJLoXVjHtc2BrSgSiW2n9Aem/cWq1OPe68A8JL06B3eVdhlP0H4TVw==}
 
   '@vue/compiler-sfc@3.5.35':
     resolution: {integrity: sha512-G5VPMcXTSywXBgtFOZOnHKBxKSrwXUcvY1iaF5/hRcy7t0J6CH/d8ha9F4nzi00Fax1eLV0QHM7v4mQu68jydw==}
@@ -924,8 +930,8 @@ packages:
   '@vue/devtools-shared@8.1.2':
     resolution: {integrity: sha512-X9RyVFYAdkBe4IUf5v48TxBF/6QPmF8CmWrDAjXzfUHrgQ/HGfTC1A6TqgXqZ03ye66l3AD51BAGD69IvKM9sw==}
 
-  '@vue/language-core@3.3.4':
-    resolution: {integrity: sha512-IuHqQ5zGGOE7CXP72VX6A42IVeIzYv4WAhO6arej11TRNqtdZfGyH8Yr2FOCaDX0dSQG+JwULLoFHGY1igYVjQ==}
+  '@vue/language-core@3.3.5':
+    resolution: {integrity: sha512-UkKu5nhX89fg4VhlG/FOeI10G3cj/7radKT/cy9BT4Q9qJmJlSTAc/dP63Xqs29aypN4f39xUV6PsLNk/dcD6g==}
 
   '@vue/reactivity@3.5.35':
     resolution: {integrity: sha512-tVc+SsHConvh/Lz64qq1pP3rYArBmK42xonovEcxY74SQtvctZodG/zhq54P5dr38cVuw25d27cPNRdlMidpGQ==}
@@ -943,6 +949,9 @@ packages:
 
   '@vue/shared@3.5.35':
     resolution: {integrity: sha512-zSbjL7gRXwks2ZQLRGCajBtBXEOXW9Ddhn/HvSdrGkE2dqGnumzW8XtusRrxrE9LvqtiqDXQ+A60Hp6mvdYxfA==}
+
+  '@vue/shared@3.5.38':
+    resolution: {integrity: sha512-FTW0AFZNaK5/mOqvGBwVfUlNLU38TiQn4+DQgIFUnrBBJQ1crMJ82yeGQLV5jyKFsO8yRukpbuP7x+nRbH6aug==}
 
   '@vue/test-utils@2.4.6':
     resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
@@ -1692,8 +1701,8 @@ packages:
   muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
 
-  nanoid@3.3.12:
-    resolution: {integrity: sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==}
+  nanoid@3.3.16:
+    resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -1778,12 +1787,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.10:
-    resolution: {integrity: sha512-pMMHxBOZKFU6HgAZ4eyGnwXF/EvPGGqUr0MnZ5+99485wwW41kW91A4LOGxSHhgugZmSChL5AlElNdwlNgcnLQ==}
-    engines: {node: ^10 || ^12 || >=14}
-
-  postcss@8.5.15:
-    resolution: {integrity: sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==}
+  postcss@8.5.18:
+    resolution: {integrity: sha512-xdB1oSLHbz1vRWgCDalrCqEFTWzFlhqFC5tIHLMOSUIjhm3XXQ1qrFy8S/ESr1JYRRXqM3c1QFiMZUJdUTqyMQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   pretty-format@27.5.1:
@@ -2151,8 +2156,8 @@ packages:
       vite:
         optional: true
 
-  vue-tsc@3.3.4:
-    resolution: {integrity: sha512-XA/JqmQwS2GZmfgpjOEGdrKwaTSEuPwxpHa7/t6f4yiGrJb3gVHTPb9wBfByMNZwQ+xDXs41b8gaS2DKsOozUw==}
+  vue-tsc@3.3.5:
+    resolution: {integrity: sha512-Rzh/G2MmNlMSAMTiQEjDrsb4dgB/jbtEM47rVN2NtidF1dfb/q4w4QvpQBtW5+y3y5H27Hjh7deVwk+YB02fNg==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
@@ -2941,10 +2946,23 @@ snapshots:
       estree-walker: 2.0.2
       source-map-js: 1.2.1
 
+  '@vue/compiler-core@3.5.38':
+    dependencies:
+      '@babel/parser': 7.29.7
+      '@vue/shared': 3.5.38
+      entities: 7.0.1
+      estree-walker: 2.0.2
+      source-map-js: 1.2.1
+
   '@vue/compiler-dom@3.5.35':
     dependencies:
       '@vue/compiler-core': 3.5.35
       '@vue/shared': 3.5.35
+
+  '@vue/compiler-dom@3.5.38':
+    dependencies:
+      '@vue/compiler-core': 3.5.38
+      '@vue/shared': 3.5.38
 
   '@vue/compiler-sfc@3.5.35':
     dependencies:
@@ -2955,7 +2973,7 @@ snapshots:
       '@vue/shared': 3.5.35
       estree-walker: 2.0.2
       magic-string: 0.30.21
-      postcss: 8.5.15
+      postcss: 8.5.18
       source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.35':
@@ -2978,11 +2996,11 @@ snapshots:
 
   '@vue/devtools-shared@8.1.2': {}
 
-  '@vue/language-core@3.3.4':
+  '@vue/language-core@3.3.5':
     dependencies:
       '@volar/language-core': 2.4.28
-      '@vue/compiler-dom': 3.5.35
-      '@vue/shared': 3.5.35
+      '@vue/compiler-dom': 3.5.38
+      '@vue/shared': 3.5.38
       alien-signals: 3.2.1
       muggle-string: 0.4.1
       path-browserify: 1.0.1
@@ -3011,6 +3029,8 @@ snapshots:
       vue: 3.5.35(typescript@5.9.3)
 
   '@vue/shared@3.5.35': {}
+
+  '@vue/shared@3.5.38': {}
 
   '@vue/test-utils@2.4.6':
     dependencies:
@@ -3067,13 +3087,13 @@ snapshots:
       '@babel/types': 7.29.7
       ast-kit: 2.2.0
 
-  autoprefixer@10.5.0(postcss@8.5.10):
+  autoprefixer@10.5.0(postcss@8.5.18):
     dependencies:
       browserslist: 4.28.2
       caniuse-lite: 1.0.30001793
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.10
+      postcss: 8.5.18
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -3825,7 +3845,7 @@ snapshots:
 
   muggle-string@0.4.1: {}
 
-  nanoid@3.3.12: {}
+  nanoid@3.3.16: {}
 
   node-releases@2.0.46: {}
 
@@ -3900,15 +3920,9 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.10:
+  postcss@8.5.18:
     dependencies:
-      nanoid: 3.3.12
-      picocolors: 1.1.1
-      source-map-js: 1.2.1
-
-  postcss@8.5.15:
-    dependencies:
-      nanoid: 3.3.12
+      nanoid: 3.3.16
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -4199,7 +4213,7 @@ snapshots:
       esbuild: 0.27.7
       fdir: 6.5.0(picomatch@4.0.4)
       picomatch: 4.0.4
-      postcss: 8.5.15
+      postcss: 8.5.18
       rollup: 4.62.2
       tinyglobby: 0.2.17
     optionalDependencies:
@@ -4272,10 +4286,10 @@ snapshots:
       '@vue/compiler-sfc': 3.5.35
       vite: 7.3.5(@types/node@26.0.0)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.9.0)
 
-  vue-tsc@3.3.4(typescript@5.9.3):
+  vue-tsc@3.3.5(typescript@5.9.3):
     dependencies:
       '@volar/typescript': 2.4.28
-      '@vue/language-core': 3.3.4
+      '@vue/language-core': 3.3.5
       typescript: 5.9.3
 
   vue@3.5.35(typescript@5.9.3):
