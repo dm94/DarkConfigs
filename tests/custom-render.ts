@@ -5,21 +5,23 @@ import { createRouter, createWebHistory } from "vue-router";
 import { createI18n } from "vue-i18n";
 import { messages } from "../src/i18n/messages";
 
+const mockComponent = { template: "<p>Mock</p>" };
+
 const routes = [
   {
     path: "/",
     name: RouteName.HOME,
-    component: () => "<p>Mock</p>",
+    component: mockComponent,
   },
   {
     path: "/config/:id",
     name: RouteName.CONFIG_DETAIL,
-    component: () => "<p>Mock</p>",
+    component: mockComponent,
   },
   {
     path: "/upload",
     name: RouteName.UPLOAD,
-    component: () => "<p>Mock</p>",
+    component: mockComponent,
   },
 ];
 

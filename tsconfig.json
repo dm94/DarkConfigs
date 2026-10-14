@@ -19,13 +19,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@public/*": ["public/*"],
-      "@typec/*": ["src/types/*"],
-      "@functions/*": ["src/functions/*"],
-      "@views/*": ["src/views/*"]
+      "@/*": ["./src/*"],
+      "@public/*": ["./public/*"],
+      "@typec/*": ["./src/types/*"],
+      "@functions/*": ["./src/functions/*"],
+      "@views/*": ["./src/views/*"]
     },
     "types": ["vitest/globals", "node", "@types/jest"]
   },

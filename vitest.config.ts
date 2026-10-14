@@ -2,6 +2,8 @@ import { defineConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 
+const rootDir = import.meta.dirname;
+
 export default defineConfig({
   test: {
     globals: true,
@@ -16,11 +18,11 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src/"),
-      "@public": path.resolve(__dirname, "./public/"),
-      "@typec": path.resolve(__dirname, "./src/types/"),
-      "@functions": path.resolve(__dirname, "./src/functions/"),
-      "@views": path.resolve(__dirname, "./src/views/"),
+      "@": path.resolve(rootDir, "./src/"),
+      "@public": path.resolve(rootDir, "./public/"),
+      "@typec": path.resolve(rootDir, "./src/types/"),
+      "@functions": path.resolve(rootDir, "./src/functions/"),
+      "@views": path.resolve(rootDir, "./src/views/"),
     },
   },
 });
