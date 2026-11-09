@@ -1129,8 +1129,8 @@ packages:
     peerDependencies:
       jsdom: '>=27.4.0 <31.0.0'
 
-  brace-expansion@2.0.2:
-    resolution: {integrity: sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ==}
+  brace-expansion@2.1.7:
+    resolution: {integrity: sha512-uZbew1NqdmPDTMJ8ah1y+b+9QEJrfkXFk3RcTQw3X0jW/xRUvFKsg1CfQdSYGdTbXZWExtU3J3ccxtnfw1Fi0g==}
 
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
@@ -1532,9 +1532,8 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  js-cookie@3.0.5:
-    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
-    engines: {node: '>=14'}
+  js-cookie@3.0.8:
+    resolution: {integrity: sha512-yeJd4aNAdYZQjaon2bpD/Gb0B/omw7HQOsynXXcOiWVCacbBcPlgn8S/d1X6blFSaHao7ozqtW7NZW19xpCtIw==}
 
   js-tokens@10.0.0:
     resolution: {integrity: sha512-lM/UBzQmfJRo9ABXbPWemivdCW8V2G8FHaHdypQaIy523snUjog0W71ayWXTjiR+ixeMyVHN2XcpnTd/liPg/Q==}
@@ -1892,10 +1891,6 @@ packages:
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
-
-  source-map-js@1.2.1:
-    resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
-    engines: {node: '>=0.10.0'}
 
   source-map-js@1.2.2:
     resolution: {integrity: sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==}
@@ -3096,7 +3091,7 @@ snapshots:
     dependencies:
       jsdom: 30.1.3
 
-  brace-expansion@2.0.2:
+  brace-expansion@2.1.7:
     dependencies:
       balanced-match: 1.0.2
 
@@ -3559,10 +3554,10 @@ snapshots:
       config-chain: 1.1.13
       editorconfig: 1.0.4
       glob: 10.5.0
-      js-cookie: 3.0.5
+      js-cookie: 3.0.8
       nopt: 7.2.1
 
-  js-cookie@3.0.5: {}
+  js-cookie@3.0.8: {}
 
   js-tokens@10.0.0: {}
 
@@ -3686,7 +3681,7 @@ snapshots:
     dependencies:
       '@babel/parser': 7.29.8
       '@babel/types': 7.29.8
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
 
   math-intrinsics@1.1.0: {}
 
@@ -3701,11 +3696,11 @@ snapshots:
 
   minimatch@9.0.1:
     dependencies:
-      brace-expansion: 2.0.2
+      brace-expansion: 2.1.7
 
   minimatch@9.0.5:
     dependencies:
-      brace-expansion: 2.0.2
+      brace-expansion: 2.1.7
 
   minipass@7.1.2: {}
 
@@ -3961,8 +3956,6 @@ snapshots:
   signal-exit@4.1.0: {}
 
   slash@3.0.0: {}
-
-  source-map-js@1.2.1: {}
 
   source-map-js@1.2.2: {}
 
